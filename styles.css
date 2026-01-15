@@ -701,18 +701,16 @@ p {
 
 .ecosystem-header {
     background: var(--gradient-primary);
-    padding: 2rem;
+    padding: 3rem 2rem;
     display: flex;
+    flex-direction: column;
     align-items: center;
+    text-align: center;
     gap: 1.5rem;
 }
 
 .labs-card .ecosystem-header {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    flex-direction: column;
-    text-align: center;
-    gap: 1.5rem;
-    padding: 3rem 2rem;
 }
 
 .foundation-card .ecosystem-header {
@@ -739,12 +737,6 @@ p {
     display: block;
 }
 
-.labs-logo {
-    background-image: url('assets/momentum-labs.jpeg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
 
 .ecosystem-info h3 {
     font-size: 1.75rem;
@@ -781,12 +773,10 @@ p {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    background: rgba(139, 92, 246, 0.1);
     padding: 0.5rem 1rem;
     border-radius: 20px;
     font-size: 0.9rem;
     font-weight: 600;
-    color: var(--primary);
 }
 
 .feature i {
@@ -1412,7 +1402,6 @@ p {
     background: var(--bg-darker);
     color: var(--text-muted);
     padding: 2rem 0;
-    margin-top: 2rem;
 }
 
 .footer-content {
