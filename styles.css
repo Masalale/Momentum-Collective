@@ -918,51 +918,21 @@ p {
     line-height: 1.7;
 }
 
-/* Creative Suite - Grid Layout */
-.apps-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
-    margin-bottom: 3rem;
-}
-
 .app-card {
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    padding: 3rem 2rem;
-    border-radius: 24px;
-    box-shadow: 0 8px 32px rgba(139, 92, 246, 0.1);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    text-align: center;
-    border: 1px solid rgba(196, 181, 253, 0.3);
-    position: relative;
+    background: white;
+    border-radius: 20px;
     overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 3rem 2rem;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
-.app-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: var(--gradient-primary);
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
-}
-
-.app-card:hover {
-    transform: translateY(-12px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(139, 92, 246, 0.15);
-    border-color: rgba(139, 92, 246, 0.5);
-}
-
-.app-card:hover::before {
-    transform: scaleX(1);
-}
-
-.app-icon {
+.app-icon-component {
     width: 100px;
     height: 100px;
     margin: 0 auto 1.5rem;
@@ -978,12 +948,12 @@ p {
     transition: all 0.3s ease;
 }
 
-.app-icon:hover {
-    transform: scale(1.05);
+.app-icon-component:hover {
+    transform: scale(1.05) rotate(3deg);
     box-shadow: 0 12px 32px rgba(139, 92, 246, 0.3);
 }
 
-.app-icon img {
+.app-icon-component img {
     width: 60px;
     height: 60px;
     object-fit: contain;
@@ -991,16 +961,34 @@ p {
     z-index: 1;
 }
 
-.app-card h4 {
-    color: var(--text-primary);
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+.app-icon-component i {
+    font-size: 2rem;
+    color: white;
 }
 
 .app-tagline {
     color: var(--primary-color);
     font-weight: 600;
     margin-bottom: 1rem;
+}
+
+.app-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.app-meta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.app-info .btn {
+    margin-top: 0.5rem;
 }
 
 .app-description {
@@ -1052,84 +1040,6 @@ p {
 
 .glow-on-hover:hover::after {
     opacity: 0.3;
-}
-.business-suite-cascade {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.business-item {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    padding: 2.5rem;
-    margin-bottom: 2rem;
-    border-radius: 20px;
-    box-shadow: 0 8px 32px rgba(139, 92, 246, 0.1);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 1px solid rgba(139, 92, 246, 0.2);
-    position: relative;
-    overflow: hidden;
-}
-
-.business-item::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 4px;
-    background: var(--gradient-primary);
-    transform: scaleY(0);
-    transition: transform 0.3s ease;
-}
-
-.business-item:hover {
-    transform: translateX(12px) scale(1.01);
-    box-shadow: 0 20px 40px rgba(139, 92, 246, 0.15);
-    border-color: rgba(139, 92, 246, 0.4);
-}
-
-.business-item:hover::before {
-    transform: scaleY(1);
-}
-
-.business-icon {
-    width: 70px;
-    height: 70px;
-    background: var(--gradient-primary);
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 1.8rem;
-    flex-shrink: 0;
-    box-shadow: 0 8px 24px rgba(139, 92, 246, 0.2);
-    transition: all 0.3s ease;
-}
-
-.business-item:hover .business-icon {
-    transform: scale(1.1);
-    box-shadow: 0 12px 32px rgba(139, 92, 246, 0.3);
-}
-
-.business-content {
-    flex: 1;
-}
-
-.business-content h4 {
-    color: var(--text-primary);
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
-}
-
-.business-content p {
-    color: var(--text-secondary);
-    margin: 0;
 }
 
 /* Services Section */
@@ -1951,36 +1861,18 @@ p {
         gap: 2rem;
     }
     
-    .apps-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    
     .app-card {
         padding: 2.5rem 2rem;
     }
     
-    .app-icon {
+    .app-icon-component {
         width: 80px;
         height: 80px;
     }
     
-    .app-icon img {
+    .app-icon-component img {
         width: 50px;
         height: 50px;
-    }
-    
-    .business-item {
-        flex-direction: column;
-        text-align: center;
-        gap: 1.5rem;
-        padding: 2rem;
-    }
-    
-    .business-icon {
-        width: 60px;
-        height: 60px;
-        font-size: 1.5rem;
     }
     
     .services {
@@ -2119,10 +2011,6 @@ p {
         padding: 1.5rem;
     }
     
-    .business-item {
-        padding: 1rem;
-    }
-    
     .service-card {
         padding: 1.5rem;
     }
@@ -2256,20 +2144,8 @@ img[src=""] {
 }
 
 /* Enhanced Icon Animations */
-.app-icon {
+.app-icon-component {
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.app-card:hover .app-icon {
-    transform: scale(1.05) rotate(3deg);
-}
-
-.business-icon {
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.business-item:hover .business-icon {
-    transform: scale(1.1) rotate(-5deg);
 }
 
 .service-icon {
@@ -2468,34 +2344,16 @@ img[src=""] {
     .hero {
         padding-top: 2rem;
     }
-}
-.app-icon {
-    width: 80px;
-    height: 80px;
-    margin: 0;
-    background: var(--gradient-primary);
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-    flex-shrink: 0;
-    box-shadow: 0 8px 24px rgba(139, 92, 246, 0.2);
-    transition: all 0.3s ease;
-}
-
-.app-icon:hover {
-    transform: scale(1.05);
-    box-shadow: 0 12px 32px rgba(139, 92, 246, 0.3);
-}
-
-.app-icon img {
-    width: 50px;
-    height: 50px;
-    object-fit: contain;
-    position: relative;
-    z-index: 1;
+    
+    .app-icon-component {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .app-icon-component img {
+        width: 50px;
+        height: 50px;
+    }
 }
 
 .app-content-wrapper {
