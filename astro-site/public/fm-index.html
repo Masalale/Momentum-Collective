@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresh Marikiti - Kenya's Circular Economy Pioneer</title>
+    
+    <!-- External Libraries -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-green: #1a7f37;
+            --dark-green: #145c28;
+            --light-green: #e8f5e8;
+            --accent-gold: #f4a261;
+            --text-dark: #2c3e50;
+            --text-light: #6c757d;
+            --white: #ffffff;
+            --light-gray: #f8f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: linear-gradient(135deg, rgba(26, 127, 55, 0.95), rgba(20, 92, 40, 0.9)) !important;
+            backdrop-filter: blur(15px);
+            transition: all 0.4s ease;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .navbar.scrolled {
+            background: linear-gradient(135deg, var(--primary-green), var(--dark-green)) !important;
+            padding: 1rem 0;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.15);
+        }
+
+        .navbar-brand {
+            font-weight: 800;
+            font-size: 1.8rem;
+            color: white !important;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand:hover {
+            transform: scale(1.05);
+        }
+
+        .navbar-brand img {
+            transition: all 0.3s ease;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+        }
+
+        .btn-momentum-link {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white !important;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+            display: inline-flex;
+            align-items: center;
+            margin-left: 1rem;
+        }
+
+        .btn-momentum-link:hover {
+            background: linear-gradient(135deg, #4f46e5, #7c3aed);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+            color: white !important;
+            text-decoration: none;
+        }
+
+        .nav-link {
+            color: rgba(255,255,255,0.9) !important;
+            font-weight: 600;
+            margin: 0 0.5rem;
+            padding: 0.8rem 1.2rem !important;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            text-transform: capitalize;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-link:hover {
+            color: white !important;
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .nav-link:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--accent-gold);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover:before {
+            width: 80%;
+        }
+
+        /* Hero Slider */
+        .hero-slider {
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .carousel {
+            height: 100vh;
+        }
+        
+        .carousel-inner {
+            height: 100vh;
+        }
+        
+        .carousel-item {
+            height: 100vh;
+            position: relative;
+            display: block;
+            width: 100%;
+            transition: transform 0.6s ease-in-out;
+        }
+        
+        .carousel-item.active {
+            display: block;
+        }
+
+        .hero-slide {
+            height: 100vh;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(26, 127, 55, 0.85), rgba(20, 92, 40, 0.75));
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            color: white;
+            max-width: 900px;
+            padding: 2rem;
+            margin-top: -80px; /* Account for fixed navbar */
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            line-height: 1.1;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            animation: slideInUp 1s ease-out;
+            letter-spacing: -1px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 3rem;
+            line-height: 1.6;
+            font-weight: 400;
+            opacity: 0.95;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            animation: slideInUp 1s ease-out 0.3s both;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-cta {
+            animation: slideInUp 1s ease-out 0.6s both;
+            margin-top: 1rem;
+        }
+
+        .btn-primary-custom {
+            background: linear-gradient(135deg, var(--accent-gold), #e76f51);
+            border: none;
+            padding: 1.2rem 2.5rem;
+            font-weight: 700;
+            border-radius: 35px;
+            transition: all 0.4s ease;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 0.95rem;
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 6px 25px rgba(244, 162, 97, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary-custom:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.1));
+            transition: all 0.4s ease;
+        }
+
+        .btn-primary-custom:hover:before {
+            left: 100%;
+        }
+
+        .btn-primary-custom:hover {
+            background: linear-gradient(135deg, #e76f51, #d63031);
+            transform: translateY(-4px);
+            box-shadow: 0 15px 40px rgba(244, 162, 97, 0.5);
+            color: white;
+        }
+
+        /* Section Styling */
+        .section-padding {
+            padding: 6rem 0;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-green);
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            text-align: center;
+            margin-bottom: 4rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Problem Section */
+        .problem-section {
+            background: var(--light-gray);
+            position: relative;
+        }
+
+        .problem-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .problem-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .problem-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: white;
+        }
+
+        /* Impact Metrics */
+        .impact-section {
+            background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
+            color: white;
+        }
+
+        .metric-card {
+            text-align: center;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .metric-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--accent-gold);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .metric-label {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-description {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        /* Services Cards */
+        .service-card {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            height: 100%;
+            border: 2px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-green);
+            box-shadow: 0 20px 50px rgba(26, 127, 55, 0.2);
+        }
+
+        .service-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--light-green), rgba(26, 127, 55, 0.1));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-size: 2.5rem;
+            color: var(--primary-green);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
+            color: white;
+            transform: scale(1.1);
+        }
+
+        /* Team Section */
+        .team-section {
+            background: var(--light-gray);
+        }
+
+        .team-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .team-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            object-fit: cover;
+            border: 4px solid var(--light-green);
+        }
+
+        .team-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .team-role {
+            color: var(--primary-green);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        /* Contact Form */
+        .contact-section {
+            background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
+            color: white;
+        }
+
+        .contact-form {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 3rem;
+        }
+
+        .form-control {
+            background: rgba(255,255,255,0.1);
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 10px;
+            color: white;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .form-control:focus {
+            background: rgba(255,255,255,0.15);
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 20px rgba(244, 162, 97, 0.3);
+            color: white;
+        }
+
+        .form-control::placeholder {
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-green);
+            color: white;
+            text-align: center;
+            line-height: 50px;
+            border-radius: 50%;
+            margin: 0 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--accent-gold);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(244, 162, 97, 0.4);
+        }
+
+        /* Animations */
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Counter Animation */
+        .counter {
+            transition: all 2s ease-in-out;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 0.8rem 0;
+            }
+            
+            .navbar-brand {
+                font-size: 1.4rem;
+            }
+            
+            .btn-momentum-link {
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+                margin-left: 0.5rem;
+            }
+            
+            .nav-link {
+                margin: 0 0.2rem;
+                padding: 0.6rem 1rem !important;
+                font-size: 0.9rem;
+            }
+            
+            .hero-slide {
+                background-attachment: scroll; /* Fix for mobile */
+            }
+            
+            .hero-content {
+                padding: 1rem;
+                margin-top: -60px;
+            }
+            
+            .hero-title {
+                font-size: 2.8rem;
+                margin-bottom: 1.5rem;
+                line-height: 1.2;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+                margin-bottom: 2rem;
+                line-height: 1.5;
+            }
+            
+            .btn-primary-custom {
+                padding: 1rem 2rem;
+                font-size: 0.9rem;
+                letter-spacing: 1px;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .section-padding {
+                padding: 4rem 0;
+            }
+            
+            .scroll-indicator {
+                bottom: 2rem;
+                font-size: 0.8rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .btn-primary-custom {
+                padding: 0.9rem 1.8rem;
+                font-size: 0.85rem;
+            }
+            
+            .btn-momentum-link {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.75rem;
+                margin-left: 0.3rem;
+            }
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            text-align: center;
+            z-index: 15;
+            animation: bounce 2s infinite;
+            font-size: 0.9rem;
+            font-weight: 500;
+            opacity: 0.9;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-5px) translateX(-50%);
+            }
+        }
+
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-green);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--dark-green);
+            transform: translateY(-3px);
+        }
+        
+        /* Carousel Controls */
+        .carousel-control-prev,
+        .carousel-control-next {
+            z-index: 12;
+            width: 5%;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+        
+        .carousel-control-prev:hover,
+        .carousel-control-next:hover {
+            opacity: 1;
+        }
+        
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            width: 40px;
+            height: 40px;
+            background-size: 60%;
+            border-radius: 50%;
+            background-color: rgba(26, 127, 55, 0.7);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        /* Allow Bootstrap to handle carousel slide behavior naturally */
+        
+        .carousel-fade .carousel-item {
+            opacity: 0;
+            transition-property: opacity;
+            transform: none;
+        }
+        
+        .carousel-fade .carousel-item.active {
+            opacity: 1;
+        }
+        
+        /* Fix any potential overflow issues */
+        .carousel-inner {
+            overflow: hidden;
+            position: relative;
+        }
+        
+        /* Proper carousel transitions - Smooth sliding */
+        .carousel-item {
+            position: relative;
+            display: block;
+            width: 100%;
+            margin-right: -100%;
+            backface-visibility: hidden;
+            transition: transform 0.6s ease-in-out;
+        }
+        
+        .carousel-item:not(.active) {
+            transform: translateX(100%);
+        }
+        
+        .carousel-item.active {
+            transform: translateX(0);
+        }
+        
+        .carousel-item-next,
+        .carousel-item-prev {
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+        
+        .carousel-item-next:not(.carousel-item-start),
+        .active.carousel-item-end {
+            transform: translateX(100%);
+        }
+        
+        .carousel-item-prev:not(.carousel-item-end),
+        .active.carousel-item-start {
+            transform: translateX(-100%);
+        }
+        
+        .carousel-item-next.carousel-item-start,
+        .carousel-item-prev.carousel-item-end {
+            transform: translateX(0);
+        }
+        
+        /* Ensure smooth carousel transitions */
+        @media (prefers-reduced-motion: reduce) {
+            .carousel-item {
+                transition: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand font-display" href="#home">
+                <img src="./assets/logo.png" alt="Fresh Marikiti" height="40" class="me-2">
+                Fresh Marikiti
+            </a>
+            
+            <a href="index.html" class="btn-momentum-link me-3">
+                <i class="fas fa-arrow-left me-1"></i>Momentum
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#problem">The Problem</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#solution">Our Solution</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#impact">Impact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            
+        </div>
+    </nav>
+    
+
+    <!-- Hero Slider -->
+    <section id="home" class="hero-slider">
+        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+            <div class="carousel-inner">
+                <!-- Slide 1 -->
+                <div class="carousel-item active">
+                    <div class="hero-slide" style="background-image: url('./assets/c1.jpeg');">
+                        <div class="hero-overlay"></div>
+                        <div class="hero-content">
+                            <h1 class="hero-title font-display">Fresh Marikiti</h1>
+                            <p class="hero-subtitle">Kenya's #1 Circular Economy for Fresh Produce & Sustainability</p>
+                            <div class="hero-cta">
+                                <a href="#problem" class="btn btn-primary-custom">Discover Our Mission</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="carousel-item">
+                    <div class="hero-slide" style="background-image: url('./assets/c2.jpeg');">
+                        <div class="hero-overlay"></div>
+                        <div class="hero-content">
+                            <h1 class="hero-title font-display">Waste to Value</h1>
+                            <p class="hero-subtitle">Transforming market waste into valuable products for a greener Kenya</p>
+                            <div class="hero-cta">
+                                <a href="#solution" class="btn btn-primary-custom">Our Solutions</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="carousel-item">
+                    <div class="hero-slide" style="background-image: url('./assets/c3.jpeg');">
+                        <div class="hero-overlay"></div>
+                        <div class="hero-content">
+                            <h1 class="hero-title font-display">Empowering Communities</h1>
+                            <p class="hero-subtitle">Building a sustainable future for Kenya, together</p>
+                            <div class="hero-cta">
+                                <a href="#team" class="btn btn-primary-custom">Meet the Team</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carousel Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="mb-2">Scroll Down</div>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section id="problem" class="problem-section section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-12" data-aos="fade-up">
+                    <h2 class="section-title font-display">The Problem: Waste Is Wasted</h2>
+                    <p class="section-subtitle">Kenya faces massive challenges in fresh produce supply chains, leading to waste, inefficiency, and lost opportunities</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="problem-card">
+                        <div class="problem-icon">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <h4>Supply Chain Waste</h4>
+                        <p>Thousands of tons of fresh produce are lost daily due to inefficient distribution networks and lack of proper storage facilities across Kenya's markets.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="problem-card">
+                        <div class="problem-icon">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <h4>Farmer Income Loss</h4>
+                        <p>Small-scale farmers struggle with price volatility and lack of direct market access, losing up to 40% of potential income due to intermediary markups.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="problem-card">
+                        <div class="problem-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h4>Environmental Impact</h4>
+                        <p>Massive organic waste from markets creates environmental problems while missing opportunities for creating value through circular economy principles.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section id="solution" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-12" data-aos="fade-up">
+                    <h2 class="section-title font-display">Our Solution: Complete Circular Economy</h2>
+                    <p class="section-subtitle">Fresh Marikiti transforms Kenya's fresh produce ecosystem through innovation, sustainability, and community empowerment</p>
+                </div>
+            </div>
+            
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <img src="./assets/logo.png" alt="Fresh Marikiti Solution" class="img-fluid rounded">
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <h3 class="mb-4">Revolutionizing Fresh Produce Distribution</h3>
+                    <p class="lead">Fresh Marikiti serves as a vital link between farmers, vendors, and consumers, creating a transparent and efficient supply chain that ensures every delivery meets the highest standards of freshness and quality.</p>
+                    
+                    <div class="row mt-4">
+                        <div class="col-6">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-check-circle text-success me-3 fs-4"></i>
+                                <span>Direct Farm Sourcing</span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-check-circle text-success me-3 fs-4"></i>
+                                <span>Waste Reduction</span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-check-circle text-success me-3 fs-4"></i>
+                                <span>Community Jobs</span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-check-circle text-success me-3 fs-4"></i>
+                                <span>Circular Economy</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Metrics Section -->
+    <section id="impact" class="impact-section section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-12" data-aos="fade-up">
+                    <h2 class="section-title font-display text-white">Our Impact Targets</h2>
+                    <p class="section-subtitle text-white opacity-75">Building a sustainable future for Kenya's fresh produce ecosystem</p>
+                    <p class="text-white opacity-50 small mt-2">*2025-2026 Strategic Goals</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="metric-card">
+                        <span class="metric-number counter" data-target="500">0</span>
+                        <h4 class="metric-label">Farmers to Support</h4>
+                        <p class="metric-description">Direct partnerships with local farmers across Kenya's agricultural regions</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="metric-card">
+                        <span class="metric-number counter" data-target="60">0</span>
+                        <h4 class="metric-label">Waste Reduction Target (%)</h4>
+                        <p class="metric-description">Reduce produce waste through our circular economy approach</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="metric-card">
+                        <span class="metric-number counter" data-target="150">0</span>
+                        <h4 class="metric-label">Jobs to Create</h4>
+                        <p class="metric-description">Local employment opportunities in processing, delivery, and management</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="metric-card">
+                        <span class="metric-number counter" data-target="2000">0</span>
+                        <h4 class="metric-label">Households to Serve</h4>
+                        <p class="metric-description">Families accessing fresh, quality produce through our network</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-12" data-aos="fade-up">
+                    <h2 class="section-title font-display">Our Services</h2>
+                    <p class="section-subtitle">Comprehensive solutions for Kenya's fresh produce ecosystem</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <h4>Market Delivery</h4>
+                        <p>Fast, reliable delivery of fresh produce from Kenya's top markets to your doorstep with guaranteed freshness and quality.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-recycle"></i>
+                        </div>
+                        <h4>Waste Management</h4>
+                        <p>Turning market waste into valuable products like compost and biofuels for a cleaner, greener environment and additional revenue streams.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4>Community Empowerment</h4>
+                        <p>Supporting local farmers and vendors, creating sustainable jobs, and building capacity for long-term economic growth in rural communities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team-section section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-12" data-aos="fade-up">
+                    <h2 class="section-title font-display">Meet Our Team</h2>
+                    <p class="section-subtitle">Passionate experts driving Kenya's sustainable future</p>
+                </div>
+            </div>
+
+            <!-- Management Team -->
+            <div class="row mb-5">
+                <div class="col-12" data-aos="fade-up">
+                    <h3 class="text-center mb-4" style="color: var(--primary-green); font-weight: 600;">Management Team</h3>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="team-card">
+                        <img src="./assets/person.jpeg" alt="David Zivai" class="team-image">
+                        <h5 class="team-name">David Zivai</h5>
+                        <p class="team-role">Founder & CEO</p>
+                        <p>Visionary leader with expertise in sustainable business models and agricultural innovation.</p>
+                    </div>
+                </div>
+
+                
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="team-card">
+                        <img src="./assets/person.jpeg" alt="Erica Aketch" class="team-image">
+                        <h5 class="team-name">Erica Aketch</h5>
+                        <p class="team-role">Project Manager</p>
+                        <p>Community engagement specialist focused on farmer relationships and stakeholder coordination.</p>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="team-card">
+                        <img src="./assets/person.jpeg" alt="Ramadhan Abdilatif" class="team-image">
+                        <h5 class="team-name">Ramadhan Abdilatif</h5>
+                        <p class="team-role">Lead Programmer</p>
+                        <p>Technical expert overseeing software development and system integration.</p>
+                    </div>
+                </div>
+                
+
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="team-card">
+                        <img src="./assets/person.jpeg" alt="Alma " class="team-image">
+                        <h5 class="team-name">Alma</h5>
+                        <p class="team-role">Outreach Coordinator</p>
+                        <p>Community engagement specialist focused on farmer relationships and stakeholder coordination.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Development Team -->
+            <div class="row">
+                <div class="col-12" data-aos="fade-up">
+                    <h3 class="text-center mb-4" style="color: var(--primary-green); font-weight: 600;">Development Team</h3>
+                </div>
+                <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="team-card">
+                        <img src="./assets/person.jpeg" alt="Lawrence Muchiri" class="team-image">
+                        <h5 class="team-name">Lawrence Muchiri</h5>
+                        <p class="team-role">Backend Developer</p>
+                        <p>Technology architect building scalable systems for our digital platform.</p>
+                    </div>
+                </div>
+                
+                <!-- <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="team-card">
+                        <img src="./assets/person.jpeg" alt="Sean" class="team-image">
+                        <h5 class="team-name">Sean</h5>
+                        <p class="team-role">Flutter Developer</p>
+                        <p>Mobile app developer creating user-friendly solutions for farmers and customers.</p>
+                    </div>
+                </div> -->
+                
+                <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="team-card">
+                        <img src="./assets/person.jpeg" alt="Joy" class="team-image">
+                        <h5 class="team-name">Joy</h5>
+                        <p class="team-role">UI/UX Designer</p>
+                        <p>Creative designer ensuring excellent user experience across all digital touchpoints.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-12" data-aos="fade-up">
+                    <h2 class="section-title font-display text-white">Get In Touch</h2>
+                    <p class="section-subtitle text-white opacity-75">Ready to join Kenya's fresh produce revolution? Let's talk.</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-12 text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="contact-info-section">
+                        <p class="mb-5 fs-5">Ready to join Kenya's fresh produce revolution? Get in touch with us through any of the channels below.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact Info -->
+            <div class="row mt-4">
+                <div class="col-lg-3 col-md-6 text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="contact-info-item">
+                        <i class="fas fa-map-marker-alt fs-2 mb-3 text-warning"></i>
+                        <h5>Location</h5>
+                        <p>Langata, Nairobi<br>Kenya</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="contact-info-item">
+                        <i class="fas fa-phone fs-2 mb-3 text-warning"></i>
+                        <h5>Phone</h5>
+                        <p>+254 715 550 005</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="contact-info-item">
+                        <i class="fas fa-envelope fs-2 mb-3 text-warning"></i>
+                        <h5>Email</h5>
+                        <p>freshmarikiti@gmail.com</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div class="contact-info-item">
+                        <i class="fas fa-clock fs-2 mb-3 text-warning"></i>
+                        <h5>Business Hours</h5>
+                        <p>Mon-Fri: 8AM-6PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <h5 class="mb-4">Fresh Marikiti</h5>
+                    <p>Kenya's leading circular economy platform for fresh produce, transforming waste into value while empowering communities.</p>
+                    <div class="social-links">
+                        <a href="https://www.tiktok.com/@freshmarikiti" aria-label="Tiktok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.x.com/@freshmarikiti" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/freshmarikiti/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/ivy-community/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <h5 class="mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#problem" class="text-light text-decoration-none">The Problem</a></li>
+                        <li><a href="#solution" class="text-light text-decoration-none">Our Solution</a></li>
+                        <li><a href="#services" class="text-light text-decoration-none">Services</a></li>
+                        <li><a href="#team" class="text-light text-decoration-none">Team</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-4">
+                    <h5 class="mb-4">Contact Info</h5>
+                    <p><i class="fas fa-map-marker-alt me-2"></i>Langata, Nairobi, Kenya</p>
+                    <p><i class="fas fa-phone me-2"></i>+254 715 550 005</p>
+                    <p><i class="fas fa-envelope me-2"></i>freshmarikiti@gmail.com</p>
+                </div>
+            </div>
+            
+            <hr class="my-4 opacity-25">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="mb-0">&copy; 2025 Fresh Marikiti. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Initialize AOS (Animate On Scroll)
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Counter animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('.counter');
+            const speed = 200;
+
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const count = parseInt(counter.innerText);
+                const increment = target / speed;
+
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(() => animateCounters(), 1);
+                } else {
+                    counter.innerText = target;
+                }
+            });
+        }
+
+        // Trigger counter animation when impact section is in view
+        const impactSection = document.querySelector('#impact');
+        let counterAnimated = false;
+
+        window.addEventListener('scroll', () => {
+            const impactTop = impactSection.offsetTop;
+            const impactHeight = impactSection.offsetHeight;
+            const windowHeight = window.innerHeight;
+            const scrollTop = window.pageYOffset;
+
+            if (scrollTop > (impactTop - windowHeight + impactHeight/2) && !counterAnimated) {
+                animateCounters();
+                counterAnimated = true;
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Back to top button
+        const backToTop = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Contact form handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Collect form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Show success message (in a real application, you would send this to your server)
+            alert('Thank you for your message! We will get back to you soon.');
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Auto-advance carousel with improved settings
+        const carousel = new bootstrap.Carousel(document.getElementById('heroCarousel'), {
+            interval: 5000,
+            wrap: true,
+            keyboard: true,
+            pause: 'hover',
+            ride: 'carousel'
+        });
+        
+        // Optional: Add smooth transition events for additional effects
+        document.getElementById('heroCarousel').addEventListener('slide.bs.carousel', function(e) {
+            // Optional: Add any custom transition effects here
+            console.log('Carousel sliding to slide:', e.to);
+        });
+        
+        document.getElementById('heroCarousel').addEventListener('slid.bs.carousel', function(e) {
+            // Optional: Add any post-transition effects here
+            console.log('Carousel slid to slide:', e.to);
+        });
+    </script>
+</body>
+</html>
