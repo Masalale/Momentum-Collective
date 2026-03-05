@@ -2,44 +2,100 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Contact - Momentum Collective" description="Get in touch with Momentum Collective. Partner with us to build the future of Africa.">
-    <section id="contact" class="contact-page">
-        <div class="container">
-            <h2 class="section-title">Get in <span class="highlight">Touch</span></h2>
-            <p class="section-subtitle text-center">We'd love to hear from you. Reach out to us through any of the
-                channels below.</p>
+<BaseLayout 
+  title="Contact"
+  description="Get in touch with Momentum Collective. Partner with us to build the future of Africa."
+  barbaNamespace="contact"
+>
+  <!-- Contact Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content text-center">
+        <p class="hero-eyebrow">Get In Touch</p>
+        <h1 class="hero-title" data-split>Let's Build Something Together</h1>
+        <p class="hero-subtext mx-auto">
+          We'd love to hear from you. Reach out to us through any of the channels below.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Contact Cards Section -->
+  <section class="section">
+    <div class="container">
+      <div class="grid-2 contact-grid">
+        <!-- Email Card -->
+        <a href="mailto:management@eyev.africa" class="contact-card" data-reveal>
+          <div class="contact-card-icon">
+            <i data-lucide="mail"></i>
+          </div>
+          <h3 class="contact-card-label">Email Us</h3>
+          <p class="contact-card-value">management@eyev.africa</p>
+          <span class="btn btn-primary">
+            Send Email
+            <i data-lucide="arrow-right"></i>
+          </span>
+        </a>
 
-            <div class="contact-grid">
-                <div class="contact-card">
-                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-                    <h3 class="contact-title">Email Us</h3>
-                    <p>For general inquiries, partnerships, or to hire our developers, please send us an email.</p>
-                    <a href="mailto:management@eyev.africa" class="btn btn-primary">management@eyev.africa</a>
-                </div>
-
-                <div class="contact-card">
-                    <div class="contact-icon"><i class="fas fa-phone"></i></div>
-                    <h3 class="contact-title">Call Us</h3>
-                    <p>For urgent matters or to speak with a member of our team directly, feel free to give us a
-                        call.</p>
-                    <a href="tel:+254110175110" class="btn btn-primary">+254 110 175 110</a>
-                </div>
-            </div>
-
-            <div class="social-contact">
-                <h3 class="text-center">Follow Our Journey</h3>
-                <p class="text-center">Stay connected and see what we're building next.</p>
-                <div class="social-links">
-
-                    <a href="https://www.linkedin.com/company/momentumlabsclg/posts/?feedView=all"
-                        class="social-link"><i class="fab fa-linkedin"></i></a>
-
-                    <a href="https://www.instagram.com/momentumcollectiveclg?igsh=c3FzNGJzZjZjNmNt"
-                        class="social-link"><i class="fab fa-instagram"></i></a>
-
-                    <a href="https://github.com/ivycommunity" class="social-link"><i class="fab fa-github"></i></a>
-                </div>
-            </div>
+        <!-- Phone Card -->
+        <a href="tel:+254110175110" class="contact-card" data-reveal>
+          <div class="contact-card-icon">
+            <i data-lucide="phone"></i>
+          </div>
+          <h3 class="contact-card-label">Call Us</h3>
+          <p class="contact-card-value">+254 110 175 110</p>
+          <span class="btn btn-outline">
+            Call Now
+            <i data-lucide="arrow-right"></i>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Social Links Section -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="text-center">
+        <p class="eyebrow">Stay Connected</p>
+        <h2 class="display-3xl mb-md">Follow Our Journey</h2>
+        <p class="text-lg text-muted mb-lg">Stay connected and see what we're building next.</p>
+        
+        <div class="social-links-large">
+          <a href="https://www.linkedin.com/company/momentumlabsclg/" target="_blank" rel="noopener noreferrer" class="social-link-large" data-reveal>
+            <i data-lucide="linkedin"></i>
+            <span>LinkedIn</span>
+          </a>
+          
+          <a href="https://www.instagram.com/momentumcollectiveclg" target="_blank" rel="noopener noreferrer" class="social-link-large" data-reveal>
+            <i data-lucide="instagram"></i>
+            <span>Instagram</span>
+          </a>
+          
+          <a href="https://github.com/ivycommunity" target="_blank" rel="noopener noreferrer" class="social-link-large" data-reveal>
+            <i data-lucide="github"></i>
+            <span>GitHub</span>
+          </a>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
+  
+  <!-- CTA / Closing -->
+  <section class="section cta-section">
+    <div class="kente-decoration" aria-hidden="true"></div>
+    <div class="container">
+      <div class="cta-content">
+        <h2 class="display-4xl">Built by African Youth</h2>
+        <p class="text-muted">Our Ideas, Our Future.</p>
+        <div class="cta-buttons">
+          <a href="mailto:management@eyev.africa" class="btn btn-primary btn-lg">
+            Send Us an Email
+            <i data-lucide="arrow-right"></i>
+          </a>
+          <a href="/services" class="btn btn-outline btn-lg">Explore Services</a>
+        </div>
+      </div>
+    </div>
+  </section>
 </BaseLayout>

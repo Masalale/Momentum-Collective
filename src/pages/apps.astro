@@ -2,177 +2,317 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Apps - Momentum Collective" description="Explore the mobile apps and SaaS products developed by Momentum Collective.">
-    <!-- Mobile Apps Section -->
-    <section id="apps" class="apps">
-        <div class="container">
-            <h2 class="section-title">Our Mobile Apps</h2>
+<BaseLayout title="Apps | Momentum Collective" description="Explore the mobile apps and SaaS products developed by Momentum Collective." barbaNamespace="apps">
 
-            <!-- Creative Suite -->
-            <div class="suite">
-                <h3 class="suite-title">The Creative Suite</h3>
-                <p class="suite-description">A collection of MVPs built to inspire creativity, preserve culture, and
-                    expand opportunities:</p>
-                <div class="row row-cols-1 row-cols-md-4 g-4 mb-5">
-
-                    <div class="col">
-                        <div class="app-card">
-                            <div class="app-icon-component">
-                                <img src="/assets/afronative-icon.png" alt="AfroNative App Icon" class="img-fluid rounded mx-auto mb-3">
-                            </div>
-                            <div class="app-info">
-                                <h3 class="app-name">AfroNative</h3>
-                                <p class="app-tagline">Preserve & practice native languages</p>
-                                <p class="app-description">Engaging app to learn African mother tongues; bridging generational language gaps.</p>
-                            </div>
-                            <a href="#" class="btn btn-primary btn-small">Learn More</a>
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div class="app-card">
-                            <div class="app-icon-component">
-                                <img src="/assets/freshmarikiti-icon.png" alt="FreshMarikiti App Icon" class="img-fluid rounded mx-auto mb-3">
-                            </div>
-                            <div class="app-info">
-                                <h3 class="app-name">FreshMarikiti</h3>
-                                <p class="app-tagline">Marketplace for small vendors</p>
-                                <p class="app-description">Empowers market vendors (especially women) to sell & deliver goods digitally; expands reach beyond physical stalls.</p>
-                            </div>
-                            <a href="/fm-index" class="btn btn-primary btn-small">Learn More</a>
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div class="app-card">
-                            <div class="app-icon-component">
-                                <img src="/assets/immuno_logo2.png" alt="Immuno App Icon" class="img-fluid rounded mx-auto mb-3">
-                            </div>
-                            <div class="app-info">
-                                <h3 class="app-name">Immuno</h3>
-                                <p class="app-tagline">Immunization tracking & reminders</p>
-                                <p class="app-description">Helps hospitals track vaccination progress; sends timely reminders; ensures no immunization milestones are missed.</p>
-                            </div>
-                            <a href="/immuno" class="btn btn-primary btn-small">Learn More</a>
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div class="app-card">
-                            <div class="app-icon-component">
-                                <i class="fas fa-gamepad fa-2x" style="color: white; position: relative; z-index: 1;"></i>
-                            </div>
-                            <div class="app-info">
-                                <h3 class="app-name">Manoemano</h3>
-                                <p class="app-tagline">A platform for peaceful digital expression and activism through gaming.</p>
-                            </div>
-                            <a href="#" class="btn btn-primary btn-small">Learn More</a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- Business Suite -->
-            <div class="suite business-suite">
-                <h3 class="suite-title">The Business Suite (SaaS)</h3>
-                <p class="suite-description">Practical tools designed to streamline services and support
-                    businesses,
-                    now available as SaaS products:</p>
-
-                <div class="row row-cols-1 row-cols-md-4 g-4">
-                    <div class="col">
-                        <div class="app-card">
-                            <div class="app-icon-component">
-                                <i class="fas fa-car fa-2x" style="color: white; position: relative; z-index: 1;"></i>
-                            </div>
-                            <div class="app-info">
-                                <h3 class="app-name">Trot</h3>
-                                <p class="app-tagline">Car rentals made easy and transparent.</p>
-                            </div>
-                            <a href="#" class="btn btn-primary btn-small">Learn More</a>
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div class="app-card">
-                            <div class="app-icon-component">
-                                <i class="fas fa-tshirt fa-2x" style="color: white; position: relative; z-index: 1;"></i>
-                            </div>
-                            <div class="app-info">
-                                <h3 class="app-name">Robes</h3>
-                                <p class="app-tagline">Personalized fashion shopping that links to items from social media.</p>
-                            </div>
-                            <a href="#" class="btn btn-primary btn-small">Learn More</a>
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div class="app-card">
-                            <div class="app-icon-component">
-                                <i class="fas fa-qrcode fa-2x" style="color: white; position: relative; z-index: 1;"></i>
-                            </div>
-                            <div class="app-info">
-                                <h3 class="app-name">Mpesa QR System</h3>
-                                <p class="app-tagline">Simple, secure mobile payments for businesses.</p>
-                            </div>
-                            <a href="#" class="btn btn-primary btn-small">Learn More</a>
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div class="app-card">
-                            <div class="app-icon-component">
-                                <i class="fas fa-calendar-check fa-2x" style="color: white; position: relative; z-index: 1;"></i>
-                            </div>
-                            <div class="app-info">
-                                <h3 class="app-name">Booking System</h3>
-                                <p class="app-tagline">Seamless reservations for businesses and events.</p>
-                            </div>
-                            <a href="#" class="btn btn-primary btn-small">Learn More</a>
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div class="app-card">
-                            <div class="app-icon-component">
-                                <i class="fas fa-home fa-2x" style="color: white; position: relative; z-index: 1;"></i>
-                            </div>
-                            <div class="app-info">
-                                <h3 class="app-name">Rent Tracker</h3>
-                                <p class="app-tagline">Easy property management and automated reminders.</p>
-                            </div>
-                            <a href="#" class="btn btn-primary btn-small">Learn More</a>
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div class="app-card">
-                            <div class="app-icon-component">
-                                <i class="fas fa-boxes fa-2x" style="color: white; position: relative; z-index: 1;"></i>
-                            </div>
-                            <div class="app-info">
-                                <h3 class="app-name">Inventory System</h3>
-                                <p class="app-tagline">Smarter stock control for small and medium-sized enterprises.</p>
-                            </div>
-                            <a href="#" class="btn btn-primary btn-small">Learn More</a>
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div class="app-card">
-                            <div class="app-icon-component">
-                                <i class="fas fa-graduation-cap fa-2x" style="color: white; position: relative; z-index: 1;"></i>
-                            </div>
-                            <div class="app-info">
-                                <h3 class="app-name">Learning Management System (LMS)</h3>
-                                <p class="app-tagline">An accessible digital learning platform for institutions.</p>
-                            </div>
-                            <a href="#" class="btn btn-primary btn-small">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <!-- 1. PAGE HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <p class="hero-eyebrow">Our Products</p>
+        <h1 class="hero-title display-5xl" data-split>
+          Solutions Built for Africa
+        </h1>
+        <p class="hero-subtext">
+          From language preservation to digital marketplaces, we design and ship products that serve real communities across the continent.
+        </p>
+        <div class="hero-buttons">
+          <a href="/contact" class="btn btn-primary btn-lg">
+            <span>Partner With Us</span>
+            <i data-lucide="arrow-right"></i>
+          </a>
+          <a href="/services" class="btn btn-outline btn-lg">
+            <span>Our Services</span>
+          </a>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. MARQUEE -->
+  <div class="marquee">
+    <div class="marquee-track">
+      <div class="marquee-content">
+        <span>Nairobi</span>
+        <span class="marquee-dot"></span>
+        <span>Lagos</span>
+        <span class="marquee-dot"></span>
+        <span>Accra</span>
+        <span class="marquee-dot"></span>
+        <span>Cairo</span>
+        <span class="marquee-dot"></span>
+        <span>Johannesburg</span>
+        <span class="marquee-dot"></span>
+        <span>Dakar</span>
+        <span class="marquee-dot"></span>
+        <span>Addis Ababa</span>
+        <span class="marquee-dot"></span>
+        <span>AfroNative</span>
+        <span class="marquee-dot"></span>
+        <span>FreshMarikiti</span>
+        <span class="marquee-dot"></span>
+        <span>Immuno</span>
+        <span class="marquee-dot"></span>
+        <span>Manoemano</span>
+        <span class="marquee-dot"></span>
+        <span>Trot</span>
+        <span class="marquee-dot"></span>
+        <span>Robes</span>
+        <span class="marquee-dot"></span>
+        <span>Built by African Youth</span>
+      </div>
+      <div class="marquee-content" aria-hidden="true">
+        <span>Nairobi</span>
+        <span class="marquee-dot"></span>
+        <span>Lagos</span>
+        <span class="marquee-dot"></span>
+        <span>Accra</span>
+        <span class="marquee-dot"></span>
+        <span>Cairo</span>
+        <span class="marquee-dot"></span>
+        <span>Johannesburg</span>
+        <span class="marquee-dot"></span>
+        <span>Dakar</span>
+        <span class="marquee-dot"></span>
+        <span>Addis Ababa</span>
+        <span class="marquee-dot"></span>
+        <span>AfroNative</span>
+        <span class="marquee-dot"></span>
+        <span>FreshMarikiti</span>
+        <span class="marquee-dot"></span>
+        <span>Immuno</span>
+        <span class="marquee-dot"></span>
+        <span>Manoemano</span>
+        <span class="marquee-dot"></span>
+        <span>Trot</span>
+        <span class="marquee-dot"></span>
+        <span>Robes</span>
+        <span class="marquee-dot"></span>
+        <span>Built by African Youth</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. CREATIVE SUITE — Horizontal Scroll Showcase -->
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">The Creative Suite</p>
+      <h2 class="display-4xl mb-sm" data-split>Built to Inspire</h2>
+      <p class="text-muted mb-lg">
+        A collection of MVPs built to inspire creativity, preserve culture, and expand opportunities across the African continent.
+      </p>
+    </div>
+    <div class="horizontal-wrapper">
+      <div class="horizontal-track" id="creative-track">
+
+        <div class="app-card" data-reveal>
+          <div class="app-card-icon">
+            <i data-lucide="languages"></i>
+          </div>
+          <h3 class="app-card-title">AfroNative</h3>
+          <p class="app-card-tagline">Preserve & practice native languages</p>
+          <p class="app-card-description">
+            Engaging app to learn African mother tongues; bridging generational language gaps.
+          </p>
+          <a href="#" class="btn btn-outline">
+            <span>Learn More</span>
+            <i data-lucide="arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="app-card" data-reveal>
+          <div class="app-card-icon">
+            <i data-lucide="shopping-basket"></i>
+          </div>
+          <h3 class="app-card-title">FreshMarikiti</h3>
+          <p class="app-card-tagline">Marketplace for small vendors</p>
+          <p class="app-card-description">
+            Empowers market vendors to sell & deliver goods digitally; expands reach beyond physical stalls.
+          </p>
+          <a href="/fm-index" class="btn btn-outline">
+            <span>Learn More</span>
+            <i data-lucide="arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="app-card" data-reveal>
+          <div class="app-card-icon">
+            <i data-lucide="shield"></i>
+          </div>
+          <h3 class="app-card-title">Immuno</h3>
+          <p class="app-card-tagline">Immunization tracking & reminders</p>
+          <p class="app-card-description">
+            Helps hospitals track vaccination progress; sends timely reminders; ensures no immunization milestones are missed.
+          </p>
+          <a href="/immuno" class="btn btn-outline">
+            <span>Learn More</span>
+            <i data-lucide="arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="app-card" data-reveal>
+          <div class="app-card-icon">
+            <i data-lucide="gamepad-2"></i>
+          </div>
+          <h3 class="app-card-title">Manoemano</h3>
+          <p class="app-card-tagline">Digital expression through gaming</p>
+          <p class="app-card-description">
+            A platform for peaceful digital expression and activism through gaming.
+          </p>
+          <a href="#" class="btn btn-outline">
+            <span>Learn More</span>
+            <i data-lucide="arrow-right"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. BUSINESS SUITE -->
+  <section class="section section-alt">
+    <div class="container">
+      <p class="eyebrow">The Business Suite</p>
+      <h2 class="display-4xl mb-sm" data-split>SaaS for the African Market</h2>
+      <p class="text-muted mb-lg">
+        Practical tools designed to streamline services and support businesses, now available as SaaS products.
+      </p>
+      <div class="grid-4">
+
+        <div class="app-card" data-reveal>
+          <div class="app-card-icon">
+            <i data-lucide="car"></i>
+          </div>
+          <h3 class="app-card-title">Trot</h3>
+          <p class="app-card-tagline">Car rentals made easy and transparent.</p>
+          <a href="#" class="btn btn-outline">
+            <span>Learn More</span>
+            <i data-lucide="arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="app-card" data-reveal>
+          <div class="app-card-icon">
+            <i data-lucide="shirt"></i>
+          </div>
+          <h3 class="app-card-title">Robes</h3>
+          <p class="app-card-tagline">Personalized fashion shopping that links to items from social media.</p>
+          <a href="#" class="btn btn-outline">
+            <span>Learn More</span>
+            <i data-lucide="arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="app-card" data-reveal>
+          <div class="app-card-icon">
+            <i data-lucide="qr-code"></i>
+          </div>
+          <h3 class="app-card-title">Mpesa QR System</h3>
+          <p class="app-card-tagline">Simple, secure mobile payments for businesses.</p>
+          <a href="#" class="btn btn-outline">
+            <span>Learn More</span>
+            <i data-lucide="arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="app-card" data-reveal>
+          <div class="app-card-icon">
+            <i data-lucide="calendar-check"></i>
+          </div>
+          <h3 class="app-card-title">Booking System</h3>
+          <p class="app-card-tagline">Seamless reservations for businesses and events.</p>
+          <a href="#" class="btn btn-outline">
+            <span>Learn More</span>
+            <i data-lucide="arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="app-card" data-reveal>
+          <div class="app-card-icon">
+            <i data-lucide="home"></i>
+          </div>
+          <h3 class="app-card-title">Rent Tracker</h3>
+          <p class="app-card-tagline">Easy property management and automated reminders.</p>
+          <a href="#" class="btn btn-outline">
+            <span>Learn More</span>
+            <i data-lucide="arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="app-card" data-reveal>
+          <div class="app-card-icon">
+            <i data-lucide="package"></i>
+          </div>
+          <h3 class="app-card-title">Inventory System</h3>
+          <p class="app-card-tagline">Smarter stock control for SMEs.</p>
+          <a href="#" class="btn btn-outline">
+            <span>Learn More</span>
+            <i data-lucide="arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="app-card" data-reveal>
+          <div class="app-card-icon">
+            <i data-lucide="book-open"></i>
+          </div>
+          <h3 class="app-card-title">Learning Management System</h3>
+          <p class="app-card-tagline">An accessible digital learning platform for institutions.</p>
+          <a href="#" class="btn btn-outline">
+            <span>Learn More</span>
+            <i data-lucide="arrow-right"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. CTA -->
+  <section class="section cta-section">
+    <div class="kente-decoration"></div>
+    <div class="container">
+      <div class="cta-content">
+        <h2 class="display-4xl mb-sm">Have a Product Idea?</h2>
+        <p class="text-muted mb-md">
+          Whether you need a mobile app, a SaaS platform, or a custom digital solution, our team of young African builders is ready to bring your vision to life.
+        </p>
+        <div class="cta-buttons">
+          <a href="/contact" class="btn btn-primary btn-lg">
+            <span>Get In Touch</span>
+            <i data-lucide="arrow-right"></i>
+          </a>
+          <a href="/services" class="btn btn-outline btn-lg">
+            <span>Our Services</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </BaseLayout>
+
+<script>
+  import { initMarquee } from '../scripts/marquee';
+  import gsap from 'gsap';
+  import ScrollTrigger from 'gsap/ScrollTrigger';
+  document.addEventListener('DOMContentLoaded', () => {
+    initMarquee();
+    // Horizontal scroll via GSAP
+    const track = document.getElementById('creative-track');
+    if (track) {
+      const cards = track.querySelectorAll('.app-card');
+      const totalWidth = Array.from(cards).reduce((w, c) => w + (c as HTMLElement).offsetWidth + 32, 0);
+      gsap.to(track, {
+        x: () => -(totalWidth - window.innerWidth + 64),
+        ease: 'none',
+        scrollTrigger: {
+          trigger: track.closest('.horizontal-wrapper'),
+          start: 'top top',
+          end: () => `+=${totalWidth}`,
+          scrub: 1,
+          pin: true,
+          anticipatePin: 1,
+        }
+      });
+    }
+  });
+</script>
