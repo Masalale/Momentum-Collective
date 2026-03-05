@@ -1,12 +1,6 @@
-# Momentum Collective - Astro Website
+# Momentum Collective
 
 Pan-African, scalable digital solutions. We build, innovate, and empower through Momentum Labs and Momentum Foundation.
-
-## 🚀 Migration Complete!
-
-This project has been successfully migrated from static HTML to Astro. All content, styling, and functionality has been preserved.
-
-**See [MIGRATION_GUIDE.md](./MIGRATION_GUIDE.md) for detailed migration information.**
 
 ## 📁 Project Structure
 
@@ -27,8 +21,9 @@ Momentum-Collective/
 │   ├── script.js                  # Client-side JavaScript
 │   ├── immuno.html               # Immuno app landing page
 │   └── fm-index.html             # FreshMarikiti landing page
-├── old-html-backup/               # Original HTML files (backup)
 ├── package.json
+├── astro.config.mjs
+├── tsconfig.json
 └── README.md
 ```
 
@@ -55,13 +50,12 @@ All commands are run from the root of the project:
 
 ## 🎨 Features
 
-- ✅ All original content preserved
-- ✅ Responsive design maintained
-- ✅ Bootstrap styles intact
-- ✅ Font Awesome icons working
-- ✅ Mobile navigation functional
+- ✅ Responsive design
+- ✅ Bootstrap grid system
+- ✅ Font Awesome icons
+- ✅ Mobile navigation
 - ✅ Smooth scrolling animations
-- ✅ SEO meta tags included
+- ✅ SEO optimized
 - ✅ Clean, modern routing
 
 ## 🚀 Development
@@ -87,14 +81,13 @@ This creates an optimized static site in the `dist/` directory.
 
 ### Deploy Options:
 - **Vercel**: Connect your Git repo for automatic deployments
-- **Netlify**: Drag & drop the `dist/` folder
-- **GitHub Pages**: Use the provided workflow in MIGRATION_GUIDE.md
+- **Netlify**: Build command: `bun run build`, Publish directory: `dist`
+- **GitHub Pages**: Static hosting with GitHub Actions
 
 ## 📚 Learn More
 
 - [Astro Documentation](https://docs.astro.build)
 - [Astro Discord](https://astro.build/chat)
-- [Migration Guide](./MIGRATION_GUIDE.md)
 
 ## 📞 Contact
 
