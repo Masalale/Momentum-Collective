@@ -97,6 +97,18 @@ function getOverlay(): HTMLElement {
   return el;
 }
 
+function updateNavLinks(path?: string): void {
+  const currentPath = (path || window.location.pathname).replace(/\/$/, '') || '/';
+  document.querySelectorAll('.nav-link').forEach(link => {
+    const href = link.getAttribute('href')?.replace(/\/$/, '') || '/';
+    if (href === currentPath) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+}
+
 function initPage(container: HTMLElement): void {
   createIcons({ icons: ALL_ICONS });
 
@@ -106,6 +118,17 @@ function initPage(container: HTMLElement): void {
   initScrollReveal();
   initSplitText();
   initCounterAnimation();
+
+  // Wrap ecosystem images for proper contained display
+  container.querySelectorAll('.ecosystem-card').forEach(card => {
+    const img = card.querySelector('.ecosystem-image');
+    if (img && !card.querySelector('.ecosystem-image-wrap')) {
+      const wrap = document.createElement('div');
+      wrap.className = 'ecosystem-image-wrap';
+      img.parentNode?.insertBefore(wrap, img);
+      wrap.appendChild(img);
+    }
+  });
 
   if (container.querySelector('#africa-network-svg')) {
     import('./africa-network').then(({ initAfricaNetwork }) => {
@@ -127,10 +150,11 @@ barba.init({
 
       once({ next }) {
         lenis.start();
+        updateNavLinks();
         initPage(next.container);
       },
 
-      leave({ current }) {
+      leave(data: any) {
         const overlay = getOverlay();
         lenis.stop();
 
@@ -142,8 +166,13 @@ barba.init({
               duration: 0.6,
               ease: 'power4.inOut',
             })
+            .call(() => {
+              if (data.next?.url?.path) {
+                updateNavLinks(data.next.url.path);
+              }
+            })
             .to(
-              current.container,
+              data.current.container,
               { opacity: 0, duration: 0.1 },
               '-=0.1',
             );

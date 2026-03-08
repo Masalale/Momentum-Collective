@@ -1,19 +1,22 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="Services | Momentum Collective" description="Discover our services." barbaNamespace="services">
-
+<BaseLayout
+  title="Services | Momentum Collective"
+  description="Discover our services."
+  barbaNamespace="services"
+>
   <!-- 1. PAGE HERO -->
   <section class="hero">
     <div class="container">
       <div class="hero-content">
         <p class="hero-eyebrow">Why Partner With Us</p>
-        <h1 class="hero-title display-5xl" data-split>
-          Youth-Driven, Africa-First
-        </h1>
+        <h1 class="hero-title" data-split>Youth-Driven, Africa-First</h1>
         <p class="hero-subtext">
-          We are a dynamic collective of young African developers, designers, and innovators delivering technology solutions rooted in local context and built for global impact.
+          We are a dynamic collective of young African developers, designers,
+          and innovators delivering technology solutions rooted in local context
+          and built for global impact.
         </p>
         <div class="hero-buttons">
           <a href="/contact" class="btn btn-primary btn-lg">
@@ -28,78 +31,89 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </section>
 
-  <!-- 2. SERVICES GRID -->
+  <!-- 2. OUR ADVANTAGES -->
   <section class="section section-alt">
     <div class="container">
-      <h2 class="display-4xl mb-lg" data-split>Our Advantages</h2>
-      <div class="grid-3">
+      <div class="section-header">
+        <p class="eyebrow">Momentum Advantage</p>
+        <h2 class="display-3xl mb-xs" data-split>Why Partner With Us</h2>
+        <p class="text-muted" style="max-width: 600px; margin: 0 auto;">
+          Delivering technology solutions rooted in local context and built for
+          global impact.
+        </p>
+      </div>
 
-        <div class="service-card" data-reveal>
-          <span class="service-number">01</span>
-          <div class="service-icon">
+      <div class="card-grid-editorial cols-3">
+        <div class="card-editorial" data-reveal>
+          <div class="card-editorial-icon">
             <i data-lucide="users"></i>
           </div>
-          <div class="service-content">
-            <h3>Youth-Driven Innovation</h3>
-            <p>Powered by talented African youth who understand local needs and global standards.</p>
-          </div>
+          <div class="card-editorial-tagline">Advantage 01</div>
+          <h3 class="card-editorial-title">Youth-Driven Innovation</h3>
+          <p class="card-editorial-description">
+            Powered by talented African youth who understand local needs and
+            global standards.
+          </p>
         </div>
 
-        <div class="service-card" data-reveal>
-          <span class="service-number">02</span>
-          <div class="service-icon">
+        <div class="card-editorial" data-reveal>
+          <div class="card-editorial-icon">
             <i data-lucide="dollar-sign"></i>
           </div>
-          <div class="service-content">
-            <h3>Cost-Effective Solutions</h3>
-            <p>Affordable, high-value technology designed for the African market.</p>
-          </div>
+          <div class="card-editorial-tagline">Advantage 02</div>
+          <h3 class="card-editorial-title">Cost-Effective Solutions</h3>
+          <p class="card-editorial-description">
+            Affordable, high-value technology specifically designed for the
+            African market.
+          </p>
         </div>
 
-        <div class="service-card" data-reveal>
-          <span class="service-number">03</span>
-          <div class="service-icon">
+        <div class="card-editorial" data-reveal>
+          <div class="card-editorial-icon">
             <i data-lucide="heart"></i>
           </div>
-          <div class="service-content">
-            <h3>Community-Centric</h3>
-            <p>Built with a deep understanding of African cultures, values, and community needs.</p>
-          </div>
+          <div class="card-editorial-tagline">Advantage 03</div>
+          <h3 class="card-editorial-title">Community-Centric</h3>
+          <p class="card-editorial-description">
+            Built with a deep understanding of African cultures, values, and
+            community needs.
+          </p>
         </div>
 
-        <div class="service-card" data-reveal>
-          <span class="service-number">04</span>
-          <div class="service-icon">
+        <div class="card-editorial" data-reveal>
+          <div class="card-editorial-icon">
             <i data-lucide="headphones"></i>
           </div>
-          <div class="service-content">
-            <h3>Ongoing Support</h3>
-            <p>Continuous support and updates to ensure your solutions evolve with your business.</p>
-          </div>
+          <div class="card-editorial-tagline">Advantage 04</div>
+          <h3 class="card-editorial-title">Ongoing Support</h3>
+          <p class="card-editorial-description">
+            Continuous updates to ensure your solutions evolve with your
+            business.
+          </p>
         </div>
 
-        <div class="service-card" data-reveal>
-          <span class="service-number">05</span>
-          <div class="service-icon">
+        <div class="card-editorial" data-reveal>
+          <div class="card-editorial-icon">
             <i data-lucide="globe"></i>
           </div>
-          <div class="service-content">
-            <h3>Pan-African Context</h3>
-            <p>Built for the diverse and dynamic African business environment.</p>
-          </div>
+          <div class="card-editorial-tagline">Advantage 05</div>
+          <h3 class="card-editorial-title">Pan-African Context</h3>
+          <p class="card-editorial-description">
+            Built for the diverse and dynamic African business environment.
+          </p>
         </div>
 
-        <div class="service-card" data-reveal>
-          <span class="service-number">06</span>
-          <div class="service-icon">
+        <div class="card-editorial" data-reveal>
+          <div class="card-editorial-icon">
             <i data-lucide="scale"></i>
           </div>
-          <div class="service-content">
-            <h3>Inclusive Design</h3>
-            <p>Gender-sensitive platforms that create opportunities for all community members.</p>
-          </div>
+          <div class="card-editorial-tagline">Advantage 06</div>
+          <h3 class="card-editorial-title">Inclusive Design</h3>
+          <p class="card-editorial-description">
+            Gender-sensitive platforms that create opportunities for all
+            community members.
+          </p>
         </div>
-
       </div>
     </div>
   </section>
@@ -107,16 +121,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <!-- 3. HOW WE WORK -->
   <section class="section">
     <div class="container">
-      <p class="eyebrow">Our Process</p>
-      <h2 class="display-4xl mb-lg" data-split>How We Work</h2>
+      <div class="section-header">
+        <p class="eyebrow">Our Process</p>
+        <h2 class="section-title">How We Work</h2>
+      </div>
       <div class="process-grid">
-
         <div class="process-step" data-reveal>
           <div class="process-icon">
             <i data-lucide="search"></i>
           </div>
           <h3 class="process-title">Discover</h3>
-          <p class="process-description">We deeply understand your context, users, and business environment.</p>
+          <p class="process-description">
+            We deeply understand your context, users, and business environment.
+          </p>
         </div>
 
         <div class="process-step" data-reveal>
@@ -124,7 +141,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <i data-lucide="layers"></i>
           </div>
           <h3 class="process-title">Design & Build</h3>
-          <p class="process-description">Rapid prototyping and iterative development grounded in African design principles.</p>
+          <p class="process-description">
+            Rapid prototyping and iterative development grounded in African
+            design principles.
+          </p>
         </div>
 
         <div class="process-step" data-reveal>
@@ -132,9 +152,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <i data-lucide="rocket"></i>
           </div>
           <h3 class="process-title">Launch & Scale</h3>
-          <p class="process-description">We launch with you and scale continuously based on real user feedback.</p>
+          <p class="process-description">
+            We launch with you and scale continuously based on real user
+            feedback.
+          </p>
         </div>
-
       </div>
     </div>
   </section>
@@ -146,7 +168,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="cta-content">
         <h2 class="display-4xl mb-sm">Ready to Partner?</h2>
         <p class="text-muted mb-md">
-          Let us help you build technology that serves your community, scales across the continent, and stands out on the global stage.
+          Let us help you build technology that serves your community, scales
+          across the continent, and stands out on the global stage.
         </p>
         <div class="cta-buttons">
           <a href="/contact" class="btn btn-primary btn-lg">
@@ -160,9 +183,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
     </div>
   </section>
-
 </BaseLayout>
 
 <script>
-  import { initMarquee } from '../scripts/marquee';
+  import { initMarquee } from "../scripts/marquee";
 </script>
