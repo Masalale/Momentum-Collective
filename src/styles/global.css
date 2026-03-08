@@ -749,15 +749,17 @@ h5 {
 
 /* Section 14: Hero Section */
 .hero {
-  min-height: 80dvh;
+  min-height: 60dvh;
   display: flex;
   align-items: center;
   padding: var(--space-xl) 0 var(--space-lg);
-  background: linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-alt) 100%);
+  background: var(--bg-deep);
+  position: relative;
+  overflow: hidden;
 }
 
 .hero-content {
-  max-width: 720px;
+  max-width: 800px;
   margin: 0 auto;
   text-align: center;
 }
@@ -772,16 +774,17 @@ h5 {
 }
 
 .hero-title {
-  font-size: var(--text-5xl);
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-weight: 400;
+  line-height: 1.1;
   margin-bottom: var(--space-md);
-  line-height: 1.05;
 }
 
 .hero-subtext {
   font-size: var(--text-lg);
   color: var(--text-muted);
   margin-bottom: var(--space-md);
-  max-width: 560px;
+  max-width: 640px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -845,11 +848,13 @@ h5 {
 .section-header {
   text-align: center;
   max-width: 640px;
-  margin: 0 auto var(--space-lg);
+  margin: 0 auto var(--space-xl);
 }
 
 .section-title {
+  font-family: var(--font-display);
   font-size: var(--text-4xl);
+  font-weight: 400;
   margin-bottom: var(--space-sm);
 }
 
@@ -1185,6 +1190,7 @@ h5 {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   line-height: 1;
+  opacity: 1;
 }
 
 /* Tinted icon box below the number */
