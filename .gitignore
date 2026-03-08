@@ -42,3 +42,6 @@ old-html-backup/
 
 # Claude Code
 .claude/
+
+# Cache folders
+.sisyphus/
