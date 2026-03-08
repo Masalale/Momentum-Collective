@@ -8,7 +8,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   barbaNamespace="contact"
 >
   <!-- 1. CONTACT HERO -->
-  <section class="hero">
+  <section class="hero hero-compact">
     <div class="container">
       <div class="hero-content">
         <p class="hero-eyebrow">Connect With Us</p>
@@ -22,7 +22,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   </section>
 
   <!-- 2. CONTACT METHODS -->
-  <section class="section" style="padding-top: 0;">
+  <section
+    class="section"
+    style="padding-top: var(--space-md); overflow: visible;"
+  >
     <div class="container">
       <div class="card-grid-editorial cols-3">
         <!-- Email Entry -->
@@ -147,22 +150,18 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </div>
   </section>
 
-  <!-- 4. FINAL STATEMENT (Minimalist) -->
-  <section class="section" style="padding: var(--space-lg) 0;">
+  <!-- 4. FINAL STATEMENT -->
+  <section class="section cta-section">
+    <div class="kente-decoration"></div>
     <div class="container text-center">
-      <div
-        class="kente-decoration"
-        style="position: relative; margin-bottom: var(--space-md);"
-      >
-      </div>
       <h2 class="display-2xl" style="font-weight: 300; opacity: 0.8;">
-        Built by African Youth
+        Build. Ship. Sell. Scale.
       </h2>
       <p
         class="text-muted"
         style="font-family: var(--font-mono); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.2em; margin-top: 1rem;"
       >
-        Our Ideas, Our Future.
+        Africa's Execution-First Product Lab.
       </p>
     </div>
   </section>

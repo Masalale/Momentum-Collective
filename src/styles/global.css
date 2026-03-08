@@ -5,16 +5,16 @@
 
 /* Section 1: CSS Custom Properties (Design Tokens) */
 :root {
-  /* Colors — Clean Light Theme */
+  /* Colors, Clean Light + Bold Accents */
   --bg-deep: #FFFFFF;
-  --bg-alt: #F8F9FA;
-  --text-primary: #1a1a1a;
-  --text-muted: #6b7280;
+  --bg-alt: #F9F7FF;
+  --text-primary: #1A0A2E;
+  --text-muted: #6B7280;
   --accent-ochre: #D4920A;
-  --accent-green: #1A7A4A;
-  --accent-crimson: #B5292A;
-  --accent-electric: #F0B429;
-  --border-subtle: rgba(0, 0, 0, 0.1);
+  --accent-green: #16A34A;
+  --accent-crimson: #DC2626;
+  --accent-electric: #7C3AED;
+  --border-subtle: rgba(26, 10, 46, 0.08);
 
   /* Typography */
   --font-display: 'Playfair Display', Georgia, serif;
@@ -86,6 +86,29 @@ body {
   min-height: 100dvh;
   overflow-x: hidden;
 }
+
+/* ── Lenis Smooth Scroll Core ────────────────────────────────────────── */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* ───────────────────────────────────────────────────────────────────── */
 
 img,
 picture,
@@ -313,7 +336,7 @@ h5 {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-subtle);
@@ -479,7 +502,7 @@ h5 {
   letter-spacing: 0.1em;
 }
 
-/* Section 7: Buttons — unified 4px radius */
+/* Section 7: Buttons, unified 4px radius */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -572,7 +595,7 @@ h5 {
   flex-shrink: 0;
 }
 
-/* Section 10: Cards — unified 4px radius */
+/* Section 10: Cards, unified 4px radius */
 .card {
   background: var(--bg-alt);
   border: 1px solid var(--border-subtle);
@@ -680,7 +703,7 @@ h5 {
   color: var(--text-muted);
 }
 
-/* Section 13: CTA Section — padded to clear kente bar */
+/* Section 13: CTA Section, padded to clear kente bar */
 .cta-section {
   background: var(--bg-alt);
   position: relative;
@@ -693,17 +716,15 @@ h5 {
   left: 0;
   right: 0;
   height: 4px;
-  background: repeating-linear-gradient(
-    90deg,
-    var(--accent-ochre) 0px,
-    var(--accent-ochre) 20px,
-    var(--accent-green) 20px,
-    var(--accent-green) 40px,
-    var(--accent-crimson) 40px,
-    var(--accent-crimson) 60px,
-    var(--accent-ochre) 60px,
-    var(--accent-ochre) 80px
-  );
+  background: repeating-linear-gradient(90deg,
+      var(--accent-ochre) 0px,
+      var(--accent-ochre) 20px,
+      var(--accent-green) 20px,
+      var(--accent-green) 40px,
+      var(--accent-crimson) 40px,
+      var(--accent-crimson) 60px,
+      var(--accent-ochre) 60px,
+      var(--accent-ochre) 80px);
 }
 
 .cta-content {
@@ -820,7 +841,7 @@ h5 {
   margin-top: var(--space-xs);
 }
 
-/* Section 16: Section Header — always centered */
+/* Section 16: Section Header, always centered */
 .section-header {
   text-align: center;
   max-width: 640px;
@@ -910,7 +931,7 @@ h5 {
 .product-card:hover {
   border-color: var(--accent-ochre);
   transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
 .product-name {
@@ -982,19 +1003,6 @@ h5 {
   margin: 0 auto var(--space-md);
 }
 
-/* Section 20: Scroll Reveal Animation */
-[data-reveal] {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity var(--duration-section) var(--ease-out-expo),
-              transform var(--duration-section) var(--ease-out-expo);
-}
-
-[data-reveal].revealed {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 /* Split text line wrapper */
 .split-text-line {
   padding-bottom: var(--descender-clearance);
@@ -1026,7 +1034,7 @@ h5 {
   color: var(--accent-ochre);
 }
 
-/* Mono uppercase label — matches eyebrow / stat-label pattern */
+/* Mono uppercase label, matches eyebrow / stat-label pattern */
 .contact-card-label {
   font-family: var(--font-mono);
   font-size: var(--text-xs);
@@ -1145,7 +1153,7 @@ h5 {
   padding: var(--space-md);
 }
 
-/* Section 24: Service Cards — column layout, consistent tokens */
+/* Section 24: Service Cards, column layout, consistent tokens */
 .services-pinned {
   position: relative;
   min-height: 100dvh;
@@ -1368,6 +1376,7 @@ h5 {
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
@@ -1377,8 +1386,4 @@ h5 {
     scroll-behavior: auto !important;
   }
 
-  [data-reveal] {
-    opacity: 1;
-    transform: none;
-  }
 }

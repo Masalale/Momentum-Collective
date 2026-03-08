@@ -1,5 +1,4 @@
 import gsap from 'gsap';
-import { lenis } from './scroll-init';
 
 export function initMarquee(): void {
   const tracks = document.querySelectorAll<HTMLElement>('.marquee-track');
@@ -13,20 +12,14 @@ export function initMarquee(): void {
 
     const totalWidth = content.offsetWidth;
 
-    const tween = gsap.to(track, {
+    gsap.to(track, {
       x: -totalWidth,
-      duration: 20,
+      duration: 25,
       ease: 'none',
       repeat: -1,
       modifiers: {
         x: gsap.utils.unitize((x: string) => parseFloat(x) % totalWidth),
       },
-    });
-
-    lenis.on('scroll', (instance) => {
-      const v = Math.abs(instance.velocity);
-      const speed = 1 + v * 0.3;
-      tween.timeScale(instance.velocity > 0 ? speed : speed * 0.5);
     });
   });
 }

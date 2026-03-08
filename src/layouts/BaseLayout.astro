@@ -10,7 +10,7 @@ import "../styles/fixes.css";
 
 const {
   title,
-  description = "Pan-African tech collective building Africa's digital future",
+  description = "Momentum Labs CLG - Africa's execution-first product lab. Build. Ship. Sell. Scale.",
   barbaNamespace,
 } = Astro.props;
 ---
@@ -70,7 +70,7 @@ const {
         border-radius: 4px;
       }
 
-      /* 4. Service cards — column layout */
+      /* 4. Service cards - column layout */
       .service-card {
         display: flex;
         flex-direction: column;
@@ -112,7 +112,7 @@ const {
         font-size: var(--text-base);
       }
 
-      /* 5. App card — softer hover shadow */
+      /* 5. App card - softer hover shadow */
       .app-card:hover {
         box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
       }
@@ -133,7 +133,7 @@ const {
         margin-bottom: var(--space-md);
       }
 
-      /* 7. Section header — always centered */
+      /* 7. Section header - always centered */
       .section-header {
         text-align: center;
       }
@@ -146,14 +146,14 @@ const {
         border-color: var(--accent-ochre);
       }
 
-      /* 10. Nav active/hover underline — sits flush on nav bottom border */
+      /* 10. Nav active/hover underline - sits flush on nav bottom border */
       .nav-link::after {
         bottom: -13px;
         height: 2px;
         z-index: 1;
       }
 
-      /* 11. Ecosystem section — CSS-only, no extra HTML wrapper needed */
+      /* 11. Ecosystem section - CSS-only, no extra HTML wrapper needed */
       .ecosystem-card {
         gap: 0 !important;
       }
@@ -262,7 +262,7 @@ const {
     <footer class="main-footer">
       <div class="container">
         <div class="footer-content">
-          <p class="footer-tagline">Built by African Youth</p>
+          <p class="footer-tagline">Build. Ship. Sell. Scale.</p>
 
           <div class="footer-social">
             <a
@@ -344,6 +344,19 @@ const {
         Rocket,
         Cloud,
         Code2,
+        MapPin,
+        Activity,
+        Building2,
+        CreditCard,
+        Lock,
+        MessageSquare,
+        ShieldCheck,
+        BarChart2,
+        Megaphone,
+        Filter,
+        ScanLine,
+        HardHat,
+        Bot,
       } from "lucide";
 
       createIcons({
@@ -386,6 +399,19 @@ const {
           Rocket,
           Cloud,
           Code2,
+          MapPin,
+          Activity,
+          Building2,
+          CreditCard,
+          Lock,
+          MessageSquare,
+          ShieldCheck,
+          BarChart2,
+          Megaphone,
+          Filter,
+          ScanLine,
+          HardHat,
+          Bot,
         },
       });
 
@@ -418,7 +444,7 @@ const {
         });
       }
 
-      // Inject overrides stylesheet (served from public/ — always fresh)
+      // Inject overrides stylesheet (served from public/ - always fresh)
       if (!document.getElementById("mc-overrides-link")) {
         const link = document.createElement("link");
         link.id = "mc-overrides-link";

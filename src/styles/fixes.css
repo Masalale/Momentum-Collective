@@ -1,7 +1,7 @@
-/* ── Momentum Collective — Design System Corrections ─────────────────────
+/* , Momentum Collective, Design System Corrections ,
    Fixes applied: unified border-radius, service card layout,
    contact card fonts, CTA padding, hover shadows.
-   ───────────────────────────────────────────────────────────────────── */
+   , */
 
 /* 1. Unified border-radius: 4px across all card types */
 .card,
@@ -17,18 +17,18 @@
   border-radius: 4px;
 }
 
-/* 2. Buttons — unified radius */
+/* 2. Buttons, unified radius */
 .btn {
   border-radius: 4px;
 }
 
-/* 3. Icon containers — unified radius */
+/* 3. Icon containers, unified radius */
 .feature-icon,
 .app-card-icon {
   border-radius: 4px;
 }
 
-/* 4. Service cards — correct column stacking layout */
+/* 4. Service cards, correct column stacking layout */
 .service-card {
   display: flex;
   flex-direction: column;
@@ -78,12 +78,12 @@
   font-size: var(--text-base);
 }
 
-/* 5. App card — softer, consistent hover shadow */
+/* 5. App card, softer, consistent hover shadow */
 .app-card:hover {
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
 }
 
-/* 6. Contact card — correct font hierarchy */
+/* 6. Contact card, correct font hierarchy */
 .contact-card-label {
   font-family: var(--font-mono);
   font-size: var(--text-xs);
@@ -100,14 +100,14 @@
   margin-bottom: var(--space-md);
 }
 
-/* 7. Section headers — always centered */
+/* 7. Section headers, always centered */
 .section-header {
   text-align: center;
   max-width: 640px;
   margin: 0 auto var(--space-lg);
 }
 
-/* 8. Ecosystem card — add hover transition */
+/* 8. Ecosystem card, add hover transition */
 .ecosystem-card {
   transition: all var(--duration-standard) var(--ease-out-expo);
 }
@@ -116,12 +116,12 @@
   border-color: var(--accent-ochre);
 }
 
-/* 9. CTA section — padding clears the 4px kente decoration bar */
+/* 9. CTA section, padding clears the 4px kente decoration bar */
 .cta-section {
   padding-top: calc(var(--space-section) + 4px);
 }
 
-/* 10. Ecosystem Pillars — modern editorial layout (no cards) */
+/* 10. Ecosystem Pillars, modern editorial layout (no cards) */
 .pillars-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -244,14 +244,18 @@
   .card-grid-editorial.cols-3 {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  /* Center a lone orphaned last card in a 3-column grid */
+  .card-grid-editorial.cols-3>.card-editorial:last-child:nth-child(3n+1) {
+    grid-column: 2;
+  }
 }
 
 .card-editorial {
   background: var(--bg-alt);
   border: 1px solid var(--border-subtle);
-  border-radius: 6px;
-  padding: 1.25rem;
-  /* Precise editorial spacing */
+  border-radius: 4px;
+  padding: var(--space-md);
   display: flex;
   flex-direction: column;
   transition: all var(--duration-standard) var(--ease-out-expo);
@@ -270,15 +274,15 @@
 }
 
 .card-editorial-icon {
-  width: 40px;
-  height: 40px;
-  background: rgba(212, 146, 10, 0.08);
+  width: 48px;
+  height: 48px;
+  background: rgba(212, 146, 10, 0.1);
   color: var(--accent-ochre);
-  border-radius: 6px;
+  border-radius: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 0.75rem;
+  margin-bottom: var(--space-sm);
   transition: all var(--duration-standard) var(--ease-out-expo);
 }
 
@@ -288,77 +292,64 @@
 }
 
 .card-editorial-icon svg {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
 }
 
 .card-editorial-tagline {
   font-family: var(--font-mono);
-  font-size: 9px;
+  font-size: var(--text-xs);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1em;
   color: var(--accent-ochre);
-  margin-bottom: 4px;
+  margin-bottom: var(--space-xs);
 }
 
 .card-editorial-title {
   font-family: var(--font-display);
-  font-size: 1.15rem;
-  font-weight: 500;
-  margin-bottom: 4px;
+  font-size: var(--text-xl);
+  font-weight: 400;
+  margin-bottom: var(--space-xs);
   line-height: 1.2;
 }
 
 .card-editorial-description {
   color: var(--text-muted);
-  font-size: 13px;
-  line-height: 1.5;
-  margin-bottom: 1.25rem;
+  font-size: var(--text-base);
+  line-height: 1.6;
+  margin-bottom: var(--space-sm);
 }
 
 .card-editorial-link {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: var(--space-xs);
   margin-top: auto;
   font-family: var(--font-mono);
-  font-size: 9px;
+  font-size: var(--text-xs);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--text-primary);
-  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--accent-ochre);
+  font-weight: 500;
   transition: all var(--duration-standard) var(--ease-out-expo);
 }
 
 .card-editorial:hover .card-editorial-link {
-  gap: 8px;
-  color: var(--accent-ochre);
+  gap: var(--space-sm);
 }
 
-/* 11. Global Premium Styling — Standardizing the Home Page aesthetic */
+/* 11. Global Premium Styling, Standardizing the Home Page aesthetic */
 .hero {
   min-height: 60dvh !important;
   /* Balanced default height for all pages */
   display: flex;
   align-items: center;
   padding: var(--space-xl) 0 var(--space-lg) !important;
-  background: radial-gradient(at 50% 0%, #f1f5f9 0%, var(--bg-deep) 100%) !important;
+  background: var(--bg-deep) !important;
   position: relative;
   overflow: hidden;
 }
 
-/* Subtle focal point glow */
-.hero::before {
-  content: '';
-  position: absolute;
-  top: -10%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80%;
-  height: 50%;
-  background: radial-gradient(circle, rgba(212, 146, 10, 0.03) 0%, transparent 70%);
-  pointer-events: none;
-}
 
 .hero-content {
   max-width: 800px !important;
@@ -385,12 +376,105 @@
 }
 
 .section {
-  padding: var(--section-padding) !important;
+  padding: var(--section-padding);
 }
 
 .section-header {
   margin-bottom: var(--space-xl) !important;
 }
+
+/* 12. About page hero, moved from page-level <style> so Barba transitions inherit it */
+.about-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+  align-items: center;
+  width: 100%;
+}
+
+@media (min-width: 900px) {
+  .about-hero-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+  }
+}
+
+.about-hero-copy {
+  text-align: left;
+  max-width: none;
+  margin: 0;
+}
+
+.about-hero-copy .hero-eyebrow {
+  text-align: left;
+}
+
+.about-hero-copy .hero-title {
+  text-align: left;
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.about-hero-copy .hero-subtext {
+  text-align: left;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  max-width: none !important;
+}
+
+.about-hero-buttons {
+  justify-content: flex-start !important;
+}
+
+.about-hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+@media (min-width: 900px) {
+  .about-hero-visual {
+    justify-content: flex-end;
+  }
+}
+
+.hero-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-logo {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  opacity: 0.9;
+}
+
+@media (min-width: 900px) {
+  .hero-logo {
+    max-width: 400px;
+  }
+}
+
+/* 13. Hero Compact, For pages with minimal hero content (e.g. Contact) */
+.hero-compact {
+  min-height: 45dvh !important;
+  padding: var(--space-xl) 0 var(--space-md) !important;
+  /* Top matches standard hero (space-xl) */
+}
+
+@media (max-width: 768px) {
+  .hero-compact {
+    min-height: auto !important;
+    padding: var(--space-xl) 0 var(--space-md) !important;
+  }
+}
+
 
 .section-title {
   font-family: var(--font-display);

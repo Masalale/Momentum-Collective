@@ -3,8 +3,6 @@ import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import {
   lenis,
-  initScrollReveal,
-  initSplitText,
   initCounterAnimation,
   cleanupScroll,
 } from './scroll-init';
@@ -48,6 +46,19 @@ import {
   Rocket,
   Cloud,
   Code2,
+  MapPin,
+  Activity,
+  Building2,
+  CreditCard,
+  Lock,
+  MessageSquare,
+  ShieldCheck,
+  BarChart2,
+  Megaphone,
+  Filter,
+  ScanLine,
+  HardHat,
+  Bot,
 } from 'lucide';
 
 const ALL_ICONS = {
@@ -89,6 +100,19 @@ const ALL_ICONS = {
   Rocket,
   Cloud,
   Code2,
+  MapPin,
+  Activity,
+  Building2,
+  CreditCard,
+  Lock,
+  MessageSquare,
+  ShieldCheck,
+  BarChart2,
+  Megaphone,
+  Filter,
+  ScanLine,
+  HardHat,
+  Bot,
 };
 
 function getOverlay(): HTMLElement {
@@ -115,8 +139,6 @@ function initPage(container: HTMLElement): void {
   cleanupScroll();
   ScrollTrigger.refresh();
 
-  initScrollReveal();
-  initSplitText();
   initCounterAnimation();
 
   // Wrap ecosystem images for proper contained display

@@ -4,36 +4,48 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 <BaseLayout
   title="About | Momentum Collective"
-  description="Learn about Momentum Collective, our vision, mission, and ecosystem — Momentum Labs and Momentum Foundation."
+  description="Momentum Labs CLG, Africa's execution-first product lab. We bridge the gap between technical training and commercial execution through 6-8 week intensive cohorts."
   barbaNamespace="about"
 >
-  <!-- 1. ABOUT HERO -->
+  <!-- 1. ABOUT HERO - split layout requested by user -->
   <section class="hero">
     <div class="container">
-      <div class="hero-content">
-        <p class="hero-eyebrow">About Us</p>
-        <h1 class="hero-title" data-split>
-          Empowering Africa's Digital Future
-        </h1>
-        <p class="hero-subtext">
-          We are a dynamic ecosystem of young African developers, designers, and
-          innovators united by a shared vision: to build solutions that
-          transform communities and preserve our cultural heritage.
-        </p>
-        <div class="hero-buttons">
-          <a href="/contact" class="btn btn-primary btn-lg">
-            <span>Join Movement</span>
-            <i data-lucide="arrow-right"></i>
-          </a>
-          <a href="/apps" class="btn btn-outline btn-lg">
-            <span>Explore Work</span>
-          </a>
+      <div class="about-hero-grid">
+        <div class="about-hero-copy">
+          <p class="hero-eyebrow">About Momentum Labs CLG</p>
+          <h1 class="hero-title" data-split>From Ivy to Momentum</h1>
+          <p class="hero-subtext">
+            We evolved from Ivy Community, a growing network of ambitious young
+            developers across Kenya, into a structured, execution-driven product
+            lab where developers don't just learn to code. They learn to build
+            businesses.
+          </p>
+          <div class="hero-buttons about-hero-buttons">
+            <a href="/contact" class="btn btn-primary btn-lg">
+              <span>Join the Cohort</span>
+              <i data-lucide="arrow-right"></i>
+            </a>
+            <a href="/apps" class="btn btn-outline btn-lg">
+              <span>Explore Our Products</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="about-hero-visual" data-reveal>
+          <div class="hero-logo-container">
+            <img
+              src="/assets/ivy_momentum.png"
+              alt="From Ivy to Momentum"
+              class="hero-logo"
+              loading="eager"
+            />
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 2. MISSION / VISION -->
+  <!-- 2. VISION / MISSION -->
   <section class="section section-alt">
     <div class="container">
       <div class="grid-2">
@@ -43,11 +55,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             <i data-lucide="eye"></i>
           </div>
           <h5>
-            To empower communities, preserve culture, and build tools that
-            address real-world needs. We champion underrepresented voices, honor
-            our heritage, and nurture the next generation of African developers.
+            To build Africa's most execution-focused developer ecosystem, where
+            young engineers transition from learners to builders, and from
+            builders to product leaders.
           </h5>
-          <p class="eyebrow">"Our Ideas, Our Future."</p>
+          <p class="eyebrow" style="margin-top: 1.5rem;">
+            "Our Ideas, Our Future."
+          </p>
         </div>
         <div data-reveal>
           <p class="eyebrow">Our Mission</p>
@@ -55,18 +69,69 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             <i data-lucide="target"></i>
           </div>
           <h5>
-            To provide hands-on experience, foster collaboration on meaningful
-            projects, and create a seamless transition for young talent into the
-            tech industry—all while delivering solutions that make a tangible
-            impact across Africa.
+            To bridge the gap between technical training and commercial
+            execution, placing developers inside live product teams that build,
+            sell, and scale real software across African markets.
           </h5>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 3. ECOSYSTEM (Side-by-Side Editorial) -->
+  <!-- 3. THE COHORT MODEL -->
   <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">Our Model</p>
+        <h2 class="section-title">The 6-8 Week Cohort</h2>
+        <p class="section-description">
+          Momentum runs structured intensive cohorts. Each cycle places
+          developers inside live product teams working on real, commercially
+          active software.
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card" data-reveal>
+          <div class="feature-icon">
+            <i data-lucide="users"></i>
+          </div>
+          <h3 class="feature-title">Onboard & Orient</h3>
+          <p class="feature-text">
+            Week 1-2: Join an active product team, understand the codebase, and
+            get oriented on client requirements and delivery standards.
+          </p>
+        </div>
+
+        <div class="feature-card" data-reveal>
+          <div class="feature-icon">
+            <i data-lucide="code-2"></i>
+          </div>
+          <h3 class="feature-title">Build & Ship</h3>
+          <p class="feature-text">
+            Week 3-6: Work on real client-facing features, ship to production,
+            improve performance, and participate in hackathons and
+            masterclasses.
+          </p>
+        </div>
+
+        <div class="feature-card" data-reveal>
+          <div class="feature-icon">
+            <i data-lucide="rocket"></i>
+          </div>
+          <h3 class="feature-title">Scale & Transition</h3>
+          <p class="feature-text">
+            Week 7-8: Top performers are absorbed into internal product teams.
+            Others are deployed to partner companies, career-ready and
+            commercially proven.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. ECOSYSTEM PILLARS -->
+  <section class="section section-alt">
     <div class="container">
       <div class="section-header">
         <p class="eyebrow">Our Ecosystem</p>
@@ -75,10 +140,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
       <div class="pillars-grid">
         <!-- Momentum Labs Pillar -->
-        <a href="/labs" class="pillar" data-reveal>
+        <a href="/apps" class="pillar" data-reveal>
           <div class="pillar-image-container">
             <img
-              src="/assets/momentum-labs-upscaled.png"
+              src="/assets/momentum-labs.png"
               alt="Momentum Labs"
               class="pillar-image"
               loading="lazy"
@@ -86,24 +151,24 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           </div>
           <div class="pillar-content">
             <div class="pillar-header">
-              <span class="pillar-tagline">Our Ideas, Our Future.</span>
+              <span class="pillar-tagline">Build. Ship. Sell. Scale.</span>
               <h3 class="pillar-title">Momentum Labs</h3>
             </div>
             <p class="pillar-description">
-              The innovation arm of the Collective. This is where we design,
-              build, and scale our cutting-edge digital products. From mobile
-              apps to enterprise-level SaaS, Momentum Labs is where ideas become
-              reality.
+              The innovation and execution arm of the Collective. This is where
+              cohorts are run, live products are built, and developers are
+              forged into commercial software engineers. 23+ active systems, all
+              sold externally.
             </p>
             <div class="pillar-features">
               <div class="pillar-feature">
                 <i data-lucide="smartphone"></i><span>Mobile Apps</span>
               </div>
               <div class="pillar-feature">
-                <i data-lucide="cloud"></i><span>SaaS Solutions</span>
+                <i data-lucide="cloud"></i><span>SaaS Platforms</span>
               </div>
               <div class="pillar-feature">
-                <i data-lucide="code-2"></i><span>Open Source</span>
+                <i data-lucide="zap"></i><span>AI Systems</span>
               </div>
             </div>
           </div>
@@ -129,8 +194,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             <p class="pillar-description">
               The funding and empowerment pillar of our ecosystem. The
               Foundation is dedicated to providing grants, scholarships, and
-              resources to young African talent, ensuring that financial
-              barriers don't stand in the way of innovation.
+              resources to young African talent, ensuring financial barriers
+              don't stand in the way of innovation.
             </p>
             <div class="pillar-features">
               <div class="pillar-feature">
@@ -149,25 +214,75 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </div>
   </section>
 
-  <!-- 4. JOIN CTA -->
+  <!-- 5. TALENT PIPELINE -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">Talent Pipeline</p>
+        <h2 class="section-title">What You Leave With</h2>
+        <p class="section-description">
+          We produce developers who have shipped production software, understand
+          product-market fit, have worked within agile teams, and have
+          contributed to real revenue-generating systems.
+        </p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card" data-reveal>
+          <div class="feature-icon">
+            <i data-lucide="layers"></i>
+          </div>
+          <h3 class="feature-title">Absorbed Internally</h3>
+          <p class="feature-text">
+            Top-performing developers are absorbed into internal product teams,
+            continuing to own and scale the same systems they built during the
+            cohort.
+          </p>
+        </div>
+        <div class="feature-card" data-reveal>
+          <div class="feature-icon">
+            <i data-lucide="building-2"></i>
+          </div>
+          <h3 class="feature-title">Deployed to Partners</h3>
+          <p class="feature-text">
+            Others are placed at partner companies, fully career-ready,
+            commercially experienced, and proven on live, revenue-generating
+            systems.
+          </p>
+        </div>
+        <div class="feature-card" data-reveal>
+          <div class="feature-icon">
+            <i data-lucide="rocket"></i>
+          </div>
+          <h3 class="feature-title">Advanced Leadership</h3>
+          <p class="feature-text">
+            Select developers continue into product leadership roles, driving
+            strategy, mentoring incoming cohorts, and expanding the Momentum
+            ecosystem.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. JOIN CTA -->
   <section class="section cta-section">
     <div class="kente-decoration"></div>
     <div class="container">
       <div class="cta-content">
-        <h2 class="display-4xl mb-sm">Ready to Join Our Movement?</h2>
+        <h2 class="display-4xl mb-sm">Ready to Join the Lab?</h2>
         <p class="text-muted mb-md">
-          Whether you're a developer, designer, entrepreneur, or simply
-          passionate about Africa's digital future, there's a place for you in
-          the Momentum Collective.
+          Whether you're a developer ready to ship real software, a business
+          looking for a live product team, or a partner looking to deploy our
+          systems, there's a place for you in the Momentum ecosystem.
         </p>
         <div class="cta-buttons">
           <a href="/contact" class="btn btn-primary btn-lg">
-            <i data-lucide="user-plus"></i>
-            <span>Join Community</span>
+            <i data-lucide="arrow-right"></i>
+            <span>Join the Cohort</span>
           </a>
           <a href="/apps" class="btn btn-outline btn-lg">
             <i data-lucide="eye"></i>
-            <span>See Our Work</span>
+            <span>See Our Products</span>
           </a>
         </div>
       </div>
