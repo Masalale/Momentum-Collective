@@ -2,11 +2,6 @@
    Unique additions that extend global.css (no duplicates).
    ======================================================= */
 
-/* 1. App card — hover lift shadow */
-.app-card:hover {
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
-}
-
 /* 2. Ecosystem Pillars — editorial layout (About page) */
 .pillars-grid {
   display: grid;
@@ -164,7 +159,7 @@
   transition: all var(--duration-standard) var(--ease-out-expo);
   position: relative;
   overflow: hidden;
-  text-decoration: none !important;
+  text-decoration: none;
   color: inherit;
   height: 100%;
 }
@@ -279,20 +274,10 @@
   width: 100%;
 }
 
-/* Image below text on mobile (natural order) */
-.about-hero-visual {
-  order: 0;
-}
-
 @media (min-width: 900px) {
   .about-hero-grid {
     grid-template-columns: 1fr 1fr;
     gap: var(--space-xl);
-  }
-
-  /* Restore natural DOM order at desktop (copy left, image right) */
-  .about-hero-visual {
-    order: 0;
   }
 }
 
@@ -367,6 +352,5 @@
 @media (max-width: 768px) {
   .hero-compact {
     min-height: auto !important;
-    padding: var(--space-xl) 0 var(--space-md) !important;
   }
 }

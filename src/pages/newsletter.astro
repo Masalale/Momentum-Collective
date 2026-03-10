@@ -1,0 +1,171 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Newsletter"
+  description="Stay up to date with Momentum Collective. Follow product launches, developer milestones, and innovation from Africa's execution-first product lab."
+  barbaNamespace="newsletter"
+>
+  <!-- 1. HERO -->
+  <section class="hero hero-compact">
+    <div class="container">
+      <div class="hero-content">
+        <p class="hero-eyebrow">Stay Connected</p>
+        <h1 class="hero-title" data-split>The Momentum Dispatch</h1>
+        <p class="hero-subtext">
+          Product launches, developer milestones, market wins, and insights from
+          inside Africa's execution-first product lab. Delivered when it matters.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. SUBSCRIBE -->
+  <section class="section" style="padding-top: var(--space-md);">
+    <div class="container">
+      <div class="cta-box" style="max-width: 680px; margin: 0 auto; text-align: center;">
+        <p class="eyebrow">Subscribe</p>
+        <h2 class="cta-title" style="margin-bottom: var(--space-sm);">
+          Join the Inner Circle
+        </h2>
+        <p class="text-muted" style="margin-bottom: var(--space-md); font-size: var(--text-base);">
+          No noise. Just meaningful updates on what we're building, who we're
+          deploying, and where the ecosystem is heading.
+        </p>
+        <!-- Subscription form — to be wired up later -->
+        <form
+          class="newsletter-form"
+          style="display: flex; gap: var(--space-sm); flex-wrap: wrap; justify-content: center;"
+          onsubmit="return false;"
+        >
+          <input
+            type="email"
+            placeholder="your@email.com"
+            required
+            style="
+              flex: 1;
+              min-width: 220px;
+              padding: 0.85rem 1.25rem;
+              background: var(--bg-deep);
+              border: 1px solid var(--border-subtle);
+              border-radius: 4px;
+              color: var(--text-primary);
+              font-family: var(--font-body);
+              font-size: var(--text-base);
+              outline: none;
+              transition: border-color var(--duration-standard) var(--ease-out-expo);
+            "
+            onfocus="this.style.borderColor='var(--accent-ochre)'"
+            onblur="this.style.borderColor='var(--border-subtle)'"
+          />
+          <button type="submit" class="btn btn-primary btn-lg">
+            <span>Subscribe</span>
+            <i data-lucide="arrow-right"></i>
+          </button>
+        </form>
+        <p
+          style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-top: var(--space-sm);"
+        >
+          No spam. Unsubscribe any time.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. WHAT TO EXPECT -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">What You'll Get</p>
+        <h2 class="section-title">Inside Every Issue</h2>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card" data-reveal>
+          <div class="feature-icon">
+            <i data-lucide="rocket"></i>
+          </div>
+          <h3 class="feature-title">Product Launches</h3>
+          <p class="feature-text">
+            First-look announcements every time a new Momentum system ships to
+            market.
+          </p>
+        </div>
+
+        <div class="feature-card" data-reveal>
+          <div class="feature-icon">
+            <i data-lucide="users"></i>
+          </div>
+          <h3 class="feature-title">Cohort Updates</h3>
+          <p class="feature-text">
+            Stories from active cohorts, developer milestones, and team
+            highlights.
+          </p>
+        </div>
+
+        <div class="feature-card" data-reveal>
+          <div class="feature-icon">
+            <i data-lucide="bar-chart-2"></i>
+          </div>
+          <h3 class="feature-title">Market Insights</h3>
+          <p class="feature-text">
+            Observations on tech adoption, African market trends, and what
+            we're learning on the ground.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. PAST ISSUES — placeholder, add issues here -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">Archive</p>
+        <h2 class="section-title">Past Issues</h2>
+        <p class="section-description">
+          Browse previous dispatches from the lab.
+        </p>
+      </div>
+
+      <!-- Issues will be added here -->
+      <div
+        style="
+          border: 1px dashed var(--border-subtle);
+          border-radius: 4px;
+          padding: var(--space-xl) var(--space-md);
+          text-align: center;
+          color: var(--text-muted);
+        "
+      >
+        <p style="font-family: var(--font-mono); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em;">
+          Issues coming soon
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. CTA -->
+  <section class="section cta-section">
+    <div class="kente-decoration"></div>
+    <div class="container">
+      <div class="cta-content">
+        <h2 class="display-3xl mb-xs">Build. Ship. Sell. Scale.</h2>
+        <p class="text-muted mb-md" style="font-size: var(--text-base);">
+          Follow the journey as we build Africa's most execution-focused
+          product lab.
+        </p>
+        <div class="cta-buttons">
+          <a href="/contact" class="btn btn-primary btn-lg">
+            <span>Partner With Us</span>
+            <i data-lucide="arrow-right"></i>
+          </a>
+          <a href="/apps" class="btn btn-outline btn-lg">
+            <span>See Our Products</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

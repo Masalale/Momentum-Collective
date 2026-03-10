@@ -34,7 +34,6 @@
 
   /* Descender clearance (Playfair Display as Canela stand-in & IBM Plex) */
   --descender-clearance-canela: 0.18em;
-  --descender-clearance-ibm: 0.14em;
   --descender-clearance: var(--descender-clearance-canela);
 
   /* Spacing */
@@ -1326,7 +1325,6 @@ h5 {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   line-height: 1;
-  opacity: 1;
 }
 
 /* Tinted icon box below the number */
