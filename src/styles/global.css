@@ -286,6 +286,16 @@ h5 {
   }
 }
 
+/* Centre a solo orphan in the last row of the 2-col mobile grid */
+@media (max-width: 767px) {
+  .grid-3 > *:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 @media (min-width: 768px) {
   .grid-3 {
     grid-template-columns: repeat(3, 1fr);
@@ -416,6 +426,7 @@ h5 {
   width: 100%;
 }
 
+/* CSS-animated hamburger — no Lucide swap needed */
 .nav-toggle {
   display: flex;
   align-items: center;
@@ -426,6 +437,58 @@ h5 {
   border: none;
   color: var(--text-primary);
   cursor: pointer;
+  padding: 0;
+  /* Hide the Lucide icon inside; we use CSS lines instead */
+}
+
+.nav-toggle svg {
+  display: none;
+}
+
+/* Three-bar hamburger drawn with CSS */
+.nav-toggle-bar {
+  position: relative;
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+  transition:
+    background 0.2s ease,
+    transform 0.35s var(--ease-out-expo),
+    top 0.3s var(--ease-out-expo);
+}
+
+.nav-toggle-bar::before,
+.nav-toggle-bar::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 22px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+  transition:
+    transform 0.35s var(--ease-out-expo),
+    top 0.3s var(--ease-out-expo);
+}
+
+.nav-toggle-bar::before { top: -7px; }
+.nav-toggle-bar::after  { top:  7px; }
+
+/* ── Open state: bars become an X ── */
+.nav-toggle.is-open .nav-toggle-bar {
+  background: transparent; /* hide middle bar */
+}
+
+.nav-toggle.is-open .nav-toggle-bar::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.nav-toggle.is-open .nav-toggle-bar::after {
+  top: 0;
+  transform: rotate(-45deg);
 }
 
 @media (min-width: 768px) {

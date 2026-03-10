@@ -240,7 +240,7 @@ const {
         </div>
 
         <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
-          <i data-lucide="menu"></i>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
         </button>
       </div>
     </nav>
@@ -423,23 +423,16 @@ const {
         navToggle.addEventListener("click", () => {
           isMenuOpen = !isMenuOpen;
           mobileMenu.classList.toggle("open", isMenuOpen);
-
-          const icon = navToggle.querySelector("i");
-          if (icon) {
-            icon.setAttribute("data-lucide", isMenuOpen ? "x" : "menu");
-            createIcons({ icons: { Menu, X } });
-          }
+          navToggle.classList.toggle("is-open", isMenuOpen);
+          navToggle.setAttribute("aria-label", isMenuOpen ? "Close menu" : "Open menu");
         });
 
         mobileMenu.querySelectorAll(".nav-link").forEach((link) => {
           link.addEventListener("click", () => {
             isMenuOpen = false;
             mobileMenu.classList.remove("open");
-            const icon = navToggle.querySelector("i");
-            if (icon) {
-              icon.setAttribute("data-lucide", "menu");
-              createIcons({ icons: { Menu } });
-            }
+            navToggle.classList.remove("is-open");
+            navToggle.setAttribute("aria-label", "Open menu");
           });
         });
       }
