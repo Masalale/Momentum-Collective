@@ -36,14 +36,21 @@
 
 .pillar-image-container {
   width: 100%;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 4 / 3;
   background: var(--bg-alt);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--space-lg);
+  padding: var(--space-md);
   overflow: hidden;
   position: relative;
+}
+
+@media (min-width: 640px) {
+  .pillar-image-container {
+    aspect-ratio: 1 / 1;
+    padding: var(--space-lg);
+  }
 }
 
 .pillar-image {
@@ -65,7 +72,7 @@
 
 .pillar-title {
   font-family: var(--font-display);
-  font-size: var(--text-3xl);
+  font-size: clamp(var(--text-xl), 4vw, var(--text-3xl));
   font-weight: 400;
   color: var(--text-primary);
   margin-bottom: var(--space-xs);
@@ -89,7 +96,7 @@
 .pillar-features {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-md);
+  gap: var(--space-sm);
   margin-top: var(--space-sm);
 }
 
@@ -112,13 +119,23 @@
 /* 3. App page editorial card grid */
 .card-grid-editorial {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-sm);
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-xs);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 640px) {
   .card-grid-editorial {
-    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-sm);
+  }
+}
+
+/* Centre a solo orphan in the last row of the 2-col mobile grid */
+@media (max-width: 1023px) {
+  .card-grid-editorial > .card-editorial:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -131,7 +148,7 @@
     grid-template-columns: repeat(3, 1fr);
   }
 
-  /* Center a lone orphaned last card in a 3-column grid */
+  /* Centre a lone orphan in a 3-column desktop grid */
   .card-grid-editorial.cols-3 > .card-editorial:last-child:nth-child(3n+1) {
     grid-column: 2;
   }
@@ -141,7 +158,7 @@
   background: var(--bg-alt);
   border: 1px solid var(--border-subtle);
   border-radius: 4px;
-  padding: var(--space-md);
+  padding: var(--space-sm);
   display: flex;
   flex-direction: column;
   transition: all var(--duration-standard) var(--ease-out-expo);
@@ -152,6 +169,12 @@
   height: 100%;
 }
 
+@media (min-width: 640px) {
+  .card-editorial {
+    padding: var(--space-md);
+  }
+}
+
 .card-editorial:hover {
   border-color: var(--accent-ochre);
   transform: translateY(-4px);
@@ -160,16 +183,25 @@
 }
 
 .card-editorial-icon {
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   background: rgba(212, 146, 10, 0.1);
   color: var(--accent-ochre);
   border-radius: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: var(--space-sm);
+  margin-bottom: var(--space-xs);
   transition: all var(--duration-standard) var(--ease-out-expo);
+  flex-shrink: 0;
+}
+
+@media (min-width: 640px) {
+  .card-editorial-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: var(--space-sm);
+  }
 }
 
 .card-editorial:hover .card-editorial-icon {
@@ -178,8 +210,15 @@
 }
 
 .card-editorial-icon svg {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
+}
+
+@media (min-width: 640px) {
+  .card-editorial-icon svg {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 .card-editorial-tagline {
@@ -193,7 +232,7 @@
 
 .card-editorial-title {
   font-family: var(--font-display);
-  font-size: var(--text-xl);
+  font-size: clamp(var(--text-lg), 3.5vw, var(--text-xl));
   font-weight: 400;
   margin-bottom: var(--space-xs);
   line-height: 1.2;
@@ -201,9 +240,16 @@
 
 .card-editorial-description {
   color: var(--text-muted);
-  font-size: var(--text-base);
-  line-height: 1.6;
+  font-size: var(--text-xs);
+  line-height: 1.5;
   margin-bottom: var(--space-sm);
+}
+
+@media (min-width: 640px) {
+  .card-editorial-description {
+    font-size: var(--text-base);
+    line-height: 1.6;
+  }
 }
 
 .card-editorial-link {
@@ -228,15 +274,25 @@
 .about-hero-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-lg);
+  gap: var(--space-md);
   align-items: center;
   width: 100%;
+}
+
+/* Image below text on mobile (natural order) */
+.about-hero-visual {
+  order: 0;
 }
 
 @media (min-width: 900px) {
   .about-hero-grid {
     grid-template-columns: 1fr 1fr;
     gap: var(--space-xl);
+  }
+
+  /* Restore natural DOM order at desktop (copy left, image right) */
+  .about-hero-visual {
+    order: 0;
   }
 }
 

@@ -43,10 +43,10 @@
   --space-md: 2rem;
   --space-lg: 4rem;
   --space-xl: 8rem;
-  --space-section: clamp(5rem, 10vw, 10rem);
+  --space-section: clamp(3rem, 8vw, 10rem);
 
   /* Section padding */
-  --section-padding: clamp(5rem, 10vw, 10rem) 0;
+  --section-padding: clamp(3rem, 8vw, 10rem) 0;
 
   /* Max widths */
   --container-max: 1280px;
@@ -240,7 +240,7 @@ h5 {
   width: 100%;
   max-width: var(--container-max);
   margin: 0 auto;
-  padding: 0 var(--space-md);
+  padding: 0 clamp(1rem, 5vw, 2rem);
 }
 
 .container-narrow {
@@ -250,6 +250,11 @@ h5 {
 .section {
   padding: var(--section-padding);
   position: relative;
+  overflow: visible;
+}
+
+/* Sections with decorative absolute-positioned children still need clip */
+.cta-section {
   overflow: hidden;
 }
 
@@ -271,13 +276,20 @@ h5 {
 
 .grid-3 {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-md);
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-xs);
+}
+
+@media (min-width: 480px) {
+  .grid-3 {
+    gap: var(--space-sm);
+  }
 }
 
 @media (min-width: 768px) {
   .grid-3 {
     grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
   }
 }
 
@@ -454,7 +466,7 @@ h5 {
 .main-footer {
   background: var(--bg-alt);
   border-top: 1px solid var(--border-subtle);
-  padding: var(--space-lg) 0;
+  padding: clamp(var(--space-md), 5vw, var(--space-lg)) 0;
 }
 
 .footer-content {
@@ -467,13 +479,15 @@ h5 {
 
 .footer-tagline {
   font-family: var(--font-display);
-  font-size: var(--text-xl);
+  font-size: clamp(var(--text-lg), 3vw, var(--text-xl));
   color: var(--accent-ochre);
 }
 
 .footer-social {
   display: flex;
-  gap: var(--space-md);
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-sm);
 }
 
 .social-link {
@@ -749,10 +763,10 @@ h5 {
 
 /* Section 14: Hero Section */
 .hero {
-  min-height: 60dvh;
+  min-height: clamp(40dvh, 60dvh, 80dvh);
   display: flex;
   align-items: center;
-  padding: var(--space-xl) 0 var(--space-lg);
+  padding: clamp(3rem, 10vw, 8rem) 0 clamp(2rem, 6vw, 4rem);
   background: var(--bg-deep);
   position: relative;
   overflow: hidden;
@@ -774,7 +788,7 @@ h5 {
 }
 
 .hero-title {
-  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-size: clamp(1.8rem, 7vw, 4.5rem);
   font-weight: 400;
   line-height: 1.1;
   margin-bottom: var(--space-md);
@@ -848,31 +862,41 @@ h5 {
 .section-header {
   text-align: center;
   max-width: 640px;
-  margin: 0 auto var(--space-xl);
+  margin: 0 auto clamp(2rem, 6vw, 8rem);
 }
 
 .section-title {
   font-family: var(--font-display);
-  font-size: var(--text-4xl);
+  font-size: clamp(var(--text-2xl), 5vw, var(--text-4xl));
   font-weight: 400;
   margin-bottom: var(--space-sm);
 }
 
 .section-description {
   color: var(--text-muted);
-  font-size: var(--text-lg);
+  font-size: clamp(var(--text-base), 2vw, var(--text-lg));
 }
 
 /* Section 17: Features Grid */
 .features-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-md);
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-sm);
+}
+
+/* Centre a solo orphan in the last row of the 2-col mobile grid */
+@media (max-width: 767px) {
+  .features-grid > .feature-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    max-width: 50%;
+    margin: 0 auto;
+  }
 }
 
 @media (min-width: 768px) {
   .features-grid {
     grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
   }
 }
 
@@ -880,8 +904,14 @@ h5 {
   background: var(--bg-deep);
   border: 1px solid var(--border-subtle);
   border-radius: 4px;
-  padding: var(--space-md);
+  padding: var(--space-sm);
   transition: all var(--duration-standard) var(--ease-out-expo);
+}
+
+@media (min-width: 640px) {
+  .feature-card {
+    padding: var(--space-md);
+  }
 }
 
 .feature-card:hover {
@@ -890,38 +920,62 @@ h5 {
 }
 
 .feature-icon {
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--accent-ochre);
-  margin-bottom: var(--space-sm);
+  margin-bottom: var(--space-xs);
   background: rgba(212, 146, 10, 0.1);
   border-radius: 4px;
 }
 
+@media (min-width: 640px) {
+  .feature-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: var(--space-sm);
+  }
+}
+
 .feature-title {
   font-family: var(--font-display);
-  font-size: var(--text-xl);
+  font-size: clamp(var(--text-lg), 3.5vw, var(--text-xl));
   margin-bottom: var(--space-xs);
 }
 
 .feature-text {
   color: var(--text-muted);
-  font-size: var(--text-base);
+  font-size: var(--text-sm);
+}
+
+@media (min-width: 640px) {
+  .feature-text {
+    font-size: var(--text-base);
+  }
 }
 
 /* Section 18: Products Grid */
 .products-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-md);
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-sm);
+}
+
+/* Centre a solo orphan in the last row of the 2-col mobile grid */
+@media (max-width: 767px) {
+  .products-grid > .product-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    max-width: 50%;
+    margin: 0 auto;
+  }
 }
 
 @media (min-width: 768px) {
   .products-grid {
     grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
   }
 }
 
@@ -929,8 +983,14 @@ h5 {
   background: var(--bg-alt);
   border: 1px solid var(--border-subtle);
   border-radius: 4px;
-  padding: var(--space-md);
+  padding: var(--space-sm);
   transition: all var(--duration-standard) var(--ease-out-expo);
+}
+
+@media (min-width: 640px) {
+  .product-card {
+    padding: var(--space-md);
+  }
 }
 
 .product-card:hover {
@@ -941,7 +1001,7 @@ h5 {
 
 .product-name {
   font-family: var(--font-display);
-  font-size: var(--text-xl);
+  font-size: clamp(var(--text-lg), 3.5vw, var(--text-xl));
   margin-bottom: var(--space-xs);
 }
 
@@ -951,13 +1011,25 @@ h5 {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--accent-ochre);
-  margin-bottom: var(--space-sm);
+  margin-bottom: var(--space-xs);
+}
+
+@media (min-width: 640px) {
+  .product-tagline {
+    margin-bottom: var(--space-sm);
+  }
 }
 
 .product-description {
   color: var(--text-muted);
-  font-size: var(--text-base);
+  font-size: var(--text-sm);
   margin-bottom: var(--space-sm);
+}
+
+@media (min-width: 640px) {
+  .product-description {
+    font-size: var(--text-base);
+  }
 }
 
 .product-link {
@@ -997,13 +1069,13 @@ h5 {
 }
 
 .cta-title {
-  font-size: var(--text-3xl);
+  font-size: clamp(var(--text-xl), 4vw, var(--text-3xl));
   margin-bottom: var(--space-sm);
 }
 
 .cta-text {
   color: var(--text-muted);
-  font-size: var(--text-lg);
+  font-size: clamp(var(--text-base), 2vw, var(--text-lg));
   max-width: 560px;
   margin: 0 auto var(--space-md);
 }
@@ -1065,8 +1137,9 @@ h5 {
 /* Section 22: Social Links (Contact Page) */
 .social-links-large {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: var(--space-lg);
+  gap: var(--space-md);
   margin-top: var(--space-md);
 }
 
@@ -1103,7 +1176,7 @@ h5 {
   border: 1px solid var(--border-subtle);
   border-radius: 4px;
   padding: var(--space-lg);
-  min-width: 320px;
+  min-width: min(320px, 80vw);
   max-width: 400px;
   transition: all var(--duration-standard) var(--ease-out-expo);
 }
@@ -1221,23 +1294,33 @@ h5 {
 /* Process Steps */
 .process-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-lg);
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
   text-align: center;
+}
+
+@media (min-width: 640px) {
+  .process-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+  }
 }
 
 .process-step {
   position: relative;
 }
 
-.process-step:not(:last-child)::after {
-  content: '';
-  position: absolute;
-  top: 24px;
-  right: -50%;
-  width: 100%;
-  height: 1px;
-  background: var(--border-subtle);
+/* connector line only visible when 3-column layout is active */
+@media (min-width: 640px) {
+  .process-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 24px;
+    right: -50%;
+    width: 100%;
+    height: 1px;
+    background: var(--border-subtle);
+  }
 }
 
 .process-icon {
