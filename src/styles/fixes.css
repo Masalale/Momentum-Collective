@@ -343,7 +343,26 @@
   }
 }
 
-/* 5. Hero Compact — pages with minimal hero content (e.g. Contact) */
+/* 5. Newsletter email input */
+.newsletter-input {
+  flex: 1;
+  min-width: 220px;
+  padding: 0.85rem 1.25rem;
+  background: var(--bg-deep);
+  border: 1px solid var(--border-subtle);
+  border-radius: 4px;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  outline: none;
+  transition: border-color var(--duration-standard) var(--ease-out-expo);
+}
+
+.newsletter-input:focus {
+  border-color: var(--accent-ochre);
+}
+
+/* 6. Hero Compact — pages with minimal hero content (e.g. Contact) */
 .hero-compact {
   min-height: 45dvh !important;
   padding: var(--space-xl) 0 var(--space-md) !important;

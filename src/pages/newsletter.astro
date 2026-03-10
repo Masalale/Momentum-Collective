@@ -12,7 +12,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <div class="container">
       <div class="hero-content">
         <p class="hero-eyebrow">Stay Connected</p>
-        <h1 class="hero-title" data-split>The Momentum Dispatch</h1>
+        <h1 class="hero-title">The Momentum Dispatch</h1>
         <p class="hero-subtext">
           Product launches, developer milestones, market wins, and insights from
           inside Africa's execution-first product lab. Delivered when it matters.
@@ -33,31 +33,17 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           No noise. Just meaningful updates on what we're building, who we're
           deploying, and where the ecosystem is heading.
         </p>
-        <!-- Subscription form — to be wired up later -->
         <form
+          id="newsletter-form"
           class="newsletter-form"
           style="display: flex; gap: var(--space-sm); flex-wrap: wrap; justify-content: center;"
-          onsubmit="return false;"
         >
           <input
             type="email"
+            id="newsletter-email"
+            class="newsletter-input"
             placeholder="your@email.com"
             required
-            style="
-              flex: 1;
-              min-width: 220px;
-              padding: 0.85rem 1.25rem;
-              background: var(--bg-deep);
-              border: 1px solid var(--border-subtle);
-              border-radius: 4px;
-              color: var(--text-primary);
-              font-family: var(--font-body);
-              font-size: var(--text-base);
-              outline: none;
-              transition: border-color var(--duration-standard) var(--ease-out-expo);
-            "
-            onfocus="this.style.borderColor='var(--accent-ochre)'"
-            onblur="this.style.borderColor='var(--border-subtle)'"
           />
           <button type="submit" class="btn btn-primary btn-lg">
             <span>Subscribe</span>
@@ -65,10 +51,25 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           </button>
         </form>
         <p
+          id="newsletter-status"
+          style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--accent-ochre); text-transform: uppercase; letter-spacing: 0.1em; margin-top: var(--space-sm); display: none;"
+        ></p>
+        <p
           style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-top: var(--space-sm);"
         >
           No spam. Unsubscribe any time.
         </p>
+
+        <script>
+          const form = document.getElementById('newsletter-form') as HTMLFormElement;
+          const status = document.getElementById('newsletter-status') as HTMLElement;
+
+          form?.addEventListener('submit', (e) => {
+            e.preventDefault();
+            status.textContent = 'Coming soon — we\'re setting up the dispatch.';
+            status.style.display = 'block';
+          });
+        </script>
       </div>
     </div>
   </section>

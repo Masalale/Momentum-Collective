@@ -1,7 +1,9 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
-export default defineConfig({});
-
-// updated Fri Mar  6 18:39:10 EAT 2026
+export default defineConfig({
+  site: 'https://momentumcoll.netlify.app',
+  integrations: [sitemap()],
+});

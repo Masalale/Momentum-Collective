@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
+gsap.ticker.lagSmoothing(0);
 
 // ---------------------------------------------------------------------------
 // Lenis smooth scroll, single persistent instance
@@ -17,11 +18,6 @@ const lenis = new Lenis({
   wheelMultiplier: 1,
   touchMultiplier: 1,
 });
-
-// Expose to window for debugging and cross-script access
-if (typeof window !== 'undefined') {
-  (window as any).lenis = lenis;
-}
 
 // Sync with GSAP ticker
 gsap.ticker.add((time: number) => {

@@ -40,6 +40,9 @@ Thumbs.db
 *.bak
 old-html-backup/
 
+# Internal docs
+concept.md
+
 # Claude Code
 .claude/
 

@@ -1440,9 +1440,9 @@ h5 {
 
 .ecosystem-image {
   width: 100%;
-  max-width: 280px;
+  max-width: 260px;
   height: auto;
-  max-height: 220px;
+  max-height: 210px;
   object-fit: contain;
   display: block;
   margin: 0 auto;
@@ -1461,7 +1461,7 @@ h5 {
   font-size: var(--text-2xl);
   font-weight: 400;
   color: var(--text-primary);
-  margin-bottom: 0;
+  margin-bottom: var(--space-xs);
 }
 
 .ecosystem-features {

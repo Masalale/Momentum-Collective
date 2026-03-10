@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://momentumcoll.netlify.app/sitemap-index.xml
