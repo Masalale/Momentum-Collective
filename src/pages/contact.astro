@@ -150,7 +150,24 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </div>
   </section>
 
-  <div style="position: relative; width: 100%; height: 4px; margin-top: var(--space-xl);">
+  <section class="section cta-section">
     <div class="kente-decoration"></div>
-  </div>
+    <div class="container">
+      <div class="cta-content">
+        <h2 class="display-3xl mb-xs">Start a Conversation</h2>
+        <p class="text-muted mb-md" style="font-size: var(--text-base);">
+          Whether you have a product idea, want to partner, or just want to say hello — we're ready.
+        </p>
+        <div class="cta-buttons">
+          <a href="mailto:management@eyev.africa" class="btn btn-primary btn-lg">
+            <span>Email Us</span>
+            <i data-lucide="arrow-right"></i>
+          </a>
+          <a href="/services" class="btn btn-outline btn-lg">
+            <span>Our Services</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 </BaseLayout>

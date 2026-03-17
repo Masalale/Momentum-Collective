@@ -10,10 +10,11 @@
   margin-top: var(--space-lg);
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .pillars-grid {
     grid-template-columns: repeat(2, 1fr);
-    align-items: flex-start;
+    gap: var(--space-lg);
+    align-items: stretch;
   }
 }
 
@@ -126,7 +127,7 @@
 
 /* Centre a solo orphan in the last row of the 2-col mobile grid */
 @media (max-width: 1023px) {
-  .card-grid-editorial > .card-editorial:last-child:nth-child(odd) {
+  .card-grid-editorial>.card-editorial:last-child:nth-child(odd) {
     grid-column: 1 / -1;
     max-width: 50%;
     margin-left: auto;
@@ -144,7 +145,7 @@
   }
 
   /* Centre a lone orphan in a 3-column desktop grid */
-  .card-grid-editorial.cols-3 > .card-editorial:last-child:nth-child(3n+1) {
+  .card-grid-editorial.cols-3>.card-editorial:last-child:nth-child(3n+1) {
     grid-column: 2;
   }
 }
@@ -409,11 +410,13 @@
 }
 
 .system-card .card-editorial-tagline {
-  color: var(--text-muted); /* More subdued than the ochre used elsewhere */
+  color: var(--text-muted);
+  /* More subdued than the ochre used elsewhere */
 }
 
 .system-card .card-editorial-title {
-  font-family: var(--font-body); /* Switch from Playfair to Plex for a more "system/tech" feel */
+  font-family: var(--font-body);
+  /* Switch from Playfair to Plex for a more "system/tech" feel */
   font-weight: 500;
   font-size: var(--text-lg);
   letter-spacing: -0.01em;
@@ -444,18 +447,7 @@
   }
 }
 
-.partner-row-number {
-  position: absolute;
-  top: -2rem;
-  right: 0;
-  font-family: var(--font-display);
-  font-size: clamp(8rem, 15vw, 16rem);
-  font-weight: 300;
-  color: var(--bg-alt);
-  line-height: 0.8;
-  z-index: -1;
-  user-select: none;
-}
+
 
 .partner-row-brand {
   display: flex;
@@ -472,13 +464,20 @@
   justify-content: center;
   border-radius: 4px;
   overflow: hidden;
+  padding: var(--space-sm);
+}
+
+@media (min-width: 768px) {
+  .partner-logo-box {
+    width: 160px;
+    height: 160px;
+  }
 }
 
 .partner-logo-box img {
-  width: 80%;
-  height: 80%;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
-  mix-blend-mode: multiply;
 }
 
 .partner-type {
@@ -492,7 +491,7 @@
 .partner-row-content {
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
+  gap: var(--space-md);
 }
 
 .partner-row-title {
@@ -503,7 +502,8 @@
 }
 
 .partner-row-description {
-  font-size: var(--text-lg);
+  font-size: var(--text-base);
+  line-height: 1.8;
   color: var(--text-muted);
   max-width: 600px;
 }
@@ -581,7 +581,8 @@
 }
 
 .article-action {
-  display: none; /* Hide on mobile to save space */
+  display: none;
+  /* Hide on mobile to save space */
 }
 
 @media (min-width: 768px) {
@@ -594,7 +595,7 @@
     transform: translateX(-10px);
     transition: all var(--duration-standard) var(--ease-out-expo);
   }
-  
+
   .article-row:hover .article-action {
     opacity: 1;
     transform: translateX(0);
@@ -624,7 +625,7 @@
     gap: var(--space-xl);
     align-items: flex-start;
   }
-  
+
   /* Alternate sides for rhythm */
   .service-block:nth-child(even) .service-block-content {
     order: -1;
@@ -691,4 +692,267 @@
 .service-block-content li i {
   color: var(--accent-ochre);
   margin-top: 4px;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   8. Barba.js Transition Fixes — Prevent Style Conflicts on Refresh
+   ───────────────────────────────────────────────────────────────────── */
+
+/* CRITICAL FIX: Override Barba.js animation side effects
+   The issue is that Barba.js page transitions temporarily apply inline styles
+   or trigger reflows that cause cards to lose their backgrounds/borders.
+   We need surgical, high-specificity rules that win over any dynamic changes. */
+
+/* Force all cards to maintain stable base appearance */
+[data-barba="container"] .card-editorial,
+[data-barba="container"] .feature-card,
+[data-barba-namespace] .card-editorial,
+[data-barba-namespace] .feature-card {
+  will-change: auto;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+/* Programme cards: WHITE background (inside gray section) */
+#core-programs .card-editorial,
+.section-alt .card-editorial--programme,
+.card-grid-editorial .card-editorial--programme {
+  background: var(--bg-deep);
+  border: 1px solid var(--border-subtle);
+}
+
+/* About page pillar cards: WHITE background */
+.pillars-grid .feature-card {
+  background: var(--bg-deep);
+  border: 1px solid var(--border-subtle);
+}
+
+/* Programme list checkmark styling */
+.programme-list {
+  list-style: none;
+  margin: var(--space-sm) 0;
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--space-xs) / 2);
+  flex: 1;
+}
+
+.programme-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: calc(var(--space-xs) / 2);
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.programme-list li i[data-lucide],
+.programme-list li svg {
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+  color: var(--accent-ochre);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Programme CTA links */
+.programme-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-top: auto;
+  padding-top: var(--space-sm);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-ochre);
+  text-decoration: none;
+  transition: gap 0.2s ease;
+}
+
+.programme-cta:hover {
+  gap: var(--space-sm);
+}
+
+.programme-cta i[data-lucide],
+.programme-cta svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Newsletter LinkedIn button container */
+.newsletter-linkedin-cta {
+  margin-top: var(--space-xl);
+  display: flex;
+  justify-content: center;
+}
+
+.newsletter-linkedin-cta .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   9. Service Page Intent Cards — Clean Minimal Design
+   ───────────────────────────────────────────────────────────────────── */
+
+/* Intent grid layout */
+.intent-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-sm);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .intent-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 100%;
+    gap: var(--space-md);
+  }
+}
+
+@media (min-width: 1024px) {
+  .intent-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Intent card - clean, minimal design */
+.intent-card {
+  background: var(--bg-deep);
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  padding: var(--space-lg) var(--space-md);
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-xs);
+  text-decoration: none;
+  color: inherit;
+}
+
+.intent-card:hover {
+  border-color: var(--accent-ochre);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.intent-card.active {
+  border-color: var(--accent-ochre);
+  background: rgba(13, 148, 136, 0.02);
+}
+
+/* Intent icon - circular with subtle background */
+.intent-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(13, 148, 136, 0.08);
+  border-radius: 50%;
+  color: var(--accent-ochre);
+  margin-bottom: var(--space-xs);
+}
+
+.intent-icon svg,
+.intent-icon i {
+  width: 20px;
+  height: 20px;
+}
+
+/* Intent label - primary text */
+.intent-label {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+/* Intent hint - secondary text */
+.intent-hint {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+}
+
+/* Sticky bar refinements */
+.intent-sticky {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: var(--bg-deep);
+  border-top: 1px solid var(--border-subtle);
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(100%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: var(--space-sm) 0;
+}
+
+.intent-sticky.visible {
+  transform: translateY(0);
+}
+
+.intent-sticky .btn {
+  white-space: nowrap;
+}
+
+.intent-sticky-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.intent-sticky-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  flex: 1;
+}
+
+.intent-sticky-close {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s;
+}
+
+.intent-sticky-close:hover {
+  color: var(--text-primary);
+}
+
+/* intent-card--link: anchor used as an intent card */
+.intent-card--link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Newsletter LinkedIn CTA icon sizing */
+.newsletter-linkedin-cta svg,
+.newsletter-linkedin-cta i[data-lucide] {
+  width: 18px;
+  height: 18px;
 }

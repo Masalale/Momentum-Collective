@@ -59,6 +59,31 @@ import {
   ScanLine,
   HardHat,
   Bot,
+  MapPinPlus,
+  Pill,
+  Baby,
+  Stethoscope,
+  Fingerprint,
+  MessageCircle,
+  BrainCircuit,
+  TabletSmartphone,
+  BadgeCheck,
+  Droplets,
+  Ambulance,
+  CloudRain,
+  HeartHandshake,
+  Siren,
+  Bell,
+  Satellite,
+  ShieldAlert,
+  AlertCircle,
+  Calendar,
+  Timer,
+  Sprout,
+  CheckCircle2,
+  Handshake,
+  ArrowUpRight,
+  ExternalLink,
 } from 'lucide';
 
 const ALL_ICONS = {
@@ -113,6 +138,31 @@ const ALL_ICONS = {
   ScanLine,
   HardHat,
   Bot,
+  MapPinPlus,
+  Pill,
+  Baby,
+  Stethoscope,
+  Fingerprint,
+  MessageCircle,
+  BrainCircuit,
+  TabletSmartphone,
+  BadgeCheck,
+  Droplets,
+  Ambulance,
+  CloudRain,
+  HeartHandshake,
+  Siren,
+  Bell,
+  Satellite,
+  ShieldAlert,
+  AlertCircle,
+  Calendar,
+  Timer,
+  Sprout,
+  CheckCircle2,
+  Handshake,
+  ArrowUpRight,
+  ExternalLink,
 };
 
 function getOverlay(): HTMLElement {
@@ -161,6 +211,69 @@ function initPage(container: HTMLElement): void {
   if (container.querySelector('.marquee-track')) {
     import('./marquee').then(({ initMarquee }) => {
       initMarquee();
+    });
+  }
+
+  // Update relative timestamps on every page transition
+  container.querySelectorAll<HTMLElement>('time[data-reltime]').forEach((el) => {
+    const iso = el.getAttribute('datetime');
+    if (!iso) return;
+    const rtf = new Intl.RelativeTimeFormat('en', { numeric: 'auto' });
+    const diff = new Date(iso).getTime() - Date.now();
+    const abs = Math.abs(diff);
+    const sign = diff < 0 ? -1 : 1;
+    let label: string;
+    if (abs < 60_000)           label = 'just now';
+    else if (abs < 3_600_000)   label = rtf.format(sign * Math.round(abs / 60_000), 'minute');
+    else if (abs < 86_400_000)  label = rtf.format(sign * Math.round(abs / 3_600_000), 'hour');
+    else if (abs < 604_800_000) label = rtf.format(sign * Math.round(abs / 86_400_000), 'day');
+    else if (abs < 2_592_000_000) label = rtf.format(sign * Math.round(abs / 604_800_000), 'week');
+    else if (abs < 31_536_000_000) label = rtf.format(sign * Math.round(abs / 2_592_000_000), 'month');
+    else                        label = rtf.format(sign * Math.round(abs / 31_536_000_000), 'year');
+    el.textContent = label;
+  });
+
+  // Re-bind intent card handlers on every page transition
+  const intentCards = container.querySelectorAll<HTMLElement>('.intent-card');
+  if (intentCards.length > 0) {
+    const stickyBar = container.querySelector<HTMLElement>('#intent-sticky');
+    const stickyLabel = container.querySelector<HTMLElement>('#intent-sticky-label');
+    const stickyCta = container.querySelector<HTMLAnchorElement>('#intent-sticky-cta');
+    const stickyCtaText = container.querySelector<HTMLElement>('#intent-sticky-cta-text');
+    const stickyClose = container.querySelector<HTMLElement>('#intent-sticky-close');
+
+    const intentMessages: Record<string, { label: string; cta: string }> = {
+      developer: { label: 'Ready to join a cohort?', cta: 'Apply now' },
+      train: { label: 'Ready to train your team?', cta: 'Enquire about cohorts' },
+      hackathon: { label: 'Interested in joining a hackathon?', cta: 'Register your interest' },
+      partner: { label: 'Ready to partner with us?', cta: 'Start a conversation' },
+    };
+
+    intentCards.forEach((card) => {
+      card.addEventListener('click', () => {
+        intentCards.forEach((c) => c.classList.remove('active'));
+        card.classList.add('active');
+
+        const intent = card.dataset.intent ?? '';
+        const subject = encodeURIComponent(card.dataset.subject ?? 'Enquiry');
+        const body = encodeURIComponent(card.dataset.body ?? '');
+        const msg = intentMessages[intent];
+
+
+        if (stickyLabel && msg) stickyLabel.textContent = msg.label;
+        if (stickyCtaText && msg) stickyCtaText.textContent = msg.cta;
+        if (stickyCta) {
+          stickyCta.href = `mailto:management@eyev.africa?subject=${subject}&body=${body}`;
+        }
+        stickyBar?.classList.add('visible');
+        stickyBar?.removeAttribute('aria-hidden');
+      });
+    });
+
+    stickyClose?.addEventListener('click', () => {
+      stickyBar?.classList.remove('visible');
+      stickyBar?.setAttribute('aria-hidden', 'true');
+      intentCards.forEach((c) => c.classList.remove('active'));
     });
   }
 }

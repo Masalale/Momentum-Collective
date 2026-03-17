@@ -3,7 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout
-  title="About | Momentum Collective"
+  title="About"
   description="Momentum Labs CLG, Africa's execution-first product lab. We bridge the gap between technical training and commercial execution through 6-8 week intensive cohorts."
   barbaNamespace="about"
 >
@@ -138,52 +138,135 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <h2 class="section-title">Two Interconnected Pillars</h2>
       </div>
 
-      <div class="features-grid" style="align-items: stretch;">
+      <div class="features-grid pillars-grid" style="align-items: stretch;">
         <!-- Momentum Labs Pillar -->
-        <a href="/apps" class="feature-card" data-reveal style="text-decoration: none; color: inherit; display: flex; flex-direction: column; padding: 0; overflow: hidden;">
-          <div style="width: 100%; aspect-ratio: 1; background: var(--bg-alt); display: flex; align-items: center; justify-content: center; padding: var(--space-lg); border-bottom: 1px solid var(--border-subtle);">
-            <img src="/assets/momentum-labs.png" alt="Momentum Labs" style="max-width: 80%; max-height: 80%; object-fit: contain; filter: drop-shadow(0 8px 24px rgba(0,0,0,0.12));" loading="lazy" />
+        <a
+          href="/apps"
+          class="feature-card"
+          data-reveal
+          style="text-decoration: none; color: inherit; display: flex; flex-direction: column; padding: 0; overflow: hidden;"
+        >
+          <div
+            style="width: 100%; aspect-ratio: 4/3; background: var(--bg-alt); display: flex; align-items: center; justify-content: center; padding: var(--space-lg); border-bottom: 1px solid var(--border-subtle);"
+          >
+            <img
+              src="/assets/momentum-labs.png"
+              alt="Momentum Labs"
+              style="max-width: 80%; max-height: 80%; object-fit: contain; filter: drop-shadow(0 8px 24px rgba(0,0,0,0.12));"
+              loading="lazy"
+            />
           </div>
-          <div style="padding: var(--space-md); display: flex; flex-direction: column; flex-grow: 1;">
-            <span style="font-family: var(--font-mono); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent-ochre); margin-bottom: var(--space-xs);">Build. Ship. Sell. Scale.</span>
-            <h3 class="feature-title" style="margin-bottom: var(--space-sm);">Momentum Labs</h3>
-            <p class="feature-text" style="font-size: var(--text-base); margin-bottom: var(--space-md); flex-grow: 1;">
-              The innovation and execution arm of the Collective. This is where cohorts are run, live products are built, and developers are forged into commercial software engineers. 23+ active systems, all sold externally.
+          <div
+            style="padding: var(--space-lg); display: flex; flex-direction: column; flex-grow: 1;"
+          >
+            <span
+              style="font-family: var(--font-mono); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent-ochre); margin-bottom: var(--space-xs);"
+              >Build. Ship. Sell. Scale.</span
+            >
+            <h3 class="feature-title" style="margin-bottom: var(--space-sm);">
+              Momentum Labs
+            </h3>
+            <p
+              class="feature-text"
+              style="font-size: var(--text-base); margin-bottom: var(--space-md); flex-grow: 1;"
+            >
+              The innovation and execution arm of the Collective. This is where
+              cohorts are run, live products are built, and developers are
+              forged into commercial software engineers. 42+ active systems, all
+              sold externally.
             </p>
-            <div style="display: flex; gap: var(--space-sm); flex-wrap: wrap; margin-top: auto; border-top: 1px solid var(--border-subtle); padding-top: var(--space-sm);">
-              <div style="display: flex; align-items: center; gap: var(--space-xs); font-family: var(--font-mono); font-size: var(--text-xs); text-transform: uppercase; border: 1px solid var(--border-subtle); padding: 4px 8px; border-radius: 4px;">
-                <i data-lucide="smartphone" style="color: var(--accent-ochre); width: 14px; height: 14px;"></i><span>Mobile</span>
+            <div
+              style="display: flex; gap: var(--space-sm); flex-wrap: wrap; margin-top: auto; border-top: 1px solid var(--border-subtle); padding-top: var(--space-sm);"
+            >
+              <div
+                style="display: flex; align-items: center; gap: var(--space-xs); font-family: var(--font-mono); font-size: var(--text-xs); text-transform: uppercase; border: 1px solid var(--border-subtle); padding: 4px 8px; border-radius: 4px;"
+              >
+                <i
+                  data-lucide="smartphone"
+                  style="color: var(--accent-ochre); width: 14px; height: 14px;"
+                ></i><span>Mobile</span>
               </div>
-              <div style="display: flex; align-items: center; gap: var(--space-xs); font-family: var(--font-mono); font-size: var(--text-xs); text-transform: uppercase; border: 1px solid var(--border-subtle); padding: 4px 8px; border-radius: 4px;">
-                <i data-lucide="cloud" style="color: var(--accent-ochre); width: 14px; height: 14px;"></i><span>SaaS</span>
+              <div
+                style="display: flex; align-items: center; gap: var(--space-xs); font-family: var(--font-mono); font-size: var(--text-xs); text-transform: uppercase; border: 1px solid var(--border-subtle); padding: 4px 8px; border-radius: 4px;"
+              >
+                <i
+                  data-lucide="cloud"
+                  style="color: var(--accent-ochre); width: 14px; height: 14px;"
+                ></i><span>SaaS</span>
               </div>
-              <div style="display: flex; align-items: center; gap: var(--space-xs); font-family: var(--font-mono); font-size: var(--text-xs); text-transform: uppercase; border: 1px solid var(--border-subtle); padding: 4px 8px; border-radius: 4px;">
-                <i data-lucide="zap" style="color: var(--accent-ochre); width: 14px; height: 14px;"></i><span>AI</span>
+              <div
+                style="display: flex; align-items: center; gap: var(--space-xs); font-family: var(--font-mono); font-size: var(--text-xs); text-transform: uppercase; border: 1px solid var(--border-subtle); padding: 4px 8px; border-radius: 4px;"
+              >
+                <i
+                  data-lucide="zap"
+                  style="color: var(--accent-ochre); width: 14px; height: 14px;"
+                ></i><span>AI</span>
               </div>
             </div>
           </div>
         </a>
 
         <!-- Momentum Foundation Pillar -->
-        <article class="feature-card" data-reveal style="display: flex; flex-direction: column; padding: 0; overflow: hidden;">
-          <div style="width: 100%; aspect-ratio: 1; background: var(--bg-alt); display: flex; align-items: center; justify-content: center; padding: var(--space-lg); border-bottom: 1px solid var(--border-subtle);">
-            <img src="/assets/momentum-foundation.png" alt="Momentum Foundation" style="max-width: 80%; max-height: 80%; object-fit: contain; filter: drop-shadow(0 8px 24px rgba(0,0,0,0.12));" loading="lazy" />
+        <article
+          class="feature-card"
+          data-reveal
+          style="display: flex; flex-direction: column; padding: 0; overflow: hidden;"
+        >
+          <div
+            style="width: 100%; aspect-ratio: 4/3; background: var(--bg-alt); display: flex; align-items: center; justify-content: center; padding: var(--space-lg); border-bottom: 1px solid var(--border-subtle);"
+          >
+            <img
+              src="/assets/momentum-foundation.png"
+              alt="Momentum Foundation"
+              style="max-width: 80%; max-height: 80%; object-fit: contain; filter: drop-shadow(0 8px 24px rgba(0,0,0,0.12));"
+              loading="lazy"
+            />
           </div>
-          <div style="padding: var(--space-md); display: flex; flex-direction: column; flex-grow: 1;">
-            <span style="font-family: var(--font-mono); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent-ochre); margin-bottom: var(--space-xs);">Investments for Ventured Youths.</span>
-            <h3 class="feature-title" style="margin-bottom: var(--space-sm);">Momentum Foundation</h3>
-            <p class="feature-text" style="font-size: var(--text-base); margin-bottom: var(--space-md); flex-grow: 1;">
-              The funding and empowerment pillar of our ecosystem. The Foundation is dedicated to providing grants, scholarships, and resources to young African talent, ensuring financial barriers don't stand in the way of innovation.
+          <div
+            style="padding: var(--space-lg); display: flex; flex-direction: column; flex-grow: 1;"
+          >
+            <span
+              style="font-family: var(--font-mono); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent-ochre); margin-bottom: var(--space-xs);"
+              >Investments for Ventured Youths.</span
+            >
+            <h3 class="feature-title" style="margin-bottom: var(--space-sm);">
+              Momentum Foundation
+            </h3>
+            <p
+              class="feature-text"
+              style="font-size: var(--text-base); margin-bottom: var(--space-md); flex-grow: 1;"
+            >
+              The funding and empowerment pillar of our ecosystem. The
+              Foundation is dedicated to providing grants, scholarships, and
+              resources to young African talent, ensuring financial barriers
+              don't stand in the way of innovation.
             </p>
-            <div style="display: flex; gap: var(--space-sm); flex-wrap: wrap; margin-top: auto; border-top: 1px solid var(--border-subtle); padding-top: var(--space-sm);">
-              <div style="display: flex; align-items: center; gap: var(--space-xs); font-family: var(--font-mono); font-size: var(--text-xs); text-transform: uppercase; border: 1px solid var(--border-subtle); padding: 4px 8px; border-radius: 4px;">
-                <i data-lucide="graduation-cap" style="color: var(--accent-ochre); width: 14px; height: 14px;"></i><span>Scholarships</span>
+            <div
+              style="display: flex; gap: var(--space-sm); flex-wrap: wrap; margin-top: auto; border-top: 1px solid var(--border-subtle); padding-top: var(--space-sm);"
+            >
+              <div
+                style="display: flex; align-items: center; gap: var(--space-xs); font-family: var(--font-mono); font-size: var(--text-xs); text-transform: uppercase; border: 1px solid var(--border-subtle); padding: 4px 8px; border-radius: 4px;"
+              >
+                <i
+                  data-lucide="graduation-cap"
+                  style="color: var(--accent-ochre); width: 14px; height: 14px;"
+                ></i><span>Scholarships</span>
               </div>
-              <div style="display: flex; align-items: center; gap: var(--space-xs); font-family: var(--font-mono); font-size: var(--text-xs); text-transform: uppercase; border: 1px solid var(--border-subtle); padding: 4px 8px; border-radius: 4px;">
-                <i data-lucide="heart" style="color: var(--accent-ochre); width: 14px; height: 14px;"></i><span>Grants</span>
+              <div
+                style="display: flex; align-items: center; gap: var(--space-xs); font-family: var(--font-mono); font-size: var(--text-xs); text-transform: uppercase; border: 1px solid var(--border-subtle); padding: 4px 8px; border-radius: 4px;"
+              >
+                <i
+                  data-lucide="heart"
+                  style="color: var(--accent-ochre); width: 14px; height: 14px;"
+                ></i><span>Grants</span>
               </div>
-              <div style="display: flex; align-items: center; gap: var(--space-xs); font-family: var(--font-mono); font-size: var(--text-xs); text-transform: uppercase; border: 1px solid var(--border-subtle); padding: 4px 8px; border-radius: 4px;">
-                <i data-lucide="users" style="color: var(--accent-ochre); width: 14px; height: 14px;"></i><span>Mentorship</span>
+              <div
+                style="display: flex; align-items: center; gap: var(--space-xs); font-family: var(--font-mono); font-size: var(--text-xs); text-transform: uppercase; border: 1px solid var(--border-subtle); padding: 4px 8px; border-radius: 4px;"
+              >
+                <i
+                  data-lucide="users"
+                  style="color: var(--accent-ochre); width: 14px; height: 14px;"
+                ></i><span>Mentorship</span>
               </div>
             </div>
           </div>
@@ -193,7 +276,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   </section>
 
   <!-- 5. TALENT PIPELINE -->
-  <section class="section section-alt">
+  <section class="section">
     <div class="container">
       <div class="section-header">
         <p class="eyebrow">Talent Pipeline</p>
@@ -255,12 +338,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </p>
         <div class="cta-buttons">
           <a href="/contact" class="btn btn-primary btn-lg">
-            <i data-lucide="arrow-right"></i>
             <span>Join the Cohort</span>
+            <i data-lucide="arrow-right"></i>
           </a>
           <a href="/apps" class="btn btn-outline btn-lg">
-            <i data-lucide="eye"></i>
             <span>See Our Products</span>
+            <i data-lucide="eye"></i>
           </a>
         </div>
       </div>

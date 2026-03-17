@@ -7,50 +7,61 @@ const partners = [
     sector: "Education & Research",
     icon: "graduation-cap",
     type: "Education Partner",
-    image: "/assets/vfri_logo.jpeg",
+    image: "/assets/victoria-falls-regional-institute.jpg",
     quote: "Committed to academic excellence and community development.",
     description:
-      "Victoria Falls Regional Institute is a higher education and research institution dedicated to advancing knowledge and shaping the next generation of professionals in the region. VFRI's programmes span across disciplines, combining academic rigour with practical, community-oriented outcomes. Momentum built and maintains VFRI's full digital infrastructure — from the institutional website to learning management systems serving students and faculty.",
-    url: "https://www.linkedin.com/school/victoria-falls-regional-institute/",
+      "VFRI is a higher education and research institution committed to academic excellence and community development. Through Momentum, organisations can commission custom digital platforms for educational and research institutions — from student portals to research repositories, Learning Management Systems (LMS), administrative and enrolment portals, and institutional research databases and websites.",
+    url: "#",
   },
   {
     name: "Panoramic Synergy Enterprises",
     sector: "IT Consulting & GRC",
     icon: "shield-check",
     type: "Technology Partner",
-    image: "/assets/pse_logo.jpeg",
+    image: "/assets/panoramic-synergy.webp",
     quote: "Trusted and Tested IT Solutions & IT GRC.",
     description:
-      "PSE is a world-class IT consulting and professional services company specialising in Information Technology solutions and IT Governance, Risk, and Compliance (GRC). Their expertise spans digital transformation, ERP deployment, cybersecurity frameworks, and AI integration — serving organisations across Africa that demand enterprise-grade technology delivery.",
-    url: "https://www.linkedin.com/company/panoramic-synergy-enterprises/",
+      "PSE is a world-class IT consulting and professional services firm specialising in IT solutions and IT Governance, Risk, and Compliance. Through Momentum, clients access PSE's full range of services — digital transformation, ERP deployment, compliance frameworks, and AI-driven engagements. PSE does not operate a direct-referral programme; all engagements flow through Momentum.",
+    url: "https://panoramicsynergy.com/",
   },
   {
     name: "Hedera",
     sector: "Blockchain & Web3",
     icon: "hexagon",
     type: "Ecosystem & Tech Partner",
-    image: "/assets/hedera_academy_logo.png",
+    image: "/assets/hedera-logo.png",
     quote: "Hello future.",
     description:
-      "Hedera is the world's only public DLT network governed by known, trusted institutions — built for performance, security, and regulatory compliance. With sub-3-second transaction finality, industry-low fees, and an energy-efficient model, Hedera powers the next generation of enterprise blockchain applications. Momentum developers are trained on Hedera's network and build production-grade systems using its Consensus Service, Token Service, and Smart Contract infrastructure.",
-    url: "https://www.linkedin.com/company/hedera/",
+      "Hedera is the world's only public DLT network governed by known institutions — built for fast, secure, and compliant decentralised applications. Through Momentum, clients access Hedera's enterprise network and Academy programme, with developers trained to build production-grade blockchain systems. Hedera does not operate a direct-referral programme; enquire through Momentum.",
+    url: "https://hedera.com/",
   },
   {
     name: "Innovate Maritime Africa",
     sector: "Maritime & Blue Economy",
     icon: "ship",
     type: "Venture & Industry Partner",
-    image: "https://innovatemaritimeafrica.com/wp-content/uploads/2024/12/IMA-Logo-1-66x66.jpg",
+    image: "/assets/innovate-maritime-africa.jpg",
     quote: "The 1st Maritime Venture Studio in Africa.",
     description:
-      "IMA partners with bold maritime founders to transform ambitious ideas into impactful ventures — co-building companies that are shaping the future of Africa's blue economy. From port operations to cargo logistics and ocean sustainability, IMA works at the frontier of maritime innovation on the continent. Momentum engineers the software layer for IMA's portfolio, bringing product execution capability to maritime startups from idea through to market launch.",
-    url: "https://www.linkedin.com/company/innovate-maritime-africa/",
+      "Africa's first maritime venture studio — IMA partners with bold maritime founders to transform ideas into impactful innovations shaping the continent's blue economy. Through Momentum, clients gain access to IMA's venture-building expertise and co-development capabilities for maritime-focused technology. IMA does not operate a direct-referral programme; enquire through Momentum.",
+    url: "https://innovatemaritimeafrica.com/",
+  },
+  {
+    name: "Cloudora",
+    sector: "Cloud & DevOps",
+    icon: "cloud",
+    type: "Technology Partner",
+    image: "/assets/cloudora-logo.png",
+    quote: "Enterprise standards for reliability, uptime, and scalability.",
+    description:
+      "Cloudora ensures every system deployed through Momentum meets enterprise standards for reliability, uptime, and scalability. Through Momentum, clients access Cloudora's full-stack cloud engineering expertise — from architecture design to automated deployment pipelines, container orchestration and microservices, high-availability architecture and disaster recovery, and cloud cost optimisation and monitoring. Cloudora does not operate a direct-referral programme; enquire through Momentum.",
+    url: "#",
   },
 ];
 ---
 
 <BaseLayout
-  title="Partners | Momentum Collective"
+  title="Partners"
   description="The organisations, investors, and institutions that deploy, support, and grow alongside Momentum Collective across African markets."
   barbaNamespace="partners"
 >
@@ -61,8 +72,8 @@ const partners = [
         <p class="hero-eyebrow">Our Ecosystem</p>
         <h1 class="hero-title">Partners & Collaborators</h1>
         <p class="hero-subtext">
-          The organisations, investors, and institutions that deploy our systems,
-          fund our talent, and grow alongside the Momentum ecosystem.
+          The organisations, investors, and institutions that deploy our
+          systems, fund our talent, and grow alongside the Momentum ecosystem.
         </p>
       </div>
     </div>
@@ -77,37 +88,35 @@ const partners = [
       </div>
 
       <div class="partner-stagger">
-      {partners.map((partner, index) => (
-        <div class="partner-row" data-reveal>
-          <div class="partner-row-number">{(index + 1).toString().padStart(2, '0')}</div>
-          
-          <div class="partner-row-brand">
-            <div class="partner-logo-box">
-              {partner.image ? (
-                <img src={partner.image} alt={`${partner.name} logo`} />
-              ) : (
-                <i data-lucide={partner.icon} style="width: 48px; height: 48px; color: var(--accent-ochre);"></i>
-              )}
+        {
+          partners.map((partner, index) => (
+            <div class="partner-row" data-reveal>
+
+
+              <div class="partner-row-brand">
+                <div class="partner-logo-box">
+                  {partner.image ? (
+                    <img src={partner.image} alt={`${partner.name} logo`} />
+                  ) : (
+                    <i
+                      data-lucide={partner.icon}
+                      style="width: 48px; height: 48px; color: var(--accent-ochre);"
+                    />
+                  )}
+                </div>
+                <span class="partner-type">{partner.type}</span>
+              </div>
+
+              <div class="partner-row-content">
+                <h3 class="partner-row-title">{partner.name}</h3>
+                {partner.quote && (
+                  <p class="partner-row-quote">"{partner.quote}"</p>
+                )}
+                <p class="partner-row-description">{partner.description}</p>
+              </div>
             </div>
-            <span class="partner-type">{partner.type}</span>
-          </div>
-          
-          <div class="partner-row-content">
-            <h3 class="partner-row-title">{partner.name}</h3>
-            {partner.quote && (
-              <p class="partner-row-quote">"{partner.quote}"</p>
-            )}
-            <p class="partner-row-description">{partner.description}</p>
-            {partner.url && partner.url !== "#" && (
-              <a href={partner.url} target="_blank" rel="noopener noreferrer" class="partner-row-link">
-                Visit website <i data-lucide="arrow-up-right" style="width:14px;height:14px;display:inline-block;vertical-align:middle;margin-left:4px;"></i>
-              </a>
-            )}
-          </div>
-        </div>
-      ))}
-    </div>
-        </div>
+          ))
+        }
       </div>
     </div>
   </section>
@@ -130,8 +139,8 @@ const partners = [
           </div>
           <h3 class="feature-title">Technology Partners</h3>
           <p class="feature-text">
-            Industry leaders whose platforms and expertise Momentum co-delivers
-            to clients. All client engagements flow through Momentum.
+            Industry leaders whose platforms and expertise Momentum co-delivers to
+            clients. All client engagements flow through Momentum.
           </p>
         </div>
 
@@ -160,8 +169,6 @@ const partners = [
     </div>
   </section>
 
-
-
   <!-- 5. BECOME A PARTNER CTA -->
   <section class="section cta-section">
     <div class="kente-decoration"></div>
@@ -169,8 +176,8 @@ const partners = [
       <div class="cta-content">
         <h2 class="display-3xl mb-xs">Become a Partner</h2>
         <p class="text-muted mb-md" style="font-size: var(--text-base);">
-          Whether you want to deploy our systems, hire our developers, or fund
-          our talent — let's build together.
+          Whether you want to deploy our systems, hire our developers, or fund our
+          talent — let's build together.
         </p>
         <div class="cta-buttons">
           <a href="/contact" class="btn btn-primary btn-lg">
@@ -211,7 +218,9 @@ const partners = [
     text-align: center;
     gap: var(--space-xs);
     background: var(--surface);
-    transition: border-color 0.2s ease, transform 0.2s ease;
+    transition:
+      border-color 0.2s ease,
+      transform 0.2s ease;
   }
 
   .partner-logo-card:hover {
@@ -273,34 +282,5 @@ const partners = [
     color: var(--accent-ochre);
     margin-bottom: var(--space-xs);
     line-height: 1.4;
-  }
-
-  .partner-row-link {
-    display: inline-flex;
-    align-items: center;
-    margin-top: var(--space-xs);
-    font-family: var(--font-mono);
-    font-size: var(--text-xs);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--text-muted);
-    text-decoration: none;
-    transition: color 0.2s ease;
-  }
-
-  .partner-row-link:hover {
-    color: var(--accent-ochre);
-  }
-
-  .partner-logo-box img {
-    max-width: 80px;
-    max-height: 60px;
-    object-fit: contain;
-    filter: grayscale(30%);
-    transition: filter 0.2s ease;
-  }
-
-  .partner-row:hover .partner-logo-box img {
-    filter: grayscale(0%);
   }
 </style>
