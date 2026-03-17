@@ -1,9 +1,57 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+const linkedInPosts = [
+  {
+    title: "Final Day for Hackathon Submissions",
+    date: "4 Days Ago",
+    excerpt:
+      "🚨 Final Day for Hackathon Submissions 🚨 Today marks the final deadline for submissions to the Africa Forward: Humanitarian in Tech Masterclass x Hackathon.",
+    icon: "alert-circle",
+    tag: "Event",
+    url: "https://www.linkedin.com/feed/update/urn:li:activity:7438246421256028161/",
+  },
+  {
+    title: "We're Hiring: Unity Developers & 3D Animators",
+    date: "6 Days Ago",
+    excerpt:
+      "Momentum Labs is building the next generation of African-made digital experiences, and we’re looking for Unity Developers and 3D Animators to join us in building ManoeMano.",
+    icon: "users",
+    tag: "Hiring",
+    url: "https://www.linkedin.com/feed/update/urn:li:activity:7437376845362290688/",
+  },
+  {
+    title: "Thank You to Our Masterclass Speakers",
+    date: "1 Week Ago",
+    excerpt:
+      "A big thank you to the incredible speakers who joined us for the Africa Forward: Humanitarian in Tech Masterclass. Your insights on technology, innovation, and humanitarian impact created a powerful conversation.",
+    icon: "message-square",
+    tag: "Event Recap",
+    url: "https://www.linkedin.com/feed/update/urn:li:activity:7435651086818095104/",
+  },
+  {
+    title: "Africa Forward Masterclass & Hackathon is Live",
+    date: "1 Week Ago",
+    excerpt:
+      "Today is the day. Africa Forward – Humanitarian in Tech Masterclass & Hackathon is happening now.",
+    icon: "rocket",
+    tag: "Event",
+    url: "https://www.linkedin.com/feed/update/urn:li:activity:7435545957838053376/",
+  },
+  {
+    title: "Tomorrow We Convene: Africa Forward",
+    date: "1 Week Ago",
+    excerpt:
+      "Tomorrow, we convene. Africa Forward – Humanitarian in Tech Masterclass & Hackathon (2nd Edition) goes live.",
+    icon: "calendar",
+    tag: "Event Announcement",
+    url: "https://www.linkedin.com/feed/update/urn:li:activity:7435202776504188928/",
+  },
+];
 ---
 
 <BaseLayout
-  title="Newsletter"
+  title="Newsletter | Momentum Collective"
   description="Stay up to date with Momentum Collective. Follow product launches, developer milestones, and innovation from Africa's execution-first product lab."
   barbaNamespace="newsletter"
 >
@@ -119,30 +167,46 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </div>
   </section>
 
-  <!-- 4. PAST ISSUES — placeholder, add issues here -->
+  <!-- 4. LINKEDIN UPDATES -->
   <section class="section">
     <div class="container">
-      <div class="section-header">
-        <p class="eyebrow">Archive</p>
-        <h2 class="section-title">Past Issues</h2>
+      <!-- 3. LATEST UPDATES (LinkedIn Feed) -->
+      <div id="updates" class="section-header" style="margin-top: var(--space-xl);">
+        <p class="eyebrow">The Network</p>
+        <h2 class="section-title">Latest Updates</h2>
         <p class="section-description">
-          Browse previous dispatches from the lab.
+          Dispatches, milestones, and partner announcements from the Momentum ecosystem.
         </p>
       </div>
 
-      <!-- Issues will be added here -->
-      <div
-        style="
-          border: 1px dashed var(--border-subtle);
-          border-radius: 4px;
-          padding: var(--space-xl) var(--space-md);
-          text-align: center;
-          color: var(--text-muted);
-        "
-      >
-        <p style="font-family: var(--font-mono); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em;">
-          Issues coming soon
-        </p>
+      <div class="publication-container">
+        {
+          linkedInPosts.map((post) => (
+            <a href={post.url} target="_blank" rel="noopener noreferrer" class="article-row" data-reveal>
+              <div class="article-meta">
+                <span class="article-date">{post.date}</span>
+                <span class="article-tag">{post.tag}</span>
+              </div>
+              
+              <div class="article-main">
+                <h3 class="article-title">{post.title}</h3>
+                <p class="article-excerpt">{post.excerpt}</p>
+              </div>
+              
+              <div class="article-action">
+                <span style="font-family: var(--font-mono); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em; margin-right: 8px;">Read</span>
+                <i data-lucide="arrow-up-right" style="width: 20px; height: 20px;"></i>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+
+      <div class="newsletter-linkedin-cta" data-reveal>
+        <a href="https://www.linkedin.com/company/momentumlabsclg/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+          Follow Us on LinkedIn
+          <i data-lucide="external-link"></i>
+        </a>
       </div>
     </div>
   </section>
@@ -170,3 +234,59 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  .newsletter-post-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-bottom: calc(var(--space-xs) / 2);
+    flex-wrap: wrap;
+  }
+
+  .newsletter-post-tag {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--accent-ochre);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border: 1px solid var(--accent-ochre);
+    padding: 2px 6px;
+    border-radius: 2px;
+  }
+
+  .newsletter-post-date {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .newsletter-linkedin-cta {
+    margin-top: var(--space-xl);
+    display: flex;
+    justify-content: center;
+  }
+
+  .newsletter-linkedin-cta .btn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+  }
+
+  .newsletter-linkedin-cta svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .card-editorial-link-card {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-editorial-link-card:hover {
+    border-color: var(--accent-ochre);
+  }
+</style>

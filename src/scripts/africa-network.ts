@@ -135,12 +135,12 @@ export function initAfricaNetwork(): void {
   });
   const stop1 = createSVGElement('stop', {
     offset: '0%',
-    'stop-color': '#D4920A',
+    'stop-color': '#0D9488',
     'stop-opacity': '0.3',
   });
   const stop2 = createSVGElement('stop', {
     offset: '100%',
-    'stop-color': '#D4920A',
+    'stop-color': '#0D9488',
     'stop-opacity': '1',
   });
   gradient.appendChild(stop1);
@@ -152,7 +152,7 @@ export function initAfricaNetwork(): void {
     d: AFRICA_OUTLINE,
     class: 'africa-outline',
     fill: 'none',
-    stroke: 'rgba(212, 146, 10, 0.08)',
+    stroke: 'rgba(13, 148, 136, 0.08)',
     'stroke-width': '1.5',
   });
   svg.appendChild(outline);
@@ -208,7 +208,7 @@ export function initAfricaNetwork(): void {
       r: '8',
       class: 'network-node-pulse',
       id: `pulse-${city.id}`,
-      fill: 'rgba(212, 146, 10, 0.3)',
+      fill: 'rgba(13, 148, 136, 0.3)',
     });
     g.appendChild(pulseCircle);
 
@@ -218,7 +218,7 @@ export function initAfricaNetwork(): void {
       r: '4',
       class: 'network-node',
       id: `node-${city.id}`,
-      fill: '#D4920A',
+      fill: '#0D9488',
       opacity: '0',
     });
     g.appendChild(circle);

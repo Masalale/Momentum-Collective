@@ -4,23 +4,24 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 <BaseLayout
   title="Services | Momentum Collective"
-  description="Partner with Momentum Labs CLG, execution-first development, dedicated product teams, 6-8 week intensive cohorts, and AI-forward solutions built for African markets."
+  description="Momentum Labs CLG runs Africa's most intensive developer programmes — cohorts, masterclasses, and hackathons — and provides exclusive access to best-in-class technology partners."
   barbaNamespace="services"
 >
   <!-- 1. PAGE HERO -->
   <section class="hero">
     <div class="container">
       <div class="hero-content">
-        <p class="hero-eyebrow">Why Partner With Momentum</p>
+        <p class="hero-eyebrow">What We Do</p>
         <h1 class="hero-title">Execution Over Theory</h1>
         <p class="hero-subtext">
-          We don't ship GitHub repositories, we ship live products. Our teams
-          build, iterate, and scale real software into African markets through
-          focused 6-8 week cycles.
+          We run Africa's most intensive developer programmes — cohorts,
+          masterclasses, and hackathons. We also give clients exclusive access
+          to best-in-class technology partners who don't operate direct-referral
+          programmes. Every engagement flows through Momentum.
         </p>
         <div class="hero-buttons">
           <a href="/contact" class="btn btn-primary btn-lg">
-            <span>Start a Partnership</span>
+            <span>Start a Conversation</span>
             <i data-lucide="arrow-right"></i>
           </a>
           <a href="/apps" class="btn btn-outline btn-lg">
@@ -31,214 +32,619 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </div>
   </section>
 
-  <!-- 2. OUR EDGE -->
-  <section class="section section-alt">
+  <!-- 2. CORE PROGRAMMES -->
+  <section id="core-programs" class="section section-alt">
     <div class="container">
       <div class="section-header">
-        <p class="eyebrow">Our Edge</p>
-        <h2 class="display-3xl mb-xs">What Sets Us Apart</h2>
-        <p class="text-muted" style="max-width: 600px; margin: 0 auto;">
-          Five principles that define how we build, who we build for, and why
-          our products survive in the market.
+        <p class="eyebrow">Core Programmes</p>
+        <h2 class="section-title">Three Ways We Train Builders</h2>
+        <p class="section-description">
+          High-intensity formats designed for one outcome: developers who ship
+          real software into production.
         </p>
       </div>
 
       <div class="card-grid-editorial cols-3">
-        <div class="card-editorial" data-reveal>
-          <div class="card-editorial-icon">
-            <i data-lucide="rocket"></i>
-          </div>
-          <div class="card-editorial-tagline">Edge 01</div>
-          <h3 class="card-editorial-title">Execution Over Theory</h3>
+
+        <!-- Cohorts -->
+        <div id="cohorts" class="card-editorial card-editorial--programme" data-reveal>
+          <div class="card-editorial-icon"><i data-lucide="users"></i></div>
+          <div class="card-editorial-tagline">Intensive Programme · 6–8 Weeks</div>
+          <h3 class="card-editorial-title">Cohorts</h3>
           <p class="card-editorial-description">
-            We ship live products, not just GitHub repositories. Every developer
-            who passes through Momentum has shipped code to production clients.
+            Our flagship format. Developers join live product teams, ship
+            production software, and emerge as engineers who've proven
+            themselves in real market conditions — not just in theory.
           </p>
+          <ul class="programme-list">
+            <li><i data-lucide="check-circle-2"></i> Join a live product team from day one</li>
+            <li><i data-lucide="check-circle-2"></i> Ship to production within the first 2 weeks</li>
+            <li><i data-lucide="check-circle-2"></i> Mentored by senior engineers throughout</li>
+            <li><i data-lucide="check-circle-2"></i> Graduate with a portfolio of deployed software</li>
+          </ul>
+          <a href="/contact" class="programme-cta">
+            Enquire about cohorts <i data-lucide="arrow-right"></i>
+          </a>
         </div>
 
-        <div class="card-editorial" data-reveal>
-          <div class="card-editorial-icon">
-            <i data-lucide="users"></i>
-          </div>
-          <div class="card-editorial-tagline">Edge 02</div>
-          <h3 class="card-editorial-title">Dedicated Product Teams</h3>
+        <!-- Masterclasses -->
+        <div class="card-editorial card-editorial--programme" data-reveal>
+          <div class="card-editorial-icon"><i data-lucide="book-open"></i></div>
+          <div class="card-editorial-tagline">Specialist Sessions · Focused Depth</div>
+          <h3 class="card-editorial-title">Masterclasses</h3>
           <p class="card-editorial-description">
-            Each software system has committed developers actively maintaining
-            and scaling it. You're not getting a one-time build, you're getting
-            a team.
+            Targeted deep-dives into specific stacks, tools, and disciplines.
+            Delivered by practitioners actively using these technologies in
+            production — not instructors reading from slides.
           </p>
+          <ul class="programme-list">
+            <li><i data-lucide="check-circle-2"></i> Blockchain & Web3 (Hedera)</li>
+            <li><i data-lucide="check-circle-2"></i> AI & Large Language Models</li>
+            <li><i data-lucide="check-circle-2"></i> Cloud, DevOps & Infrastructure</li>
+            <li><i data-lucide="check-circle-2"></i> Full-stack product engineering</li>
+          </ul>
+          <a href="/contact" class="programme-cta">
+            Enquire about masterclasses <i data-lucide="arrow-right"></i>
+          </a>
         </div>
 
-        <div class="card-editorial" data-reveal>
-          <div class="card-editorial-icon">
-            <i data-lucide="zap"></i>
-          </div>
-          <div class="card-editorial-tagline">Edge 03</div>
-          <h3 class="card-editorial-title">Short, Intensive Cycles</h3>
+        <!-- Hackathons -->
+        <div id="hackathons" class="card-editorial card-editorial--programme" data-reveal>
+          <div class="card-editorial-icon"><i data-lucide="timer"></i></div>
+          <div class="card-editorial-tagline">Rapid-Build Events · 48–72 Hours</div>
+          <h3 class="card-editorial-title">Hackathons</h3>
           <p class="card-editorial-description">
-            6-8 weeks of structured, real-world development. No bloated
-            timelines. Momentum operates on discipline and delivery, features
-            ship on schedule.
+            Compressed, high-energy build events where developers tackle real
+            problems and ship working prototypes in days. Used to surface
+            talent, test ideas fast, and generate proof-of-concept systems.
           </p>
+          <ul class="programme-list">
+            <li><i data-lucide="check-circle-2"></i> Organisation-sponsored problem statements</li>
+            <li><i data-lucide="check-circle-2"></i> Cross-functional developer teams</li>
+            <li><i data-lucide="check-circle-2"></i> Working demos at the end — not slide decks</li>
+            <li><i data-lucide="check-circle-2"></i> Best projects fast-tracked into full builds</li>
+          </ul>
+          <a href="/contact" class="programme-cta">
+            Enquire about hackathons <i data-lucide="arrow-right"></i>
+          </a>
         </div>
 
-        <div class="card-editorial" data-reveal>
-          <div class="card-editorial-icon">
-            <i data-lucide="globe"></i>
-          </div>
-          <div class="card-editorial-tagline">Edge 04</div>
-          <h3 class="card-editorial-title">Market-Focused Innovation</h3>
-          <p class="card-editorial-description">
-            Every product addresses real operational inefficiencies in African
-            markets, from healthcare and finance to retail, property, and
-            education.
-          </p>
-        </div>
-
-        <div class="card-editorial" data-reveal>
-          <div class="card-editorial-icon">
-            <i data-lucide="bot"></i>
-          </div>
-          <div class="card-editorial-tagline">Edge 05</div>
-          <h3 class="card-editorial-title">AI-Forward Strategy</h3>
-          <p class="card-editorial-description">
-            We are embedding AI across sectors, finance, healthcare, marketing,
-            HR, and governance. Every product line has an intelligence layer in
-            development.
-          </p>
-        </div>
-
-        <div class="card-editorial" data-reveal>
-          <div class="card-editorial-icon">
-            <i data-lucide="user-plus"></i>
-          </div>
-          <div class="card-editorial-tagline">Edge 06</div>
-          <h3 class="card-editorial-title">Built-In Talent Pipeline</h3>
-          <p class="card-editorial-description">
-            Partner companies gain access to Momentum-trained developers,
-            engineers who have shipped production software, worked in agile
-            teams, and understand commercial systems.
-          </p>
-        </div>
       </div>
     </div>
   </section>
 
-  <!-- 3. REVENUE MODEL -->
-  <section class="section">
+  <!-- 3. BRIDGE — "We also open doors" -->
+  <section class="section bridge-section">
+    <div class="container container-narrow text-center">
+      <p class="bridge-headline">We also open doors.</p>
+      <p class="bridge-body">
+        Our technology partners don't operate affiliate or direct-referral
+        programmes. Every client relationship flows through Momentum — we make
+        the introduction and earn a commission on each engagement. You get
+        access to world-class expertise. They get a vetted client. Everyone wins.
+      </p>
+    </div>
+  </section>
+
+  <!-- 4. PARTNER NETWORK -->
+  <section id="partner-services" class="section section-alt">
     <div class="container">
       <div class="section-header">
-        <p class="eyebrow">How We Go to Market</p>
-        <h2 class="section-title">Our Revenue Model</h2>
+        <p class="eyebrow">Exclusive Access</p>
+        <h2 class="section-title">Technology Partners You Can Only Reach Through Us</h2>
         <p class="section-description">
-          All systems are sold externally to businesses, institutions, and
-          organisations across Africa. Developers contribute directly to
-          monetized products.
+          These partners deliver world-class services across blockchain,
+          IT consulting, energy, maritime, and cloud infrastructure. None of
+          them operate direct-referral or affiliate programmes — Momentum is
+          the only way in.
         </p>
       </div>
 
-      <div class="process-grid">
-        <div class="process-step" data-reveal>
-          <div class="process-icon">
-            <i data-lucide="layers"></i>
+      <div class="service-stagger-container">
+
+        <!-- VFRI -->
+        <div class="service-block" data-reveal>
+          <div class="service-block-header">
+            <div class="partner-logo-box" style="margin-bottom: var(--space-md); width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; background: var(--surface); border: 1px solid var(--border-subtle); border-radius: 8px;">
+              <i data-lucide="graduation-cap" style="width: 40px; height: 40px; color: var(--accent-ochre);"></i>
+            </div>
+            <div class="service-block-partner">
+              <i data-lucide="graduation-cap" style="width: 14px; height: 14px;"></i>
+              Education & Research <span>Victoria Falls Regional Institute</span>
+            </div>
+            <h3 class="service-block-title">Education & Institutional Platforms</h3>
           </div>
-          <h3 class="process-title">SaaS Subscriptions</h3>
-          <p class="process-description">
-            Recurring monthly access to our platforms for businesses and
-            institutions.
-          </p>
+          <div class="service-block-content">
+            <p>
+              VFRI is a higher education and research institution committed to
+              academic excellence and community development. Through Momentum,
+              organisations can commission custom digital platforms for
+              educational and research institutions — from student portals to
+              research repositories.
+            </p>
+            <ul>
+              <li><i data-lucide="check-circle-2"></i> Custom Learning Management Systems (LMS)</li>
+              <li><i data-lucide="check-circle-2"></i> Administrative and enrolment portals</li>
+              <li><i data-lucide="check-circle-2"></i> Institutional research databases and websites</li>
+            </ul>
+            <p class="partner-note">
+              <i data-lucide="info" style="width: 13px; height: 13px; display: inline; vertical-align: middle; margin-right: 4px;"></i>
+              VFRI does not operate a direct-referral programme. Enquire through Momentum.
+            </p>
+          </div>
         </div>
 
-        <div class="process-step" data-reveal>
-          <div class="process-icon">
-            <i data-lucide="shield"></i>
+        <!-- Panoramic Synergy -->
+        <div class="service-block" data-reveal>
+          <div class="service-block-header">
+            <div class="partner-logo-box" style="margin-bottom: var(--space-md); width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; background: var(--surface); border: 1px solid var(--border-subtle); border-radius: 8px;">
+              <img src="https://panoramicsynergy.com/wp-content/uploads/2024/12/PSE-logo.png" alt="PSE logo" style="max-width: 60px; max-height: 60px; object-fit: contain;">
+            </div>
+            <div class="service-block-partner">
+              <i data-lucide="shield-check" style="width: 14px; height: 14px;"></i>
+              IT Consulting & GRC <span>Panoramic Synergy Enterprises</span>
+            </div>
+            <h3 class="service-block-title">IT Solutions, GRC & Digital Transformation</h3>
           </div>
-          <h3 class="process-title">Enterprise Licensing</h3>
-          <p class="process-description">
-            White-label and custom deployment for large organisations requiring
-            dedicated infrastructure.
-          </p>
+          <div class="service-block-content">
+            <p>
+              PSE is a world-class IT consulting and professional services firm
+              specialising in IT solutions and IT Governance, Risk, and
+              Compliance. Through Momentum, clients access PSE's full range of
+              services — digital transformation, ERP deployment, compliance
+              frameworks, and AI-driven engagements.
+            </p>
+            <ul>
+              <li><i data-lucide="check-circle-2"></i> IT Governance, Risk & Compliance (GRC)</li>
+              <li><i data-lucide="check-circle-2"></i> ERP implementation and digital transformation</li>
+              <li><i data-lucide="check-circle-2"></i> Cybersecurity assessments and frameworks</li>
+              <li><i data-lucide="check-circle-2"></i> AI and automation integration services</li>
+            </ul>
+            <p class="partner-note">
+              <i data-lucide="info" style="width: 13px; height: 13px; display: inline; vertical-align: middle; margin-right: 4px;"></i>
+              PSE does not operate a direct-referral programme. Enquire through Momentum.
+            </p>
+          </div>
         </div>
 
-        <div class="process-step" data-reveal>
-          <div class="process-icon">
-            <i data-lucide="code-2"></i>
+        <!-- Hedera -->
+        <div class="service-block" data-reveal>
+          <div class="service-block-header">
+            <div class="partner-logo-box" style="margin-bottom: var(--space-md); width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; background: var(--surface); border: 1px solid var(--border-subtle); border-radius: 8px;">
+              <img src="https://cryptologos.cc/logos/hedera-hbar-logo.svg?v=025" alt="Hedera logo" style="max-width: 50px; max-height: 50px; object-fit: contain;">
+            </div>
+            <div class="service-block-partner">
+              <i data-lucide="hexagon" style="width: 14px; height: 14px;"></i>
+              Blockchain & Web3 <span>Hedera</span>
+            </div>
+            <h3 class="service-block-title">Enterprise Blockchain & Web3 Infrastructure</h3>
           </div>
-          <h3 class="process-title">Custom Development</h3>
-          <p class="process-description">
-            Bespoke software built by Momentum teams, from concept to production
-            deployment.
-          </p>
+          <div class="service-block-content">
+            <p>
+              Hedera is the world's only public DLT network governed by known
+              institutions — built for fast, secure, and compliant decentralised
+              applications. Through Momentum, clients access Hedera's enterprise
+              network and Academy programme, with developers trained to build
+              production-grade blockchain systems.
+            </p>
+            <ul>
+              <li><i data-lucide="check-circle-2"></i> Hedera Consensus Service integrations</li>
+              <li><i data-lucide="check-circle-2"></i> Token Service and smart contract deployment</li>
+              <li><i data-lucide="check-circle-2"></i> Blockchain banking and financial platforms</li>
+              <li><i data-lucide="check-circle-2"></i> Hedera Academy developer training programme</li>
+            </ul>
+            <p class="partner-note">
+              <i data-lucide="info" style="width: 13px; height: 13px; display: inline; vertical-align: middle; margin-right: 4px;"></i>
+              Hedera does not operate a direct-referral programme. Enquire through Momentum.
+            </p>
+          </div>
         </div>
+
+        <!-- Innovate Maritime Africa -->
+        <div class="service-block" data-reveal>
+          <div class="service-block-header">
+            <div class="partner-logo-box" style="margin-bottom: var(--space-md); width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; background: var(--surface); border: 1px solid var(--border-subtle); border-radius: 8px;">
+              <img src="https://innovatemaritimeafrica.com/wp-content/uploads/2024/12/IMA-Logo-1-66x66.jpg" alt="IMA logo" style="max-width: 60px; max-height: 60px; object-fit: contain;">
+            </div>
+            <div class="service-block-partner">
+              <i data-lucide="ship" style="width: 14px; height: 14px;"></i>
+              Maritime & Blue Economy <span>Innovate Maritime Africa</span>
+            </div>
+            <h3 class="service-block-title">Maritime Venture Building & Blue Economy</h3>
+          </div>
+          <div class="service-block-content">
+            <p>
+              Africa's first maritime venture studio — IMA partners with bold
+              maritime founders to transform ideas into impactful innovations
+              shaping the continent's blue economy. Through Momentum, clients
+              gain access to IMA's venture-building expertise and co-development
+              capabilities for maritime-focused technology.
+            </p>
+            <ul>
+              <li><i data-lucide="check-circle-2"></i> Maritime venture co-building and incubation</li>
+              <li><i data-lucide="check-circle-2"></i> Port operations and logistics technology</li>
+              <li><i data-lucide="check-circle-2"></i> Supply chain and cargo management platforms</li>
+              <li><i data-lucide="check-circle-2"></i> Blue economy digital infrastructure</li>
+            </ul>
+            <p class="partner-note">
+              <i data-lucide="info" style="width: 13px; height: 13px; display: inline; vertical-align: middle; margin-right: 4px;"></i>
+              IMA does not operate a direct-referral programme. Enquire through Momentum.
+            </p>
+          </div>
+        </div>
+
+        <!-- Cloudora -->
+        <div class="service-block" data-reveal>
+          <div class="service-block-header">
+            <div class="partner-logo-box" style="margin-bottom: var(--space-md); width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; background: var(--surface); border: 1px solid var(--border-subtle); border-radius: 8px;">
+              <i data-lucide="cloud" style="width: 40px; height: 40px; color: var(--accent-ochre);"></i>
+            </div>
+            <div class="service-block-partner">
+              <i data-lucide="cloud" style="width: 14px; height: 14px;"></i>
+              Cloud & DevOps <span>Cloudora</span>
+            </div>
+            <h3 class="service-block-title">Cloud Infrastructure & DevOps Engineering</h3>
+          </div>
+          <div class="service-block-content">
+            <p>
+              Cloudora ensures every system deployed through Momentum meets
+              enterprise standards for reliability, uptime, and scalability.
+              Through Momentum, clients access Cloudora's full-stack cloud
+              engineering expertise — from architecture design to automated
+              deployment pipelines.
+            </p>
+            <ul>
+              <li><i data-lucide="check-circle-2"></i> Automated CI/CD pipeline setup and management</li>
+              <li><i data-lucide="check-circle-2"></i> Container orchestration and microservices</li>
+              <li><i data-lucide="check-circle-2"></i> High-availability architecture and disaster recovery</li>
+              <li><i data-lucide="check-circle-2"></i> Cloud cost optimisation and monitoring</li>
+            </ul>
+            <p class="partner-note">
+              <i data-lucide="info" style="width: 13px; height: 13px; display: inline; vertical-align: middle; margin-right: 4px;"></i>
+              Cloudora does not operate a direct-referral programme. Enquire through Momentum.
+            </p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- 4. HOW WE WORK -->
-  <section class="section section-alt">
+  <!-- 5. INTENT SELECTOR -->
+  <section class="section" style="padding-top: var(--space-md); padding-bottom: var(--space-md);">
     <div class="container">
-      <div class="section-header">
-        <p class="eyebrow">The Cohort Process</p>
-        <h2 class="section-title">How a Partnership Works</h2>
+      <div class="section-header" style="margin-bottom: var(--space-md);">
+        <p class="eyebrow">Where to Start</p>
+        <h2 class="section-title">What brings you here?</h2>
+        <p class="section-description">Select your intent and we'll show you exactly what applies.</p>
       </div>
-      <div class="process-grid">
-        <div class="process-step" data-reveal>
-          <div class="process-icon">
-            <i data-lucide="search"></i>
-          </div>
-          <h3 class="process-title">Discover</h3>
-          <p class="process-description">
-            We map your context, operational gaps, and product-market fit. No
-            assumptions, deep discovery first.
-          </p>
-        </div>
 
-        <div class="process-step" data-reveal>
-          <div class="process-icon">
-            <i data-lucide="layers"></i>
-          </div>
-          <h3 class="process-title">Build & Ship</h3>
-          <p class="process-description">
-            A dedicated cohort team works in focused 6-8 week cycles, shipping
-            iteratively into production environments.
-          </p>
-        </div>
+      <div class="intent-grid">
+        <button class="intent-card" data-intent="train" data-scroll="core-programs"
+          data-subject="Cohort / Training Programme Enquiry"
+          data-body="Hi Momentum, I'm interested in training our developers through a cohort or masterclass.">
+          <div class="intent-icon"><i data-lucide="graduation-cap"></i></div>
+          <div class="intent-label">Train our team</div>
+          <div class="intent-hint">Cohorts & Masterclasses</div>
+        </button>
 
-        <div class="process-step" data-reveal>
-          <div class="process-icon">
-            <i data-lucide="rocket"></i>
-          </div>
-          <h3 class="process-title">Scale & Maintain</h3>
-          <p class="process-description">
-            A committed team stays on the product post-launch, iterating,
-            scaling, and evolving based on live user data.
-          </p>
-        </div>
+        <button class="intent-card" data-intent="hackathon" data-scroll="hackathons"
+          data-subject="Hackathon Enquiry"
+          data-body="Hi Momentum, I'm interested in running a hackathon with your team.">
+          <div class="intent-icon"><i data-lucide="zap"></i></div>
+          <div class="intent-label">Run a hackathon</div>
+          <div class="intent-hint">Rapid-build events</div>
+        </button>
+
+        <button class="intent-card" data-intent="build" data-scroll="partner-services"
+          data-subject="Partner Service Enquiry"
+          data-body="Hi Momentum, I'm looking to access one of your technology partner's services.">
+          <div class="intent-icon"><i data-lucide="layers"></i></div>
+          <div class="intent-label">Access a partner service</div>
+          <div class="intent-hint">Through Momentum only</div>
+        </button>
+
+        <button class="intent-card" data-intent="partner" data-scroll="partner-services"
+          data-subject="Partnership Enquiry"
+          data-body="Hi Momentum, I'm interested in exploring a partnership with Momentum Collective.">
+          <div class="intent-icon"><i data-lucide="handshake"></i></div>
+          <div class="intent-label">Partner with us</div>
+          <div class="intent-hint">Ecosystem collaboration</div>
+        </button>
       </div>
     </div>
   </section>
 
-  <!-- 5. CTA -->
-  <section class="section cta-section">
+  <!-- 6. CTA SECTION -->
+  <section class="section cta-section" style="margin-top: var(--space-xl);">
     <div class="kente-decoration"></div>
-    <div class="container">
-      <div class="cta-content">
-        <h2 class="display-4xl mb-sm">Ready to Partner?</h2>
-        <p class="text-muted mb-md">
-          Deploy one of our 23+ live systems into your organisation, license our
-          technology, or build something entirely new with a Momentum product
-          team.
-        </p>
-        <div class="cta-buttons">
-          <a href="/contact" class="btn btn-primary btn-lg">
-            <span>Get In Touch</span>
-            <i data-lucide="arrow-right"></i>
-          </a>
-          <a href="/apps" class="btn btn-outline btn-lg">
-            <span>Explore Products</span>
-          </a>
-        </div>
+    <div class="container container-narrow text-center" data-reveal>
+      <h2 class="display-3xl" style="margin-bottom: var(--space-sm);">Partner With the Lab</h2>
+      <p class="text-lg text-muted" style="margin-bottom: var(--space-lg);">
+        Whether you want to train your team, run a hackathon, or access a
+        technology partner — start a conversation with Momentum.
+      </p>
+      <div class="flex items-center justify-center gap-sm">
+        <a href="/contact" class="btn btn-primary btn-lg">
+          Start a Conversation <i data-lucide="arrow-right"></i>
+        </a>
+        <a href="/apps" class="btn btn-outline btn-lg">
+          See Our Products
+        </a>
       </div>
     </div>
   </section>
+
+  <!-- INTENT STICKY BAR -->
+  <div id="intent-sticky" class="intent-sticky" aria-hidden="true">
+    <div class="intent-sticky-inner">
+      <span class="intent-sticky-label" id="intent-sticky-label">Ready to get started?</span>
+      <a id="intent-sticky-cta" href="/contact" class="btn btn-primary">
+        <span id="intent-sticky-cta-text">Book a call</span>
+        <i data-lucide="arrow-up-right" style="width:16px;height:16px;"></i>
+      </a>
+      <button class="intent-sticky-close" id="intent-sticky-close" aria-label="Dismiss">
+        <i data-lucide="x" style="width:16px;height:16px;"></i>
+      </button>
+    </div>
+  </div>
 </BaseLayout>
+
+<style>
+  /* Bridge section */
+  .bridge-section {
+    background: var(--ink, #1A0A2E);
+    color: #fff;
+  }
+
+  .bridge-headline {
+    font-family: var(--font-display);
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    color: var(--accent-ochre);
+    margin-bottom: var(--space-sm);
+    line-height: 1.1;
+  }
+
+  .bridge-body {
+    font-size: var(--text-base);
+    color: rgba(255, 255, 255, 0.75);
+    max-width: 640px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  /* Programme cards */
+  .card-editorial--programme {
+    padding: var(--space-md);
+  }
+
+  .programme-list {
+    list-style: none;
+    margin: var(--space-sm) 0;
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--space-xs) / 2);
+    flex: 1;
+  }
+
+  .programme-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: calc(var(--space-xs) / 2);
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  .programme-list li svg {
+    width: 14px;
+    height: 14px;
+    color: var(--accent-ochre);
+    flex-shrink: 0;
+    margin-top: 3px;
+  }
+
+  .programme-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: var(--space-sm);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent-ochre);
+    text-decoration: none;
+    transition: gap 0.2s ease;
+  }
+
+  .programme-cta:hover {
+    gap: 10px;
+  }
+
+  .programme-cta svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  /* Partner note line */
+  .partner-note {
+    margin-top: var(--space-sm);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+    border-top: 1px solid var(--border-subtle);
+    padding-top: var(--space-xs);
+    letter-spacing: 0.02em;
+  }
+
+  /* Intent selector grid */
+  .intent-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-sm);
+  }
+
+  @media (max-width: 900px) {
+    .intent-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .intent-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .intent-card {
+    background: var(--surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 4px;
+    padding: var(--space-md);
+    cursor: pointer;
+    text-align: left;
+    transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--space-xs) / 2);
+  }
+
+  .intent-card:hover {
+    border-color: var(--accent-ochre);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  }
+
+  .intent-card.active {
+    border-color: var(--accent-ochre);
+    background: color-mix(in srgb, var(--accent-ochre) 6%, var(--surface));
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  }
+
+  .intent-icon {
+    color: var(--accent-ochre);
+    margin-bottom: calc(var(--space-xs) / 2);
+  }
+
+  .intent-icon svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .intent-label {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .intent-hint {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  /* Sticky intent bar */
+  .intent-sticky {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: var(--ink);
+    border-top: 1px solid var(--accent-ochre);
+    transform: translateY(100%);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    padding: var(--space-sm) 0;
+  }
+
+  .intent-sticky.visible {
+    transform: translateY(0);
+  }
+
+  .intent-sticky-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+  }
+
+  .intent-sticky-label {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: rgba(255,255,255,0.7);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    flex: 1;
+  }
+
+  .intent-sticky-close {
+    background: transparent;
+    border: none;
+    color: rgba(255,255,255,0.4);
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s;
+  }
+
+  .intent-sticky-close:hover {
+    color: rgba(255,255,255,0.9);
+  }
+</style>
+
+<script>
+  const intentCards = document.querySelectorAll<HTMLButtonElement>('.intent-card');
+  const stickyBar = document.getElementById('intent-sticky');
+  const stickyLabel = document.getElementById('intent-sticky-label');
+  const stickyCta = document.getElementById('intent-sticky-cta') as HTMLAnchorElement;
+  const stickyCtaText = document.getElementById('intent-sticky-cta-text');
+  const stickyClose = document.getElementById('intent-sticky-close');
+
+  const intentMessages: Record<string, { label: string; cta: string }> = {
+    train: { label: 'Ready to train your team?', cta: 'Enquire about cohorts' },
+    hackathon: { label: 'Want to run a hackathon?', cta: 'Enquire about hackathons' },
+    build: { label: 'Want to access a partner service?', cta: 'Enquire through Momentum' },
+    partner: { label: 'Ready to partner with us?', cta: 'Start a partnership' },
+  };
+
+  intentCards.forEach((card) => {
+    card.addEventListener('click', () => {
+      intentCards.forEach((c) => c.classList.remove('active'));
+      card.classList.add('active');
+
+      const intent = card.dataset.intent ?? '';
+      const scrollTarget = card.dataset.scroll ?? '';
+      const subject = encodeURIComponent(card.dataset.subject ?? 'Enquiry');
+      const body = encodeURIComponent(card.dataset.body ?? '');
+      const msg = intentMessages[intent];
+
+      const target = document.getElementById(scrollTarget);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+
+      if (stickyLabel && msg) stickyLabel.textContent = msg.label;
+      if (stickyCtaText && msg) stickyCtaText.textContent = msg.cta;
+      if (stickyCta) {
+        stickyCta.href = `mailto:management@eyev.africa?subject=${subject}&body=${body}`;
+      }
+
+      stickyBar?.classList.add('visible');
+      stickyBar?.removeAttribute('aria-hidden');
+    });
+  });
+
+  stickyClose?.addEventListener('click', () => {
+    stickyBar?.classList.remove('visible');
+    stickyBar?.setAttribute('aria-hidden', 'true');
+    intentCards.forEach((c) => c.classList.remove('active'));
+  });
+</script>

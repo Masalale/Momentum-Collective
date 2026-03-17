@@ -48,3 +48,6 @@ concept.md
 
 # Cache folders
 .sisyphus/
+
+#Temp
+/misc

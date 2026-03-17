@@ -5,16 +5,17 @@
 
 /* Section 1: CSS Custom Properties (Design Tokens) */
 :root {
-  /* Colors, Clean Light + Bold Accents */
+  /* Colors, Cool Tech Slate */
   --bg-deep: #FFFFFF;
-  --bg-alt: #F9F7FF;
-  --text-primary: #1A0A2E;
-  --text-muted: #6B7280;
-  --accent-ochre: #D4920A;
-  --accent-green: #16A34A;
-  --accent-crimson: #DC2626;
-  --accent-electric: #7C3AED;
-  --border-subtle: rgba(26, 10, 46, 0.08);
+  --bg-alt: #F8FAFC;
+  --text-primary: #0F172A;
+  --text-muted: #64748B;
+  --accent-primary: #0D9488;
+  --accent-ochre: var(--accent-primary); /* Alias for backward compatibility */
+  --accent-green: #10B981;
+  --accent-crimson: #E11D48;
+  --accent-electric: #3B82F6;
+  --border-subtle: rgba(15, 23, 42, 0.08);
 
   /* Typography */
   --font-display: 'Playfair Display', Georgia, serif;
@@ -605,7 +606,7 @@ h5 {
 .btn-primary:hover {
   background: var(--accent-electric);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(212, 146, 10, 0.3);
+  box-shadow: 0 8px 24px rgba(13, 148, 136, 0.3);
 }
 
 .btn-outline {
@@ -718,7 +719,7 @@ h5 {
 
 .value-card:hover {
   border-color: var(--accent-ochre);
-  background: rgba(212, 146, 10, 0.05);
+  background: rgba(13, 148, 136, 0.05);
 }
 
 .value-icon {
@@ -989,7 +990,7 @@ h5 {
   justify-content: center;
   color: var(--accent-ochre);
   margin-bottom: var(--space-xs);
-  background: rgba(212, 146, 10, 0.1);
+  background: rgba(13, 148, 136, 0.1);
   border-radius: 4px;
 }
 
@@ -1257,7 +1258,7 @@ h5 {
   justify-content: center;
   color: var(--accent-ochre);
   margin-bottom: var(--space-md);
-  background: rgba(212, 146, 10, 0.1);
+  background: rgba(13, 148, 136, 0.1);
   border-radius: 4px;
 }
 
@@ -1335,7 +1336,7 @@ h5 {
   align-items: center;
   justify-content: center;
   color: var(--accent-ochre);
-  background: rgba(212, 146, 10, 0.1);
+  background: rgba(13, 148, 136, 0.1);
   border-radius: 4px;
   flex-shrink: 0;
   margin-bottom: var(--space-xs);
