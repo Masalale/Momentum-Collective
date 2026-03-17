@@ -10,9 +10,8 @@ import {
   createIcons,
   Menu,
   X,
-  Linkedin,
-  Instagram,
-  Github,
+  // eslint-disable-next-line deprecation/deprecation
+  Linkedin, Instagram, Github,
   ArrowRight,
   Zap,
   Users,

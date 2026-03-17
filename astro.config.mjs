@@ -4,6 +4,6 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://momentumcoll.netlify.app',
+  site: 'https://momentum-collective.vercel.app',
   integrations: [sitemap()],
 });
