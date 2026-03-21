@@ -425,10 +425,12 @@ function initPage(container: HTMLElement): void {
         ? data.courses.map(c =>
             `<li class="card-course-item js-popup-enquire-specific" data-course="${c.name}" role="button" tabindex="0">` +
               `<div class="card-course-item-content">` +
-                `<span class="card-course-list-name">${c.name}</span>` +
+                `<div class="card-course-item-header">` +
+                  `<span class="card-course-list-name">${c.name}</span>` +
+                  `<span class="card-course-item-cta" aria-hidden="true">Enquire →</span>` +
+                `</div>` +
                 `<span class="card-course-list-desc">${c.desc}</span>` +
               `</div>` +
-              `<span class="card-course-item-cta" aria-hidden="true">Enquire →</span>` +
             `</li>`
           ).join('')
         : data.courses.map(c =>
