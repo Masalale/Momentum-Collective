@@ -4,7 +4,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 const linkedInPosts = [
   {
     title: "Final Day for Hackathon Submissions",
-    date: "2026-03-06",
+    date: "2026-03-13",
     excerpt:
       "🚨 Final Day for Hackathon Submissions 🚨 Today marks the final deadline for submissions to the Africa Forward: Humanitarian in Tech Masterclass x Hackathon.",
     icon: "alert-circle",
@@ -13,7 +13,7 @@ const linkedInPosts = [
   },
   {
     title: "We’re Hiring: Unity Developers & 3D Animators",
-    date: "2026-03-04",
+    date: "2026-03-11",
     excerpt:
       "Momentum Labs is building the next generation of African-made digital experiences, and we’re looking for Unity Developers and 3D Animators to join us in building ManoeMano.",
     icon: "users",
@@ -22,7 +22,7 @@ const linkedInPosts = [
   },
   {
     title: "Thank You to Our Masterclass Speakers",
-    date: "2026-03-03",
+    date: "2026-03-06",
     excerpt:
       "A big thank you to the incredible speakers who joined us for the Africa Forward: Humanitarian in Tech Masterclass. Your insights on technology, innovation, and humanitarian impact created a powerful conversation.",
     icon: "message-square",
@@ -31,7 +31,7 @@ const linkedInPosts = [
   },
   {
     title: "Africa Forward Masterclass & Hackathon is Live",
-    date: "2026-03-03",
+    date: "2026-03-06",
     excerpt:
       "Today is the day. Africa Forward – Humanitarian in Tech Masterclass & Hackathon is happening now.",
     icon: "rocket",
@@ -40,7 +40,7 @@ const linkedInPosts = [
   },
   {
     title: "Tomorrow We Convene: Africa Forward",
-    date: "2026-03-02",
+    date: "2026-03-05",
     excerpt:
       "Tomorrow, we convene. Africa Forward – Humanitarian in Tech Masterclass & Hackathon (2nd Edition) goes live.",
     icon: "calendar",
@@ -126,7 +126,7 @@ const linkedInPosts = [
 
           form?.addEventListener("submit", (e) => {
             e.preventDefault();
-            status.textContent = "Coming soon — we're setting up the dispatch.";
+            status.textContent = "Coming soon, we're setting up the dispatch.";
             status.style.display = "block";
           });
         </script>
@@ -143,7 +143,7 @@ const linkedInPosts = [
       </div>
 
       <div class="features-grid">
-        <div class="feature-card" data-reveal>
+        <div class="feature-card">
           <div class="feature-icon">
             <i data-lucide="rocket"></i>
           </div>
@@ -154,7 +154,7 @@ const linkedInPosts = [
           </p>
         </div>
 
-        <div class="feature-card" data-reveal>
+        <div class="feature-card">
           <div class="feature-icon">
             <i data-lucide="users"></i>
           </div>
@@ -165,7 +165,7 @@ const linkedInPosts = [
           </p>
         </div>
 
-        <div class="feature-card" data-reveal>
+        <div class="feature-card">
           <div class="feature-icon">
             <i data-lucide="bar-chart-2"></i>
           </div>
@@ -204,11 +204,14 @@ const linkedInPosts = [
               target="_blank"
               rel="noopener noreferrer"
               class="article-row"
-              data-reveal
-            >
+                         >
               <div class="article-meta">
                 <time class="article-date" datetime={post.date} data-reltime>
-                  {new Date(post.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
+                  {new Date(post.date).toLocaleDateString("en-GB", {
+                    day: "numeric",
+                    month: "short",
+                    year: "numeric",
+                  })}
                 </time>
                 <span class="article-tag">{post.tag}</span>
               </div>
@@ -232,7 +235,7 @@ const linkedInPosts = [
         }
       </div>
 
-      <div class="newsletter-linkedin-cta" data-reveal>
+      <div class="newsletter-linkedin-cta">
         <a
           href="https://www.linkedin.com/company/momentumlabsclg/"
           target="_blank"

@@ -1,0 +1,103 @@
+---
+interface Props {
+  course?: string;
+  partner?: string;
+  service?: string;
+  intent?: string;
+  compact?: boolean;
+  formId?: string;
+}
+
+const {
+  course,
+  partner,
+  service,
+  intent,
+  compact = false,
+  formId = 'enquiry-form',
+} = Astro.props;
+
+const defaultMessage = course
+  ? `Hi Momentum, I'm interested in ${course}${partner ? ` via ${partner}` : ''}.`
+  : service
+  ? `Hi Momentum, I'm enquiring about your ${service} service.`
+  : intent === 'developer'
+  ? "Hi Momentum, I'm a developer interested in joining your next cohort."
+  : intent === 'partner'
+  ? "Hi Momentum, we're interested in partnering with Momentum Collective."
+  : '';
+---
+
+<div class="enquiry-form-wrap" id={formId}>
+  {(course || service) && (
+    <div class="enquiry-context-banner">
+      <i data-lucide="info"></i>
+      <span>
+        Enquiring about: <strong>{course ?? service}</strong>
+        {partner && <> via <strong>{partner}</strong></>}
+      </span>
+    </div>
+  )}
+
+  <form class={`enquiry-form${compact ? ' enquiry-form--compact' : ''}`}>
+    <input type="hidden" name="access_key"  value="YOUR_WEB3FORMS_KEY" />
+    <input type="hidden" name="subject"     value={`Enquiry — ${course ?? service ?? 'Momentum Collective'}`} />
+    <input type="hidden" name="from_name"   value="Momentum Website" />
+    <input type="hidden" name="course"      value={course ?? ''} />
+    <input type="hidden" name="partner"     value={partner ?? ''} />
+    <input type="hidden" name="service"     value={service ?? ''} />
+    <input type="hidden" name="intent"      value={intent ?? ''} />
+    <input type="hidden" name="source"      value={Astro.url.pathname} />
+    <input type="checkbox" name="botcheck"  style="display:none" tabindex="-1" />
+
+    <div class="enquiry-field">
+      {!compact && <label class="enquiry-label">Name</label>}
+      <input
+        type="text"
+        name="name"
+        class="enquiry-input"
+        placeholder="Your name"
+        required
+      />
+    </div>
+
+    <div class="enquiry-field">
+      {!compact && <label class="enquiry-label">Email</label>}
+      <input
+        type="email"
+        name="email"
+        class="enquiry-input"
+        placeholder="your@email.com"
+        required
+      />
+    </div>
+
+    <div class="enquiry-field">
+      {!compact && <label class="enquiry-label">Message</label>}
+      <textarea
+        name="message"
+        class="enquiry-textarea"
+        rows={compact ? 2 : 4}
+        placeholder="Tell us more…"
+      >{defaultMessage}</textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary enquiry-submit">
+      <span class="enquiry-submit-text">Send Enquiry</span>
+      <i data-lucide="arrow-right"></i>
+    </button>
+  </form>
+
+  <div class="enquiry-success" style="display:none" aria-live="polite">
+    <i data-lucide="check-circle-2"></i>
+    <p>
+      We've received your enquiry{course ? ` about ${course}` : ''}.
+      We'll be in touch shortly.
+    </p>
+  </div>
+
+  <div class="enquiry-error" style="display:none" aria-live="polite">
+    <p>Something went wrong. Please try again.</p>
+    <button class="btn btn-outline enquiry-retry">Retry</button>
+  </div>
+</div>

@@ -1,0 +1,459 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Courses"
+  description="Access world-class courses delivered in collaboration with Panoramic Synergy and Hedera, from ISO-certified professional development to blockchain engineering."
+  barbaNamespace="courses"
+>
+  <!-- 1. PAGE HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <p class="hero-eyebrow">Partner Learning</p>
+        <h1 class="hero-title">Learn With Our Partners</h1>
+        <p class="hero-subtext">
+          Access world-class courses delivered in collaboration with Panoramic
+          Synergy and Hedera, from ISO-certified professional development to
+          hands-on blockchain engineering.
+        </p>
+        <div class="hero-buttons">
+          <a href="/contact" class="btn btn-primary btn-lg">
+            <span>Enquire About a Course</span>
+            <i data-lucide="arrow-right"></i>
+          </a>
+          <a href="/services" class="btn btn-outline btn-lg">
+            <span>Our Programmes</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. PANORAMIC SYNERGY -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">Partner Courses</p>
+        <h2 class="section-title">Panoramic Synergy</h2>
+        <p class="section-description">
+          ISO-aligned professional development across governance, technology,
+          security, artificial intelligence, sustainability, and human
+          resources. Click a category to see the individual courses.
+        </p>
+      </div>
+
+      <div class="card-grid-editorial cols-4">
+        <div class="card-editorial">
+          <div class="card-editorial-icon"><i data-lucide="shield"></i></div>
+          <div class="card-editorial-tagline">5 Courses</div>
+          <h3 class="card-editorial-title">Business Governance</h3>
+          <p class="card-editorial-description">
+            Ethics, compliance, risk, and governance frameworks aligned with ISO
+            global standards.
+          </p>
+          <div class="card-course-actions">
+            <button class="course-popup-trigger" data-category="governance">
+              Browse <i data-lucide="arrow-right"></i>
+            </button>
+            <button class="course-enquire-direct" data-category="governance">
+              Enquire <i data-lucide="arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="card-editorial">
+          <div class="card-editorial-icon"><i data-lucide="layers"></i></div>
+          <div class="card-editorial-tagline">5 Courses</div>
+          <h3 class="card-editorial-title">IT Governance & Management</h3>
+          <p class="card-editorial-description">
+            Align technology strategy with business goals using COBIT, ITIL, and
+            agile frameworks.
+          </p>
+          <div class="card-course-actions">
+            <button class="course-popup-trigger" data-category="it">
+              Browse <i data-lucide="arrow-right"></i>
+            </button>
+            <button class="course-enquire-direct" data-category="it">
+              Enquire <i data-lucide="arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="card-editorial">
+          <div class="card-editorial-icon"><i data-lucide="lock"></i></div>
+          <div class="card-editorial-tagline">5 Courses</div>
+          <h3 class="card-editorial-title">Information & Cyber Security</h3>
+          <p class="card-editorial-description">
+            Protect data, systems, and networks with ISO-aligned security
+            management programmes.
+          </p>
+          <div class="card-course-actions">
+            <button class="course-popup-trigger" data-category="security">
+              Browse <i data-lucide="arrow-right"></i>
+            </button>
+            <button class="course-enquire-direct" data-category="security">
+              Enquire <i data-lucide="arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="card-editorial">
+          <div class="card-editorial-icon">
+            <i data-lucide="brain-circuit"></i>
+          </div>
+          <div class="card-editorial-tagline">9 Courses</div>
+          <h3 class="card-editorial-title">Artificial Intelligence</h3>
+          <p class="card-editorial-description">
+            Nine courses from foundation to executive level covering responsible
+            AI, ML, and governance.
+          </p>
+          <div class="card-course-actions">
+            <button class="course-popup-trigger" data-category="ai">
+              Browse <i data-lucide="arrow-right"></i>
+            </button>
+            <button class="course-enquire-direct" data-category="ai">
+              Enquire <i data-lucide="arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="card-editorial">
+          <div class="card-editorial-icon">
+            <i data-lucide="badge-check"></i>
+          </div>
+          <div class="card-editorial-tagline">5 Courses</div>
+          <h3 class="card-editorial-title">Quality & HSE Management</h3>
+          <p class="card-editorial-description">
+            Drive operational excellence through quality, safety, environmental,
+            and project management.
+          </p>
+          <div class="card-course-actions">
+            <button class="course-popup-trigger" data-category="hse">
+              Browse <i data-lucide="arrow-right"></i>
+            </button>
+            <button class="course-enquire-direct" data-category="hse">
+              Enquire <i data-lucide="arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="card-editorial">
+          <div class="card-editorial-icon"><i data-lucide="sprout"></i></div>
+          <div class="card-editorial-tagline">5 Courses</div>
+          <h3 class="card-editorial-title">Sustainability</h3>
+          <p class="card-editorial-description">
+            ESG, climate adaptation, SDGs, and sustainable asset management for
+            responsible organisations.
+          </p>
+          <div class="card-course-actions">
+            <button class="course-popup-trigger" data-category="sustainability">
+              Browse <i data-lucide="arrow-right"></i>
+            </button>
+            <button class="course-enquire-direct" data-category="sustainability">
+              Enquire <i data-lucide="arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="card-editorial">
+          <div class="card-editorial-icon"><i data-lucide="users"></i></div>
+          <div class="card-editorial-tagline">5 Courses</div>
+          <h3 class="card-editorial-title">Human Resource Management</h3>
+          <p class="card-editorial-description">
+            Talent, governance, diversity, learning, and workforce metrics using
+            ISO HR standards.
+          </p>
+          <div class="card-course-actions">
+            <button class="course-popup-trigger" data-category="hr">
+              Browse <i data-lucide="arrow-right"></i>
+            </button>
+            <button class="course-enquire-direct" data-category="hr">
+              Enquire <i data-lucide="arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="card-editorial">
+          <div class="card-editorial-icon">
+            <i data-lucide="graduation-cap"></i>
+          </div>
+          <div class="card-editorial-tagline">5 Modules</div>
+          <h3 class="card-editorial-title">Business School - SMP</h3>
+          <p class="card-editorial-description">
+            The SMARTER Manager Program, five executive modules across strategy,
+            leadership, and operations.
+          </p>
+          <div class="card-course-actions">
+            <button class="course-popup-trigger" data-category="smp">
+              Browse <i data-lucide="arrow-right"></i>
+            </button>
+            <button class="course-enquire-direct" data-category="smp">
+              Enquire <i data-lucide="arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. HEDERA ACADEMY -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">Partner Courses</p>
+        <h2 class="section-title">Hedera</h2>
+        <p class="section-description">
+          The Hedera Academy Program, blockchain and Web3 certification covering
+          11 modules from fundamentals to deploying decentralised applications.
+          Online and self-paced, with practical hands-on labs and
+          industry-recognised certification.
+        </p>
+      </div>
+
+      <div class="card-grid-editorial cols-4">
+        <div class="card-editorial">
+          <div class="card-editorial-icon"><i data-lucide="globe"></i></div>
+          <div class="card-editorial-tagline">Web3 Foundations</div>
+          <h3 class="card-editorial-title">Introduction to Web3 & Hedera</h3>
+          <p class="card-editorial-description">
+            Foundational concepts in Web3 and Hedera, including its governance
+            model and network expansion across Africa and globally.
+          </p>
+          <div class="card-course-actions">
+            <button class="course-popup-trigger" data-category="hedera-m1">
+              Details <i data-lucide="arrow-right"></i>
+            </button>
+            <button class="course-enquire-direct" data-category="hedera-m1">
+              Enquire <i data-lucide="arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="card-editorial">
+          <div class="card-editorial-icon"><i data-lucide="layers"></i></div>
+          <div class="card-editorial-tagline">Network Architecture</div>
+          <h3 class="card-editorial-title">Hedera Network Architecture</h3>
+          <p class="card-editorial-description">
+            Overview of Hedera's architecture, network nodes, consensus and
+            mirror nodes, core services, and practical TestNet setup.
+          </p>
+          <div class="card-course-actions">
+            <button class="course-popup-trigger" data-category="hedera-m2">
+              Details <i data-lucide="arrow-right"></i>
+            </button>
+            <button class="course-enquire-direct" data-category="hedera-m2">
+              Enquire <i data-lucide="arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="card-editorial">
+          <div class="card-editorial-icon"><i data-lucide="book-open"></i></div>
+          <div class="card-editorial-tagline">Core Concepts</div>
+          <h3 class="card-editorial-title">Hedera Core Concepts</h3>
+          <p class="card-editorial-description">
+            Core principles covering accounts, keys, transactions,
+            confirmations, state and history, and Hedera Improvement Proposals.
+          </p>
+          <div class="card-course-actions">
+            <button class="course-popup-trigger" data-category="hedera-m3">
+              Details <i data-lucide="arrow-right"></i>
+            </button>
+            <button class="course-enquire-direct" data-category="hedera-m3">
+              Enquire <i data-lucide="arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="card-editorial">
+          <div class="card-editorial-icon"><i data-lucide="code-2"></i></div>
+          <div class="card-editorial-tagline">Developer Track</div>
+          <h3 class="card-editorial-title">Hedera Developer Fundamentals</h3>
+          <p class="card-editorial-description">
+            Developer tools and SDKs with hands-on labs for environment setup,
+            account creation, and transferring HBAR.
+          </p>
+          <div class="card-course-actions">
+            <button class="course-popup-trigger" data-category="hedera-m4">
+              Details <i data-lucide="arrow-right"></i>
+            </button>
+            <button class="course-enquire-direct" data-category="hedera-m4">
+              Enquire <i data-lucide="arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="card-editorial">
+          <div class="card-editorial-icon"><i data-lucide="rocket"></i></div>
+          <div class="card-editorial-tagline">Dev Environment</div>
+          <h3 class="card-editorial-title">Local Network Setup</h3>
+          <p class="card-editorial-description">
+            Instructions and a practical lab for configuring and running a local
+            Hedera network development environment.
+          </p>
+          <div class="card-course-actions">
+            <button class="course-popup-trigger" data-category="hedera-m5">
+              Details <i data-lucide="arrow-right"></i>
+            </button>
+            <button class="course-enquire-direct" data-category="hedera-m5">
+              Enquire <i data-lucide="arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="card-editorial">
+          <div class="card-editorial-icon"><i data-lucide="activity"></i></div>
+          <div class="card-editorial-tagline">Consensus Service</div>
+          <h3 class="card-editorial-title">Hedera Consensus Service</h3>
+          <p class="card-editorial-description">
+            Detailed study of the Hedera Consensus Service and its real-world
+            applications for tamper-proof messaging and audit logs.
+          </p>
+          <div class="card-course-actions">
+            <button class="course-popup-trigger" data-category="hedera-m6">
+              Details <i data-lucide="arrow-right"></i>
+            </button>
+            <button class="course-enquire-direct" data-category="hedera-m6">
+              Enquire <i data-lucide="arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="card-editorial">
+          <div class="card-editorial-icon">
+            <i data-lucide="credit-card"></i>
+          </div>
+          <div class="card-editorial-tagline">Token Service</div>
+          <h3 class="card-editorial-title">Hedera Token Service</h3>
+          <p class="card-editorial-description">
+            Token creation on Hedera covering both fungible tokens and
+            non-fungible tokens (NFTs) with hands-on lab exercises.
+          </p>
+          <div class="card-course-actions">
+            <button class="course-popup-trigger" data-category="hedera-m7">
+              Details <i data-lucide="arrow-right"></i>
+            </button>
+            <button class="course-enquire-direct" data-category="hedera-m7">
+              Enquire <i data-lucide="arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="card-editorial">
+          <div class="card-editorial-icon"><i data-lucide="zap"></i></div>
+          <div class="card-editorial-tagline">dApp Development</div>
+          <h3 class="card-editorial-title">dApp Workshop</h3>
+          <p class="card-editorial-description">
+            Workshop on developing and deploying decentralised applications on
+            Hedera, culminating in your first live dApp.
+          </p>
+          <div class="card-course-actions">
+            <button class="course-popup-trigger" data-category="hedera-m8">
+              Details <i data-lucide="arrow-right"></i>
+            </button>
+            <button class="course-enquire-direct" data-category="hedera-m8">
+              Enquire <i data-lucide="arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="card-editorial">
+          <div class="card-editorial-icon">
+            <i data-lucide="shield-check"></i>
+          </div>
+          <div class="card-editorial-tagline">Smart Contracts</div>
+          <h3 class="card-editorial-title">Hedera Smart Contract Service</h3>
+          <p class="card-editorial-description">
+            Smart contracts on Hedera with a focus on interoperability and NFT
+            creation using Solidity, with hands-on labs.
+          </p>
+          <div class="card-course-actions">
+            <button class="course-popup-trigger" data-category="hedera-m9">
+              Details <i data-lucide="arrow-right"></i>
+            </button>
+            <button class="course-enquire-direct" data-category="hedera-m9">
+              Enquire <i data-lucide="arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="card-editorial">
+          <div class="card-editorial-icon"><i data-lucide="cloud"></i></div>
+          <div class="card-editorial-tagline">RPC Connectivity</div>
+          <h3 class="card-editorial-title">JSON-RPC Relay</h3>
+          <p class="card-editorial-description">
+            Connecting to Hedera networks using JSON-RPC, with a practical lab
+            implementing RPC connectivity to native services.
+          </p>
+          <div class="card-course-actions">
+            <button class="course-popup-trigger" data-category="hedera-m10">
+              Details <i data-lucide="arrow-right"></i>
+            </button>
+            <button class="course-enquire-direct" data-category="hedera-m10">
+              Enquire <i data-lucide="arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="card-editorial">
+          <div class="card-editorial-icon"><i data-lucide="handshake"></i></div>
+          <div class="card-editorial-tagline">Interoperability</div>
+          <h3 class="card-editorial-title">Interoperability</h3>
+          <p class="card-editorial-description">
+            In-depth exploration of Hedera interoperability with practical labs
+            using MetaMask, Solidity, React JS, and Ethers JS.
+          </p>
+          <div class="card-course-actions">
+            <button class="course-popup-trigger" data-category="hedera-m11">
+              Details <i data-lucide="arrow-right"></i>
+            </button>
+            <button class="course-enquire-direct" data-category="hedera-m11">
+              Enquire <i data-lucide="arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 4. CTA -->
+  <section class="section cta-section" style="margin-top: var(--space-xl);">
+    <div class="kente-decoration"></div>
+    <div class="container container-narrow text-center">
+      <h2 class="display-3xl" style="margin-bottom: var(--space-sm);">
+        Ready to Learn?
+      </h2>
+      <p class="text-lg text-muted" style="margin-bottom: var(--space-lg);">
+        Reach out to discuss which programme fits your team or career goals -
+        and we'll connect you with the right partner.
+      </p>
+      <div class="flex items-center justify-center gap-sm">
+        <a href="/contact" class="btn btn-primary btn-lg">
+          <span>Start a Conversation</span><i data-lucide="arrow-right"></i>
+        </a>
+        <a href="/partners" class="btn btn-outline btn-lg">See Our Partners</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- COURSE POPUP MODAL -->
+  <div
+    class="course-popup-overlay"
+    id="course-popup-overlay"
+    aria-hidden="true"
+    aria-modal="true"
+    role="dialog"
+  >
+    <div class="course-popup" id="course-popup">
+      <button
+        class="course-popup-close"
+        id="course-popup-close"
+        aria-label="Close">&#x2715;</button
+      >
+      <div id="course-popup-body"></div>
+    </div>
+  </div>
+</BaseLayout>

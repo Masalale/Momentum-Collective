@@ -72,8 +72,6 @@ export function cleanupScroll(): void {
 
 if (typeof window !== 'undefined') {
   document.addEventListener('DOMContentLoaded', () => {
-    initCounterAnimation();
-
     // Handle anchor links
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
       anchor.addEventListener('click', (e) => {

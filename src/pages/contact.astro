@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import EnquiryForm from "../components/EnquiryForm.astro";
 ---
 
 <BaseLayout
@@ -30,10 +31,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <div class="card-grid-editorial cols-3">
         <!-- Email Entry -->
         <a
-          href="mailto:management@eyev.africa"
+          href="mailto:management@momentumcollective.info"
           class="card-editorial"
-          data-reveal
-        >
+                 >
           <div class="card-editorial-icon"><i data-lucide="mail"></i></div>
           <div class="card-editorial-tagline">Communication</div>
           <h3 class="card-editorial-title">Email Us</h3>
@@ -41,12 +41,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             For general inquiries, partnerships, and product proposals.
           </p>
           <div class="card-editorial-link">
-            <span>management@eyev.africa</span><i data-lucide="arrow-right"></i>
+            <span>management@momentumcollective.info</span><i
+              data-lucide="arrow-right"></i>
           </div>
         </a>
 
         <!-- Phone Entry -->
-        <a href="tel:+254110175110" class="card-editorial" data-reveal>
+        <a href="tel:+254110175110" class="card-editorial">
           <div class="card-editorial-icon"><i data-lucide="phone"></i></div>
           <div class="card-editorial-tagline">Quick Call</div>
           <h3 class="card-editorial-title">Phone</h3>
@@ -59,7 +60,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </a>
 
         <!-- Location Entry -->
-        <div class="card-editorial" data-reveal>
+        <div class="card-editorial">
           <div class="card-editorial-icon"><i data-lucide="map-pin"></i></div>
           <div class="card-editorial-tagline">Operations</div>
           <h3 class="card-editorial-title">Nairobi Office</h3>
@@ -74,7 +75,29 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </div>
   </section>
 
-  <!-- 3. SOCIAL JOURNEY -->
+  <!-- 3. ENQUIRY FORM -->
+  <section class="section" id="contact-form-section">
+    <div class="container">
+      <div class="contact-form-grid">
+        <!-- Left: heading context (sticky) -->
+        <div class="contact-form-intro">
+          <p class="eyebrow" style="margin-bottom: var(--space-xs);">Get In Touch</p>
+          <h2 id="contact-form-heading" class="display-2xl">
+            Start a Conversation
+          </h2>
+          <p class="text-muted" style="margin-top: var(--space-sm);">
+            We read every message. Someone from the team will get back to you.
+          </p>
+        </div>
+        <!-- Right: form -->
+        <div class="contact-form-side">
+          <EnquiryForm formId="contact-page-form" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. SOCIAL JOURNEY -->
   <section class="section section-alt">
     <div class="container">
       <div class="section-header">
@@ -93,8 +116,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           rel="noopener noreferrer"
           class="card-editorial"
           style="text-align: center; align-items: center;"
-          data-reveal
-        >
+                 >
           <div
             class="card-editorial-icon"
             style="margin-bottom: var(--space-sm);"
@@ -113,8 +135,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           rel="noopener noreferrer"
           class="card-editorial"
           style="text-align: center; align-items: center;"
-          data-reveal
-        >
+                 >
           <div
             class="card-editorial-icon"
             style="margin-bottom: var(--space-sm);"
@@ -133,8 +154,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           rel="noopener noreferrer"
           class="card-editorial"
           style="text-align: center; align-items: center;"
-          data-reveal
-        >
+                 >
           <div
             class="card-editorial-icon"
             style="margin-bottom: var(--space-sm);"
@@ -150,24 +170,4 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </div>
   </section>
 
-  <section class="section cta-section">
-    <div class="kente-decoration"></div>
-    <div class="container">
-      <div class="cta-content">
-        <h2 class="display-3xl mb-xs">Start a Conversation</h2>
-        <p class="text-muted mb-md" style="font-size: var(--text-base);">
-          Whether you have a product idea, want to partner, or just want to say hello — we're ready.
-        </p>
-        <div class="cta-buttons">
-          <a href="mailto:management@eyev.africa" class="btn btn-primary btn-lg">
-            <span>Email Us</span>
-            <i data-lucide="arrow-right"></i>
-          </a>
-          <a href="/services" class="btn btn-outline btn-lg">
-            <span>Our Services</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
 </BaseLayout>

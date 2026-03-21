@@ -59,15 +59,14 @@ const {
         <a href="/" class="nav-logo">Momentum Collective</a>
 
         <div class="nav-links">
-          <a href="/" class="nav-link" data-page="home">Home</a>
-          <a href="/about" class="nav-link" data-page="about">About</a>
-          <a href="/apps" class="nav-link" data-page="apps">Apps</a>
-          <a href="/services" class="nav-link" data-page="services">Services</a>
-          <a href="/partners" class="nav-link" data-page="partners">Partners</a>
-          <a href="/newsletter" class="nav-link" data-page="newsletter"
-            >Newsletter</a
+          <a href="/about" class="nav-link">About</a>
+          <a href="/apps" class="nav-link">Apps</a>
+          <a href="/services" class="nav-link">Services</a>
+          <a href="/courses" class="nav-link">Courses</a>
+          <a href="/partners" class="nav-link">Partners</a>
+          <a href="/newsletter" class="nav-link"            >Newsletter</a
           >
-          <a href="/contact" class="nav-link" data-page="contact">Contact</a>
+          <a href="/contact" class="nav-link">Contact</a>
         </div>
 
         <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
@@ -77,15 +76,14 @@ const {
     </nav>
 
     <div class="mobile-menu" id="mobile-menu">
-      <a href="/" class="nav-link" data-page="home">Home</a>
-      <a href="/about" class="nav-link" data-page="about">About</a>
-      <a href="/apps" class="nav-link" data-page="apps">Apps</a>
-      <a href="/services" class="nav-link" data-page="services">Services</a>
-      <a href="/partners" class="nav-link" data-page="partners">Partners</a>
-      <a href="/newsletter" class="nav-link" data-page="newsletter"
-        >Newsletter</a
+      <a href="/about" class="nav-link">About</a>
+      <a href="/apps" class="nav-link">Apps</a>
+      <a href="/services" class="nav-link">Services</a>
+      <a href="/courses" class="nav-link">Courses</a>
+      <a href="/partners" class="nav-link">Partners</a>
+      <a href="/newsletter" class="nav-link"        >Newsletter</a
       >
-      <a href="/contact" class="nav-link" data-page="contact">Contact</a>
+      <a href="/contact" class="nav-link">Contact</a>
     </div>
 
     <div data-barba="wrapper">
@@ -139,165 +137,8 @@ const {
     <div id="transition-overlay" aria-hidden="true"></div>
 
     <script>
-      import {
-        createIcons,
-        Menu,
-        X,
-        // eslint-disable-next-line deprecation/deprecation
-        Linkedin, Instagram, Github,
-        ArrowRight,
-        Zap,
-        Users,
-        Shield,
-        Globe,
-        CheckCircle,
-        Smartphone,
-        GraduationCap,
-        Heart,
-        DollarSign,
-        Headphones,
-        Scale,
-        Mail,
-        Phone,
-        ChevronDown,
-        Eye,
-        Target,
-        UserPlus,
-        Languages,
-        ShoppingBasket,
-        Gamepad2,
-        QrCode,
-        CalendarCheck,
-        Home,
-        Package,
-        BookOpen,
-        Car,
-        Shirt,
-        Search,
-        Layers,
-        Rocket,
-        Cloud,
-        Code2,
-        MapPin,
-        Activity,
-        Building2,
-        CreditCard,
-        Lock,
-        MessageSquare,
-        ShieldCheck,
-        BarChart2,
-        Megaphone,
-        Filter,
-        ScanLine,
-        HardHat,
-        Bot,
-        Sprout,
-        MapPinPlus,
-        Pill,
-        Baby,
-        Stethoscope,
-        Fingerprint,
-        MessageCircle,
-        BrainCircuit,
-        TabletSmartphone,
-        BadgeCheck,
-        Droplets,
-        Ambulance,
-        CloudRain,
-        HeartHandshake,
-        Siren,
-        Bell,
-        Satellite,
-        ShieldAlert,
-        AlertCircle,
-        Calendar,
-        Timer,
-        CheckCircle2,
-        Handshake,
-        ArrowUpRight,
-        ExternalLink,
-      } from "lucide";
-
-      createIcons({
-        icons: {
-          Menu,
-          X,
-          Linkedin,
-          Instagram,
-          Github,
-          ArrowRight,
-          Zap,
-          Users,
-          Shield,
-          Globe,
-          CheckCircle,
-          Smartphone,
-          GraduationCap,
-          Heart,
-          DollarSign,
-          Headphones,
-          Scale,
-          Mail,
-          Phone,
-          ChevronDown,
-          Eye,
-          Target,
-          UserPlus,
-          Languages,
-          ShoppingBasket,
-          Gamepad2,
-          QrCode,
-          CalendarCheck,
-          Home,
-          Package,
-          BookOpen,
-          Car,
-          Shirt,
-          Search,
-          Layers,
-          Rocket,
-          Cloud,
-          Code2,
-          MapPin,
-          Activity,
-          Building2,
-          CreditCard,
-          Lock,
-          MessageSquare,
-          ShieldCheck,
-          BarChart2,
-          Megaphone,
-          Filter,
-          ScanLine,
-          HardHat,
-          Bot,
-          Sprout,
-          MapPinPlus,
-          Pill,
-          Baby,
-          Stethoscope,
-          Fingerprint,
-          MessageCircle,
-          BrainCircuit,
-          TabletSmartphone,
-          BadgeCheck,
-          Droplets,
-          Ambulance,
-          CloudRain,
-          HeartHandshake,
-          Siren,
-          Bell,
-          Satellite,
-          ShieldAlert,
-          AlertCircle,
-          Calendar,
-          Timer,
-          CheckCircle2,
-          Handshake,
-          ArrowUpRight,
-          ExternalLink,
-        },
-      });
+      import { createIcons, ALL_ICONS } from "../scripts/icons";
+      createIcons({ icons: ALL_ICONS });
 
       const navToggle = document.getElementById("nav-toggle");
       const mobileMenu = document.getElementById("mobile-menu");

@@ -10,7 +10,7 @@ const partners = [
     image: "/assets/victoria-falls-regional-institute.jpg",
     quote: "Committed to academic excellence and community development.",
     description:
-      "VFRI is a higher education and research institution committed to academic excellence and community development. Through Momentum, organisations can commission custom digital platforms for educational and research institutions — from student portals to research repositories, Learning Management Systems (LMS), administrative and enrolment portals, and institutional research databases and websites.",
+      "VFRI is a higher education and research institution committed to academic excellence and community development. Through Momentum, organisations can commission custom digital platforms for educational and research institutions, from student portals to research repositories, Learning Management Systems (LMS), administrative and enrolment portals, and institutional research databases and websites.",
     url: "#",
   },
   {
@@ -21,7 +21,7 @@ const partners = [
     image: "/assets/panoramic-synergy.webp",
     quote: "Trusted and Tested IT Solutions & IT GRC.",
     description:
-      "PSE is a world-class IT consulting and professional services firm specialising in IT solutions and IT Governance, Risk, and Compliance. Through Momentum, clients access PSE's full range of services — digital transformation, ERP deployment, compliance frameworks, and AI-driven engagements. PSE does not operate a direct-referral programme; all engagements flow through Momentum.",
+      "PSE is a world-class IT consulting and professional services firm specialising in IT solutions and IT Governance, Risk, and Compliance. Through Momentum, clients access PSE's full range of services, digital transformation, ERP deployment, compliance frameworks, and AI-driven engagements. PSE does not operate a direct-referral programme; all engagements flow through Momentum.",
     url: "https://panoramicsynergy.com/",
   },
   {
@@ -32,7 +32,7 @@ const partners = [
     image: "/assets/hedera-logo.png",
     quote: "Hello future.",
     description:
-      "Hedera is the world's only public DLT network governed by known institutions — built for fast, secure, and compliant decentralised applications. Through Momentum, clients access Hedera's enterprise network and Academy programme, with developers trained to build production-grade blockchain systems. Hedera does not operate a direct-referral programme; enquire through Momentum.",
+      "Hedera is the world's only public DLT network governed by known institutions, built for fast, secure, and compliant decentralised applications. Through Momentum, clients access Hedera's enterprise network and Academy programme, with developers trained to build production-grade blockchain systems. Hedera does not operate a direct-referral programme; enquire through Momentum.",
     url: "https://hedera.com/",
   },
   {
@@ -43,7 +43,7 @@ const partners = [
     image: "/assets/innovate-maritime-africa.jpg",
     quote: "The 1st Maritime Venture Studio in Africa.",
     description:
-      "Africa's first maritime venture studio — IMA partners with bold maritime founders to transform ideas into impactful innovations shaping the continent's blue economy. Through Momentum, clients gain access to IMA's venture-building expertise and co-development capabilities for maritime-focused technology. IMA does not operate a direct-referral programme; enquire through Momentum.",
+      "Africa's first maritime venture studio, IMA partners with bold maritime founders to transform ideas into impactful innovations shaping the continent's blue economy. Through Momentum, clients gain access to IMA's venture-building expertise and co-development capabilities for maritime-focused technology. IMA does not operate a direct-referral programme; enquire through Momentum.",
     url: "https://innovatemaritimeafrica.com/",
   },
   {
@@ -54,7 +54,7 @@ const partners = [
     image: "/assets/cloudora-logo.png",
     quote: "Enterprise standards for reliability, uptime, and scalability.",
     description:
-      "Cloudora ensures every system deployed through Momentum meets enterprise standards for reliability, uptime, and scalability. Through Momentum, clients access Cloudora's full-stack cloud engineering expertise — from architecture design to automated deployment pipelines, container orchestration and microservices, high-availability architecture and disaster recovery, and cloud cost optimisation and monitoring. Cloudora does not operate a direct-referral programme; enquire through Momentum.",
+      "Cloudora ensures every system deployed through Momentum meets enterprise standards for reliability, uptime, and scalability. Through Momentum, clients access Cloudora's full-stack cloud engineering expertise, from architecture design to automated deployment pipelines, container orchestration and microservices, high-availability architecture and disaster recovery, and cloud cost optimisation and monitoring. Cloudora does not operate a direct-referral programme; enquire through Momentum.",
     url: "#",
   },
 ];
@@ -90,9 +90,7 @@ const partners = [
       <div class="partner-stagger">
         {
           partners.map((partner, index) => (
-            <div class="partner-row" data-reveal>
-
-
+            <div class="partner-row">
               <div class="partner-row-brand">
                 <div class="partner-logo-box">
                   {partner.image ? (
@@ -133,29 +131,29 @@ const partners = [
       </div>
 
       <div class="features-grid">
-        <div class="feature-card" data-reveal>
+        <div class="feature-card">
           <div class="feature-icon">
             <i data-lucide="building-2"></i>
           </div>
           <h3 class="feature-title">Technology Partners</h3>
           <p class="feature-text">
-            Industry leaders whose platforms and expertise Momentum co-delivers to
-            clients. All client engagements flow through Momentum.
+            Industry leaders whose platforms and expertise Momentum co-delivers
+            to clients. All client engagements flow through Momentum.
           </p>
         </div>
 
-        <div class="feature-card" data-reveal>
+        <div class="feature-card">
           <div class="feature-icon">
             <i data-lucide="users"></i>
           </div>
           <h3 class="feature-title">Deployment Partners</h3>
           <p class="feature-text">
             Organisations that absorb our cohort graduates directly into their
-            teams — proven, production-ready engineers from day one.
+            teams, proven, production-ready engineers from day one.
           </p>
         </div>
 
-        <div class="feature-card" data-reveal>
+        <div class="feature-card">
           <div class="feature-icon">
             <i data-lucide="heart"></i>
           </div>
@@ -176,11 +174,11 @@ const partners = [
       <div class="cta-content">
         <h2 class="display-3xl mb-xs">Become a Partner</h2>
         <p class="text-muted mb-md" style="font-size: var(--text-base);">
-          Whether you want to deploy our systems, hire our developers, or fund our
-          talent — let's build together.
+          Whether you want to deploy our systems, hire our developers, or fund
+          our talent, let's build together.
         </p>
         <div class="cta-buttons">
-          <a href="/contact" class="btn btn-primary btn-lg">
+          <a href="/contact?intent=partner#contact-form-section" class="btn btn-primary btn-lg">
             <span>Get In Touch</span>
             <i data-lucide="arrow-right"></i>
           </a>

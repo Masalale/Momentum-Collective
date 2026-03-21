@@ -11,7 +11,8 @@
   --text-primary: #0F172A;
   --text-muted: #64748B;
   --accent-primary: #0D9488;
-  --accent-ochre: var(--accent-primary); /* Alias for backward compatibility */
+  --accent-ochre: var(--accent-primary);
+  /* Alias for backward compatibility */
   --accent-green: #10B981;
   --accent-crimson: #E11D48;
   --accent-electric: #3B82F6;
@@ -54,11 +55,8 @@
 
   /* Animation easings */
   --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
-  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
   --duration-micro: 200ms;
   --duration-standard: 300ms;
-  --duration-section: 600ms;
-  --duration-macro: 1000ms;
 }
 
 /* Section 2: Reset + Base */
@@ -288,7 +286,7 @@ h5 {
 
 /* Centre a solo orphan in the last row of the 2-col mobile grid */
 @media (max-width: 767px) {
-  .grid-3 > *:last-child:nth-child(odd) {
+  .grid-3>*:last-child:nth-child(odd) {
     grid-column: 1 / -1;
     max-width: 50%;
     margin-left: auto;
@@ -426,7 +424,7 @@ h5 {
   width: 100%;
 }
 
-/* CSS-animated hamburger — no Lucide swap needed */
+/* CSS-animated hamburger - no Lucide swap needed */
 .nav-toggle {
   display: flex;
   align-items: center;
@@ -473,12 +471,18 @@ h5 {
     top 0.3s var(--ease-out-expo);
 }
 
-.nav-toggle-bar::before { top: -7px; }
-.nav-toggle-bar::after  { top:  7px; }
+.nav-toggle-bar::before {
+  top: -7px;
+}
+
+.nav-toggle-bar::after {
+  top: 7px;
+}
 
 /* ── Open state: bars become an X ── */
 .nav-toggle.is-open .nav-toggle-bar {
-  background: transparent; /* hide middle bar */
+  background: transparent;
+  /* hide middle bar */
 }
 
 .nav-toggle.is-open .nav-toggle-bar::before {
@@ -914,7 +918,7 @@ h5 {
 
 /* Centre a solo orphan in the last row of the 2-col mobile grid */
 @media (max-width: 767px) {
-  .features-grid > .feature-card:last-child:nth-child(odd) {
+  .features-grid>.feature-card:last-child:nth-child(odd) {
     grid-column: 1 / -1;
     max-width: 50%;
     margin: 0 auto;
@@ -993,7 +997,7 @@ h5 {
 
 /* Centre a solo orphan in the last row of the 2-col mobile grid */
 @media (max-width: 767px) {
-  .products-grid > .product-card:last-child:nth-child(odd) {
+  .products-grid>.product-card:last-child:nth-child(odd) {
     grid-column: 1 / -1;
     max-width: 50%;
     margin: 0 auto;
@@ -1196,90 +1200,6 @@ h5 {
   font-size: var(--text-xs);
   text-transform: uppercase;
   letter-spacing: 0.1em;
-}
-
-/* Section 25: Ecosystem Section */
-.ecosystem-card {
-  display: grid;
-  grid-template-columns: 1fr;
-  background: var(--bg-alt);
-  border: 1px solid var(--border-subtle);
-  border-radius: 4px;
-  overflow: hidden;
-  transition: all var(--duration-standard) var(--ease-out-expo);
-}
-
-@media (min-width: 768px) {
-  .ecosystem-card {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-.ecosystem-card:hover {
-  border-color: var(--accent-ochre);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-}
-
-.ecosystem-image-wrap {
-  background: var(--bg-deep);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: var(--space-lg);
-  min-height: 260px;
-}
-
-.ecosystem-image {
-  width: 100%;
-  max-width: 260px;
-  height: auto;
-  max-height: 210px;
-  object-fit: contain;
-  display: block;
-  margin: 0 auto;
-}
-
-.ecosystem-content {
-  padding: var(--space-lg);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: var(--space-xs);
-}
-
-.ecosystem-content h3 {
-  font-family: var(--font-display);
-  font-size: var(--text-2xl);
-  font-weight: 400;
-  color: var(--text-primary);
-  margin-bottom: var(--space-xs);
-}
-
-.ecosystem-features {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-xs);
-  margin-top: var(--space-sm);
-  padding-top: var(--space-sm);
-  border-top: 1px solid var(--border-subtle);
-}
-
-.ecosystem-feature {
-  display: flex;
-  align-items: center;
-  gap: var(--space-xs);
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--text-muted);
-}
-
-.ecosystem-feature svg {
-  width: 16px;
-  height: 16px;
-  color: var(--accent-ochre);
-  flex-shrink: 0;
 }
 
 /* Section 26: Utility Classes */

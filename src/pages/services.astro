@@ -4,7 +4,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 <BaseLayout
   title="Services"
-  description="Momentum Labs CLG runs Africa's most intensive developer programmes — cohorts, masterclasses, and hackathons — and provides exclusive access to best-in-class technology partners."
+  description="Momentum Labs CLG runs Africa's most intensive developer programmes: cohorts, masterclasses, and hackathons, and provides exclusive access to best-in-class technology partners."
   barbaNamespace="services"
 >
   <!-- 1. PAGE HERO -->
@@ -14,13 +14,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <p class="hero-eyebrow">What We Do</p>
         <h1 class="hero-title">Execution Over Theory</h1>
         <p class="hero-subtext">
-          We run Africa's most intensive developer programmes — cohorts,
+          We run Africa's most intensive developer programmes: cohorts,
           masterclasses, and hackathons. We also connect clients with
           world-class technology partners across blockchain, IT consulting,
           maritime, education, and cloud infrastructure.
         </p>
         <div class="hero-buttons">
-          <a href="/contact" class="btn btn-primary btn-lg">
+          <a href="/contact?intent=general#contact-form-section" class="btn btn-primary btn-lg">
             <span>Start a Conversation</span>
             <i data-lucide="arrow-right"></i>
           </a>
@@ -37,20 +37,19 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <div class="container">
       <div class="section-header">
         <p class="eyebrow">Core Programmes</p>
-        <h2 class="section-title">Three Ways We Train Builders</h2>
+        <h2 class="section-title">How We Train Builders</h2>
         <p class="section-description">
           High-intensity formats designed for one outcome: developers who ship
           real software into production.
         </p>
       </div>
 
-      <div class="card-grid-editorial cols-3">
+      <div class="card-grid-editorial">
         <!-- Cohorts -->
         <div
           id="cohorts"
           class="card-editorial card-editorial--programme"
-          data-reveal
-        >
+                 >
           <div class="card-editorial-icon"><i data-lucide="users"></i></div>
           <div class="card-editorial-tagline">
             Intensive Programme · 6–8 Weeks
@@ -59,7 +58,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           <p class="card-editorial-description">
             Our flagship format. Developers join live product teams, ship
             production software, and emerge as engineers who've proven
-            themselves in real market conditions — not just in theory.
+            themselves in real market conditions, not just in theory.
           </p>
           <ul class="programme-list">
             <li>
@@ -78,22 +77,25 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               software
             </li>
           </ul>
-          <a href="/contact" class="programme-cta">
+          <a href="/contact?service=cohorts&intent=developer#contact-form-section" class="programme-cta">
             Enquire about cohorts <i data-lucide="arrow-right"></i>
           </a>
         </div>
 
-        <!-- Masterclasses -->
-        <div class="card-editorial card-editorial--programme" data-reveal>
+        <!-- Masterclasses + Hackathons -->
+        <div
+          id="masterclasses"
+          class="card-editorial card-editorial--programme"
+                 >
           <div class="card-editorial-icon"><i data-lucide="book-open"></i></div>
           <div class="card-editorial-tagline">
-            Specialist Sessions · Focused Depth
+            Specialist Sessions & Hackathons
           </div>
           <h3 class="card-editorial-title">Masterclasses</h3>
           <p class="card-editorial-description">
             Targeted deep-dives into specific stacks, tools, and disciplines.
             Delivered by practitioners actively using these technologies in
-            production — not instructors reading from slides.
+            production, not instructors reading from slides.
           </p>
           <ul class="programme-list">
             <li>
@@ -109,46 +111,41 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               <i data-lucide="check-circle-2"></i> Full-stack product engineering
             </li>
           </ul>
-          <a href="/contact" class="programme-cta">
-            Enquire about masterclasses <i data-lucide="arrow-right"></i>
-          </a>
-        </div>
 
-        <!-- Hackathons -->
-        <div
-          id="hackathons"
-          class="card-editorial card-editorial--programme"
-          data-reveal
-        >
-          <div class="card-editorial-icon"><i data-lucide="timer"></i></div>
-          <div class="card-editorial-tagline">
-            Rapid-Build Events · 48–72 Hours
+          <div class="programme-sub-section">
+            <p class="card-editorial-tagline" style="margin-bottom: 0.5rem;">
+              Hackathon Events · 48–72 Hours
+            </p>
+            <p
+              class="card-editorial-description"
+              style="margin-bottom: 0.5rem;"
+            >
+              Plus high-energy build events where developers tackle real
+              problems and ship working prototypes in days, used to surface
+              talent, test ideas fast, and generate proof-of-concept systems.
+            </p>
+            <ul class="programme-list">
+              <li>
+                <i data-lucide="check-circle-2"></i> Organisation-sponsored problem
+                statements
+              </li>
+              <li>
+                <i data-lucide="check-circle-2"></i> Cross-functional developer teams
+              </li>
+              <li>
+                <i data-lucide="check-circle-2"></i> Working demos at the end, not
+                slide decks
+              </li>
+              <li>
+                <i data-lucide="check-circle-2"></i> Best projects fast-tracked into
+                full builds
+              </li>
+            </ul>
           </div>
-          <h3 class="card-editorial-title">Hackathons</h3>
-          <p class="card-editorial-description">
-            Compressed, high-energy build events where developers tackle real
-            problems and ship working prototypes in days. Used to surface
-            talent, test ideas fast, and generate proof-of-concept systems.
-          </p>
-          <ul class="programme-list">
-            <li>
-              <i data-lucide="check-circle-2"></i> Organisation-sponsored problem
-              statements
-            </li>
-            <li>
-              <i data-lucide="check-circle-2"></i> Cross-functional developer teams
-            </li>
-            <li>
-              <i data-lucide="check-circle-2"></i> Working demos at the end — not
-              slide decks
-            </li>
-            <li>
-              <i data-lucide="check-circle-2"></i> Best projects fast-tracked into
-              full builds
-            </li>
-          </ul>
-          <a href="/contact" class="programme-cta">
-            Enquire about hackathons <i data-lucide="arrow-right"></i>
+
+          <a href="/contact?service=masterclasses&intent=learn#contact-form-section" class="programme-cta">
+            Enquire about masterclasses & hackathons <i
+              data-lucide="arrow-right"></i>
           </a>
         </div>
       </div>
@@ -185,26 +182,20 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <button
           class="intent-card"
           data-intent="train"
-          data-scroll="core-programs"
-          data-subject="Team Training Enquiry"
-          data-body="Hi Momentum, I'm interested in training our developers through a cohort or masterclass."
+          data-scroll="masterclasses"
+          data-subject="Masterclass & Hackathon Enquiry"
+          data-body="Hi Momentum, I'm interested in your masterclasses and hackathon events."
         >
           <div class="intent-icon"><i data-lucide="graduation-cap"></i></div>
           <div class="intent-label">Learn with us</div>
-          <div class="intent-hint">Join our masterclasses</div>
+          <div class="intent-hint">Masterclasses & hackathons</div>
         </button>
 
-        <button
-          class="intent-card"
-          data-intent="hackathon"
-          data-scroll="hackathons"
-          data-subject="Hackathon Participation Enquiry"
-          data-body="Hi Momentum, I'm an individual interested in participating in your next hackathon."
-        >
-          <div class="intent-icon"><i data-lucide="zap"></i></div>
-          <div class="intent-label">Join a hackathon</div>
-          <div class="intent-hint">Open to individuals</div>
-        </button>
+        <a href="/courses" class="intent-card intent-card--link">
+          <div class="intent-icon"><i data-lucide="book-open"></i></div>
+          <div class="intent-label">Browse courses</div>
+          <div class="intent-hint">Partner learning</div>
+        </a>
 
         <button
           class="intent-card"
@@ -223,16 +214,16 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <!-- 4. CTA SECTION -->
   <section class="section cta-section" style="margin-top: var(--space-xl);">
     <div class="kente-decoration"></div>
-    <div class="container container-narrow text-center" data-reveal>
+    <div class="container container-narrow text-center">
       <h2 class="display-3xl" style="margin-bottom: var(--space-sm);">
         Partner With the Lab
       </h2>
       <p class="text-lg text-muted" style="margin-bottom: var(--space-lg);">
         Whether you want to train your team, run a hackathon, or access a
-        technology partner — start a conversation with Momentum.
+        technology partner, start a conversation with Momentum.
       </p>
       <div class="flex items-center justify-center gap-sm">
-        <a href="/contact" class="btn btn-primary btn-lg">
+        <a href="/contact?intent=general#contact-form-section" class="btn btn-primary btn-lg">
           <span>Start a Conversation</span><i data-lucide="arrow-right"></i>
         </a>
         <a href="/apps" class="btn btn-outline btn-lg"> See Our Products </a>
@@ -246,7 +237,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <span class="intent-sticky-label" id="intent-sticky-label"
         >Ready to get started?</span
       >
-      <a id="intent-sticky-cta" href="/contact" class="btn btn-primary">
+      <a id="intent-sticky-cta" href="/contact#contact-form-section" class="btn btn-primary">
         <span id="intent-sticky-cta-text">Book a call</span>
         <i data-lucide="arrow-up-right" style="width:16px;height:16px;"></i>
       </a>
