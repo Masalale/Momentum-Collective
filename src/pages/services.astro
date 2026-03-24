@@ -37,10 +37,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <div class="container">
       <div class="section-header">
         <p class="eyebrow">Core Programmes</p>
-        <h2 class="section-title">How We Train Builders</h2>
+        <h2 class="section-title">How We Work</h2>
         <p class="section-description">
-          High-intensity formats designed for one outcome: developers who ship
-          real software into production.
+          Three ways to engage Momentum — train developers, learn a discipline,
+          or commission a production-ready build.
         </p>
       </div>
 
@@ -133,6 +133,45 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               data-lucide="arrow-right"></i>
           </a>
         </div>
+
+        <!-- Development Contracts -->
+        <div
+          id="dev-contracts"
+          class="card-editorial card-editorial--programme"
+        >
+          <div class="card-editorial-icon"><i data-lucide="hammer"></i></div>
+          <div class="card-editorial-tagline">
+            Client Builds · 6–8 Week Delivery
+          </div>
+          <h3 class="card-editorial-title">Development Contracts</h3>
+          <p class="card-editorial-description">
+            Momentum takes on external builds. Bring a brief — any system, any
+            industry. A dedicated product team is assembled, built into
+            production, and delivered in 6–8 weeks. Same standard as our 44+
+            live products.
+          </p>
+          <ul class="programme-list">
+            <li>
+              <i data-lucide="check-circle-2"></i> Any system type — AI, SaaS,
+              mobile, blockchain, web
+            </li>
+            <li>
+              <i data-lucide="check-circle-2"></i> Dedicated product team
+              assembled per project
+            </li>
+            <li>
+              <i data-lucide="check-circle-2"></i> Production-ready delivery
+              in 6–8 weeks
+            </li>
+            <li>
+              <i data-lucide="check-circle-2"></i> Built on the same pipeline
+              as our 44+ live products
+            </li>
+          </ul>
+          <a href="/contact?service=dev-contracts&intent=client#contact-form-section" class="programme-cta">
+            Commission a build <i data-lucide="arrow-right"></i>
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -191,6 +230,18 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           <div class="intent-icon"><i data-lucide="handshake"></i></div>
           <div class="intent-label">Partner with us</div>
           <div class="intent-hint">For companies</div>
+        </button>
+
+        <button
+          class="intent-card"
+          data-intent="client"
+          data-scroll="dev-contracts"
+          data-subject="Development Contract Enquiry"
+          data-body="Hi Momentum, we'd like to commission a software build."
+        >
+          <div class="intent-icon"><i data-lucide="hammer"></i></div>
+          <div class="intent-label">Commission a build</div>
+          <div class="intent-hint">For companies & clients</div>
         </button>
       </div>
     </div>
