@@ -108,7 +108,8 @@ function initContactParams(container: HTMLElement): void {
 
     const msg = form.querySelector<HTMLTextAreaElement>('[name="message"]');
     if (msg && body) {
-      msg.value = body;
+      msg.value = '';
+      setTimeout(() => typewriter(msg, body), 300);
     } else if (msg && !msg.value.trim()) {
       let message = '';
       if (course)                    message = `Hi Momentum, I'm interested in ${course}${partner ? ` via ${partner}` : ''}.`;
@@ -116,8 +117,8 @@ function initContactParams(container: HTMLElement): void {
       else if (intent === 'partner')   message = "Hi Momentum, we're interested in partnering with Momentum Collective.";
       else if (service)                message = `Hi Momentum, I'm enquiring about your ${service} service.`;
       if (message) {
-        msg.value = message;
-        msg.dataset.typewriter = message; // consumed by after-hook onComplete for animation
+        msg.value = '';
+        setTimeout(() => typewriter(msg, message), 300);
       }
     }
   }
@@ -691,7 +692,6 @@ barba.init({
 
       leave(data: any) {
         const overlay = getOverlay();
-        lenis.stop();
 
         return new Promise<void>((resolve) => {
           gsap

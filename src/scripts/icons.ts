@@ -83,6 +83,8 @@ import {
   Handshake,
   ArrowUpRight,
   ExternalLink,
+  Hammer,
+  HeartPulse,
 } from 'lucide';
 
 export const ALL_ICONS = {
@@ -162,6 +164,8 @@ export const ALL_ICONS = {
   Handshake,
   ArrowUpRight,
   ExternalLink,
+  Hammer,
+  HeartPulse,
 };
 
 export { createIcons };

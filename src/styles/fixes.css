@@ -711,20 +711,17 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: var(--space-sm);
-  max-width: 600px;
-  margin: 0 auto;
 }
 
 @media (min-width: 768px) {
   .intent-grid {
-    max-width: 100%;
     gap: var(--space-md);
   }
 }
 
 @media (min-width: 1024px) {
   .intent-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
   }
 }
 
@@ -924,6 +921,7 @@ details.card-editorial[open] .card-course-chevron {
   margin-top: var(--space-sm);
   padding-top: var(--space-sm);
 }
+
 
 .card-course-list {
   list-style: none;

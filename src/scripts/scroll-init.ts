@@ -83,5 +83,21 @@ if (typeof window !== 'undefined') {
         }
       });
     });
+
+    // Sync Lenis when dragging the native scrollbar to prevent jitter
+    let scrollbarDragging = false;
+    document.addEventListener('mousedown', (e: MouseEvent) => {
+      if (e.clientX >= document.documentElement.clientWidth) {
+        scrollbarDragging = true;
+      }
+    });
+    document.addEventListener('scroll', () => {
+      if (scrollbarDragging) {
+        lenis.scrollTo(window.scrollY, { immediate: true });
+      }
+    }, { passive: true });
+    document.addEventListener('mouseup', () => {
+      scrollbarDragging = false;
+    });
   });
 }
