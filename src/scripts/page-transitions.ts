@@ -151,6 +151,15 @@ function initPage(container: HTMLElement): void {
   cleanupScroll();
   ScrollTrigger.refresh();
 
+  if (container.querySelector('.marquee-track')) {
+    import('./marquee').then(({ initMarquee }) => {
+      initMarquee();
+    });
+  }
+
+  cleanupScroll();
+  ScrollTrigger.refresh();
+
   // Update relative timestamps on every page transition
   container.querySelectorAll<HTMLElement>('time[data-reltime]').forEach((el) => {
     const iso = el.getAttribute('datetime');
