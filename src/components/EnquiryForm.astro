@@ -1,4 +1,6 @@
 ---
+import { CONTACT_EMAIL } from '../lib/constants';
+
 interface Props {
   course?: string;
   partner?: string;
@@ -39,16 +41,14 @@ const defaultMessage = course
     </div>
   )}
 
-  <form class={`enquiry-form${compact ? ' enquiry-form--compact' : ''}`}>
-    <input type="hidden" name="access_key"  value="YOUR_WEB3FORMS_KEY" />
-    <input type="hidden" name="subject"     value={`Enquiry — ${course ?? service ?? 'Momentum Collective'}`} />
-    <input type="hidden" name="from_name"   value="Momentum Website" />
-    <input type="hidden" name="course"      value={course ?? ''} />
-    <input type="hidden" name="partner"     value={partner ?? ''} />
-    <input type="hidden" name="service"     value={service ?? ''} />
-    <input type="hidden" name="intent"      value={intent ?? ''} />
-    <input type="hidden" name="source"      value={Astro.url.pathname} />
-    <input type="checkbox" name="botcheck"  style="display:none" tabindex="-1" />
+  <form class={`enquiry-form${compact ? ' enquiry-form--compact' : ''}`} data-has-js-submit="mailto">
+    <input type="hidden" name="subject" value={`Enquiry — ${course ?? service ?? 'Momentum Collective'}`} />
+    <input type="hidden" name="course" value={course ?? ''} />
+    <input type="hidden" name="partner" value={partner ?? ''} />
+    <input type="hidden" name="service" value={service ?? ''} />
+    <input type="hidden" name="intent" value={intent ?? ''} />
+    <input type="hidden" name="source" value={Astro.url.pathname} />
+    <input type="hidden" name="to_email" value={CONTACT_EMAIL} />
 
     <div class="enquiry-field">
       {!compact && <label class="enquiry-label">Name</label>}

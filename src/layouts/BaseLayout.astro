@@ -7,12 +7,17 @@ interface Props {
 
 import "../styles/global.css";
 import "../styles/fixes.css";
+import { SITE_URL } from "../lib/constants";
 
 const {
   title,
   description = "Momentum Labs CLG - Africa's execution-first product lab. Build. Ship. Sell. Scale.",
   barbaNamespace,
 } = Astro.props;
+
+const canonicalUrl = new URL(Astro.url.pathname, SITE_URL).toString();
+const ogImageUrl = new URL('/assets/momentum-foundation.png', SITE_URL).toString();
+const isNotFoundPage = barbaNamespace === 'not-found';
 ---
 
 <!doctype html>
@@ -24,6 +29,7 @@ const {
     <meta name="description" content={description} />
     <meta name="theme-color" content="#FFFFFF" />
     <link rel="icon" type="image/png" href="/assets/momentum-labs.png" />
+    <link rel="canonical" href={canonicalUrl} />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -43,17 +49,17 @@ const {
     <meta property="og:site_name" content="Momentum Collective" />
     <meta
       property="og:image"
-      content="https://momentum-collective.vercel.app/assets/momentum-foundation.png"
+      content={ogImageUrl}
     />
     <meta property="og:image:width" content="500" />
     <meta property="og:image:height" content="500" />
     <meta name="twitter:card" content="summary" />
     <meta
       name="twitter:image"
-      content="https://momentum-collective.vercel.app/assets/momentum-foundation.png"
+      content={ogImageUrl}
     />
   </head>
-  <body>
+  <body class={isNotFoundPage ? 'is-not-found' : undefined}>
     <nav class="main-nav" id="main-nav">
       <div class="nav-container">
         <a href="/" class="nav-logo">Momentum Collective</a>
@@ -86,8 +92,8 @@ const {
       <a href="/contact" class="nav-link">Contact</a>
     </div>
 
-    <div data-barba="wrapper">
-      <main data-barba="container" data-barba-namespace={barbaNamespace}>
+    <div data-barba="wrapper" class={isNotFoundPage ? 'layout-fill' : undefined}>
+      <main data-barba="container" data-barba-namespace={barbaNamespace} class={isNotFoundPage ? 'layout-fill' : undefined}>
         <slot />
       </main>
     </div>
@@ -166,9 +172,13 @@ const {
       }
     </script>
 
-    <script>
-      import "../scripts/scroll-init";
-      import "../scripts/page-transitions";
-    </script>
+    {
+      !isNotFoundPage && (
+        <script>
+          import "../scripts/scroll-init";
+          import "../scripts/page-transitions";
+        </script>
+      )
+    }
   </body>
 </html>

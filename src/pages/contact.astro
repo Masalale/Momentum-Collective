@@ -1,6 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import EnquiryForm from "../components/EnquiryForm.astro";
+
+const url = new URL(Astro.request.url);
+const showSuccess = url.searchParams.get('success') === 'true';
 ---
 
 <BaseLayout
@@ -20,9 +23,20 @@ import EnquiryForm from "../components/EnquiryForm.astro";
         </p>
       </div>
     </div>
-  </section>
+</section>
 
-  <!-- 2. CONTACT METHODS -->
+{showSuccess && (
+<section class="section" style="padding-top: var(--space-sm); padding-bottom: 0;">
+<div class="container">
+<div class="enquiry-success" style="display: flex;">
+<i data-lucide="check-circle-2"></i>
+<p>Thank you! Your enquiry has been submitted. We'll be in touch shortly.</p>
+</div>
+</div>
+</section>
+)}
+
+<!-- 2. CONTACT METHODS -->
   <section
     class="section"
     style="padding-top: var(--space-md); overflow: visible;"

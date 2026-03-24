@@ -1,0 +1,50 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Page Not Found"
+  description="The page you requested could not be found."
+  barbaNamespace="not-found"
+>
+  <section class="hero hero-compact not-found-hero">
+    <div class="container">
+      <div class="hero-content">
+        <p class="hero-eyebrow">404</p>
+        <h1 class="hero-title">Page Not Found</h1>
+        <p class="hero-subtext">
+          Sorry, we couldn't find that page. It may have moved or no longer exists.
+        </p>
+        <div class="hero-buttons">
+          <a href="/" class="btn btn-primary btn-lg">
+            <span>Back to Home</span>
+            <i data-lucide="arrow-right"></i>
+          </a>
+          <a href="/contact" class="btn btn-outline btn-lg">
+            Contact Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .not-found-hero {
+    min-height: 0;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(1.5rem, 4vw, 3rem) 0 !important;
+  }
+
+  .not-found-hero .container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .not-found-hero .hero-content {
+    max-width: 700px;
+  }
+</style>

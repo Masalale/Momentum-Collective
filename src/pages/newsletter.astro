@@ -98,7 +98,6 @@ const linkedInPosts = [
             id="newsletter-email"
             class="newsletter-input"
             placeholder="your@email.com"
-            required
           />
           <button type="submit" class="btn btn-primary btn-lg">
             <span>Subscribe</span>
@@ -120,16 +119,27 @@ const linkedInPosts = [
           const form = document.getElementById(
             "newsletter-form",
           ) as HTMLFormElement;
+          const emailInput = document.getElementById(
+            "newsletter-email",
+          ) as HTMLInputElement;
           const status = document.getElementById(
             "newsletter-status",
           ) as HTMLElement;
 
           form?.addEventListener("submit", (e) => {
             e.preventDefault();
-            status.textContent = "Coming soon, we're setting up the dispatch.";
+            const prefilling = emailInput?.value
+              ? `?subject=${encodeURIComponent("Newsletter Interest")}&body=${encodeURIComponent(`Hi Momentum, please add ${emailInput.value} to the newsletter dispatch list.`)}`
+              : "";
+            status.textContent = "Newsletter coming soon. Please use our contact form for updates.";
+            const link = document.createElement("a");
+            link.href = `/contact${prefilling}#contact-form-section`;
+            link.textContent = " Open contact form";
+            link.style.textDecoration = "underline";
+            status.appendChild(link);
             status.style.display = "block";
           });
-        </script>
+</script>
       </div>
     </div>
   </section>

@@ -6,8 +6,7 @@ import {
   cleanupScroll,
 } from './scroll-init';
 import { createIcons, ALL_ICONS } from './icons';
-
-const WEB3FORMS_KEY = 'YOUR_WEB3FORMS_KEY';
+import { CONTACT_EMAIL } from '../lib/constants';
 
 function typewriter(el: HTMLTextAreaElement, text: string, speed = 18): void {
   el.value = '';
@@ -33,16 +32,33 @@ function bindEnquiryForm(wrap: HTMLElement): void {
     const btn = form.querySelector<HTMLButtonElement>('.enquiry-submit');
     if (btn) btn.disabled = true;
     try {
-      const res = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        body: new FormData(form),
-      });
-      if (res.ok) {
-        form.style.display = 'none';
-        if (success) success.style.display = 'flex';
-      } else {
-        throw new Error('submit failed');
-      }
+      const name = form.querySelector<HTMLInputElement>('[name="name"]')?.value?.trim() ?? '';
+      const email = form.querySelector<HTMLInputElement>('[name="email"]')?.value?.trim() ?? '';
+      const subject = form.querySelector<HTMLInputElement>('[name="subject"]')?.value?.trim() ?? 'Website Enquiry';
+      const message = form.querySelector<HTMLTextAreaElement>('[name="message"]')?.value?.trim() ?? '';
+      const course = form.querySelector<HTMLInputElement>('[name="course"]')?.value?.trim() ?? '';
+      const partner = form.querySelector<HTMLInputElement>('[name="partner"]')?.value?.trim() ?? '';
+      const service = form.querySelector<HTMLInputElement>('[name="service"]')?.value?.trim() ?? '';
+      const intent = form.querySelector<HTMLInputElement>('[name="intent"]')?.value?.trim() ?? '';
+      const source = form.querySelector<HTMLInputElement>('[name="source"]')?.value?.trim() ?? '';
+
+      const lines = [
+        `Name: ${name || '-'}`,
+        `Email: ${email || '-'}`,
+        `Course: ${course || '-'}`,
+        `Partner: ${partner || '-'}`,
+        `Service: ${service || '-'}`,
+        `Intent: ${intent || '-'}`,
+        `Source: ${source || window.location.pathname}`,
+        '',
+        message || '-',
+      ];
+
+      const mailto = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join('\n'))}`;
+      window.location.href = mailto;
+
+      form.style.display = 'none';
+      if (success) success.style.display = 'flex';
     } catch {
       if (btn) btn.disabled = false;
       if (error) error.style.display = 'flex';
@@ -62,6 +78,8 @@ function initContactParams(container: HTMLElement): void {
   const partner = params.get('partner');
   const service = params.get('service');
   const intent  = params.get('intent');
+  const subject = params.get('subject');
+  const body    = params.get('body');
 
   const heading = container.querySelector<HTMLElement>('#contact-form-heading');
   const headingMap: Record<string, string> = {
@@ -86,9 +104,12 @@ function initContactParams(container: HTMLElement): void {
     set('partner', partner);
     set('service', service);
     set('intent', intent);
+    set('subject', subject);
 
     const msg = form.querySelector<HTMLTextAreaElement>('[name="message"]');
-    if (msg && !msg.value.trim()) {
+    if (msg && body) {
+      msg.value = body;
+    } else if (msg && !msg.value.trim()) {
       let message = '';
       if (course)                    message = `Hi Momentum, I'm interested in ${course}${partner ? ` via ${partner}` : ''}.`;
       else if (intent === 'developer') message = "Hi Momentum, I'm a developer interested in joining your next cohort.";
@@ -460,16 +481,14 @@ function initPage(container: HTMLElement): void {
         `<h3 class="course-popup-title">Register Your Interest</h3>` +
         `<p class="course-popup-meta">${courseName} · ${partnerName}</p>` +
         `<div class="enquiry-form-wrap" id="popup-form-wrap">` +
-          `<form class="enquiry-form enquiry-form--compact">` +
-            `<input type="hidden" name="access_key"  value="${WEB3FORMS_KEY}" />` +
-            `<input type="hidden" name="subject"     value="Course Enquiry — ${courseName}" />` +
-            `<input type="hidden" name="from_name"   value="Momentum Website" />` +
-            `<input type="hidden" name="course"      value="${courseName}" />` +
-            `<input type="hidden" name="partner"     value="${partnerName}" />` +
-            `<input type="hidden" name="source"      value="/courses" />` +
-            `<input type="checkbox" name="botcheck"  style="display:none" tabindex="-1" />` +
-            `<input type="text"  name="name"  class="enquiry-input" placeholder="Your name"       required />` +
-            `<input type="email" name="email" class="enquiry-input" placeholder="your@email.com"  required />` +
+            `<form class="enquiry-form enquiry-form--compact" data-has-js-submit="mailto">` +
+            `<input type="hidden" name="subject" value="Course Enquiry — ${courseName}" />` +
+            `<input type="hidden" name="course" value="${courseName}" />` +
+            `<input type="hidden" name="partner" value="${partnerName}" />` +
+            `<input type="hidden" name="source" value="/courses" />` +
+            `<input type="hidden" name="to_email" value="${CONTACT_EMAIL}" />` +
+            `<input type="text" name="name" class="enquiry-input" placeholder="Your name" required />` +
+            `<input type="email" name="email" class="enquiry-input" placeholder="your@email.com" required />` +
             `<textarea name="message" class="enquiry-textarea" rows="5">${defaultMsg}</textarea>` +
             `<button type="submit" class="btn btn-primary enquiry-submit">Send Enquiry</button>` +
           `</form>` +
@@ -599,6 +618,8 @@ function initPage(container: HTMLElement): void {
 
         const intent = card.dataset.intent ?? '';
         const msg = intentMessages[intent];
+        const subject = card.dataset.subject;
+        const body = card.dataset.body;
 
 
         if (stickyLabel && msg) stickyLabel.textContent = msg.label;
@@ -607,9 +628,20 @@ function initPage(container: HTMLElement): void {
           const intentLinks: Record<string, string> = {
             developer: '/contact?intent=developer&service=cohorts#contact-form-section',
             train:     '/contact?intent=learn&service=masterclasses#contact-form-section',
+            hackathon: '/contact?intent=learn&service=hackathon#contact-form-section',
             partner:   '/contact?intent=partner#contact-form-section',
           };
-          stickyCta.href = intentLinks[intent] ?? '/contact#contact-form-section';
+          const baseHref = intentLinks[intent] ?? '/contact#contact-form-section';
+          if (subject || body) {
+            const [path, hash = ''] = baseHref.split('#');
+            const params = new URLSearchParams(path.includes('?') ? path.split('?')[1] : '');
+            if (subject) params.set('subject', subject);
+            if (body) params.set('body', body);
+            const route = path.split('?')[0];
+            stickyCta.href = `${route}?${params.toString()}${hash ? `#${hash}` : ''}`;
+          } else {
+            stickyCta.href = baseHref;
+          }
         }
         stickyBar?.classList.add('visible');
         stickyBar?.removeAttribute('aria-hidden');

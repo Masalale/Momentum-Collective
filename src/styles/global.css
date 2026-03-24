@@ -85,6 +85,30 @@ body {
   overflow-x: hidden;
 }
 
+body.is-not-found {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+body.is-not-found [data-barba="wrapper"],
+body.is-not-found [data-barba="wrapper"].layout-fill {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+body.is-not-found [data-barba="container"],
+body.is-not-found [data-barba="container"].layout-fill {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+body.is-not-found .main-footer {
+  margin-top: auto;
+}
+
 /* ── Lenis Smooth Scroll Core ────────────────────────────────────────── */
 html.lenis {
   height: auto;

@@ -11,7 +11,7 @@ const partners = [
     quote: "Committed to academic excellence and community development.",
     description:
       "VFRI is a higher education and research institution committed to academic excellence and community development. Through Momentum, organisations can commission custom digital platforms for educational and research institutions, from student portals to research repositories, Learning Management Systems (LMS), administrative and enrolment portals, and institutional research databases and websites.",
-    url: "#",
+    // url: "/contact?intent=partner&partner=Victoria+Falls+Regional+Institute#contact-form-section",
   },
   {
     name: "Panoramic Synergy Enterprises",
@@ -22,7 +22,7 @@ const partners = [
     quote: "Trusted and Tested IT Solutions & IT GRC.",
     description:
       "PSE is a world-class IT consulting and professional services firm specialising in IT solutions and IT Governance, Risk, and Compliance. Through Momentum, clients access PSE's full range of services, digital transformation, ERP deployment, compliance frameworks, and AI-driven engagements. PSE does not operate a direct-referral programme; all engagements flow through Momentum.",
-    url: "https://panoramicsynergy.com/",
+    // url: "https://panoramicsynergy.com/",
   },
   {
     name: "Hedera",
@@ -33,7 +33,7 @@ const partners = [
     quote: "Hello future.",
     description:
       "Hedera is the world's only public DLT network governed by known institutions, built for fast, secure, and compliant decentralised applications. Through Momentum, clients access Hedera's enterprise network and Academy programme, with developers trained to build production-grade blockchain systems. Hedera does not operate a direct-referral programme; enquire through Momentum.",
-    url: "https://hedera.com/",
+    // url: "https://hedera.com/",
   },
   {
     name: "Innovate Maritime Africa",
@@ -44,7 +44,7 @@ const partners = [
     quote: "The 1st Maritime Venture Studio in Africa.",
     description:
       "Africa's first maritime venture studio, IMA partners with bold maritime founders to transform ideas into impactful innovations shaping the continent's blue economy. Through Momentum, clients gain access to IMA's venture-building expertise and co-development capabilities for maritime-focused technology. IMA does not operate a direct-referral programme; enquire through Momentum.",
-    url: "https://innovatemaritimeafrica.com/",
+    // url: "https://innovatemaritimeafrica.com/",
   },
   {
     name: "Cloudora",
@@ -55,7 +55,7 @@ const partners = [
     quote: "Enterprise standards for reliability, uptime, and scalability.",
     description:
       "Cloudora ensures every system deployed through Momentum meets enterprise standards for reliability, uptime, and scalability. Through Momentum, clients access Cloudora's full-stack cloud engineering expertise, from architecture design to automated deployment pipelines, container orchestration and microservices, high-availability architecture and disaster recovery, and cloud cost optimisation and monitoring. Cloudora does not operate a direct-referral programme; enquire through Momentum.",
-    url: "#",
+    // url: "/contact?intent=partner&partner=Cloudora#contact-form-section",
   },
 ];
 ---
@@ -111,6 +111,19 @@ const partners = [
                   <p class="partner-row-quote">"{partner.quote}"</p>
                 )}
                 <p class="partner-row-description">{partner.description}</p>
+                {partner.url && (
+                  <p>
+                    <a
+                      href={partner.url}
+                      class="programme-cta"
+                      target={partner.url.startsWith("http") ? "_blank" : undefined}
+                      rel={partner.url.startsWith("http") ? "noopener noreferrer" : undefined}
+                    >
+                      {partner.url.startsWith("http") ? "Visit partner" : "Enquire via Momentum"}
+                      <i data-lucide="arrow-up-right"></i>
+                    </a>
+                  </p>
+                )}
               </div>
             </div>
           ))
