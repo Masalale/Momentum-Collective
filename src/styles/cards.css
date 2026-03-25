@@ -16,14 +16,14 @@
   }
 }
 
-/* cols-3 programme cards: too content-rich for 2-col on mobile → 1 per row */
+/* Programme cards: too content-rich for 2-col on mobile → 1 per row */
 @media (max-width: 639px) {
-  .card-grid-editorial.cols-3 {
+  .card-grid-editorial.programme-grid {
     grid-template-columns: 1fr;
   }
 
   /* Reset orphan treatment — every card is full-width so no centering needed */
-  .card-grid-editorial.cols-3 > .card-editorial:last-child:nth-child(odd) {
+  .card-grid-editorial.programme-grid > .card-editorial:last-child:nth-child(odd) {
     grid-column: auto;
     max-width: none;
     margin: 0;
