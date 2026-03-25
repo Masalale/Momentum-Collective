@@ -4,6 +4,8 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 import {
   lenis,
   cleanupScroll,
+  lockScroll,
+  unlockScroll,
 } from './scroll-init';
 import { createIcons, ALL_ICONS } from './icons';
 import { CONTACT_EMAIL } from '../lib/constants';
@@ -692,6 +694,7 @@ barba.init({
 
       leave(data: any) {
         const overlay = getOverlay();
+        lockScroll();
 
         return new Promise<void>((resolve) => {
           gsap
@@ -714,8 +717,21 @@ barba.init({
         });
       },
 
-      enter({ next }) {
+      enter({ next, current }) {
         const overlay = getOverlay();
+
+        // Pull old container out of document flow so the new container
+        // sits at the top of the wrapper — not below the fold.
+        // Without this, scrollTo(0,0) shows the old container's empty
+        // space and the overlay wipes away to reveal nothing.
+        gsap.set(current.container, { display: 'none' });
+
+        // Prepare content while overlay still covers — icons and marquee
+        // are ready before the wipe reveals the page.
+        createIcons({ icons: ALL_ICONS });
+        if (next.container.querySelector('.marquee-track')) {
+          import('./marquee').then(({ initMarquee }) => { initMarquee(); });
+        }
 
         window.scrollTo(0, 0);
         lenis.scrollTo(0, { immediate: true });
@@ -733,6 +749,7 @@ barba.init({
       },
 
       after({ next }) {
+        unlockScroll();
         lenis.start();
         initPage(next.container);
 

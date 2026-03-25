@@ -1,0 +1,237 @@
+/* ============================================================
+   Navigation & Footer
+   ============================================================ */
+
+/* ── Main Nav ── */
+.main-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-subtle);
+  transition: background var(--duration-standard) var(--ease-out-expo);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 clamp(var(--space-sm), 4vw, var(--space-md));
+}
+
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 400;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.nav-links {
+  display: none;
+  gap: var(--space-lg);
+}
+
+@media (min-width: 768px) {
+  .nav-links {
+    display: flex;
+  }
+}
+
+.nav-link {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  position: relative;
+  transition: color var(--duration-micro) var(--ease-out-expo);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -13px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent-ochre);
+  transition: width var(--duration-standard) var(--ease-out-expo);
+  z-index: 1;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--text-primary);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* CSS-animated hamburger - no Lucide swap needed */
+.nav-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: 0;
+}
+
+.nav-toggle svg {
+  display: none;
+}
+
+/* Three-bar hamburger drawn with CSS */
+.nav-toggle-bar {
+  position: relative;
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+  transition:
+    background 0.2s ease,
+    transform 0.35s var(--ease-out-expo),
+    top 0.3s var(--ease-out-expo);
+}
+
+.nav-toggle-bar::before,
+.nav-toggle-bar::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 22px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+  transition:
+    transform 0.35s var(--ease-out-expo),
+    top 0.3s var(--ease-out-expo);
+}
+
+.nav-toggle-bar::before {
+  top: -7px;
+}
+
+.nav-toggle-bar::after {
+  top: 7px;
+}
+
+/* Open state: bars become an X */
+.nav-toggle.is-open .nav-toggle-bar {
+  background: transparent;
+}
+
+.nav-toggle.is-open .nav-toggle-bar::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.nav-toggle.is-open .nav-toggle-bar::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+@media (min-width: 768px) {
+  .nav-toggle {
+    display: none;
+  }
+}
+
+/* Mobile menu */
+.mobile-menu {
+  position: fixed;
+  inset: 72px 0 0 0;
+  background: var(--bg-deep);
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-lg);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--duration-standard) var(--ease-out-expo);
+}
+
+.mobile-menu.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-menu .nav-link {
+  font-size: clamp(var(--text-xl), 6vw, var(--text-2xl));
+  font-family: var(--font-display);
+  text-transform: none;
+  letter-spacing: 0;
+  padding: var(--space-xs) var(--space-sm);
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+
+/* ── Footer ── */
+.main-footer {
+  background: var(--bg-alt);
+  border-top: 1px solid var(--border-subtle);
+  padding: clamp(var(--space-md), 5vw, var(--space-lg)) 0;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  text-align: center;
+}
+
+.footer-tagline {
+  font-family: var(--font-display);
+  font-size: clamp(var(--text-lg), 3vw, var(--text-xl));
+  color: var(--accent-ochre);
+}
+
+.footer-social {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-sm);
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 50%;
+  color: var(--text-muted);
+  transition: all var(--duration-standard) var(--ease-out-expo);
+}
+
+.social-link:hover {
+  color: var(--accent-ochre);
+  border-color: var(--accent-ochre);
+  transform: translateY(-2px);
+}
+
+.footer-copyright {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}

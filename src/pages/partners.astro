@@ -39,7 +39,7 @@ const partners = [
     name: "Innovate Maritime Africa",
     sector: "Maritime & Blue Economy",
     icon: "ship",
-    type: "Venture & Industry Partner",
+    type: "Venture Partner",
     image: "/assets/innovate-maritime-africa.jpg",
     quote: "The 1st Maritime Venture Studio in Africa.",
     description:
@@ -89,7 +89,7 @@ const partners = [
 
       <div class="partner-stagger">
         {
-          partners.map((partner, index) => (
+          partners.map((partner) => (
             <div class="partner-row">
               <div class="partner-row-brand">
                 <div class="partner-logo-box">
@@ -105,8 +105,9 @@ const partners = [
                 <span class="partner-type">{partner.type}</span>
               </div>
 
-              <div class="partner-row-content">
-                <h3 class="partner-row-title">{partner.name}</h3>
+              <h3 class="partner-row-title">{partner.name}</h3>
+
+              <div class="partner-row-body">
                 {partner.quote && (
                   <p class="partner-row-quote">"{partner.quote}"</p>
                 )}
@@ -209,7 +210,7 @@ const partners = [
     font-family: var(--font-display);
     font-size: var(--text-base);
     font-style: italic;
-    color: var(--accent-ochre);
+    color: var(--text-primary);
     margin-bottom: var(--space-xs);
     line-height: 1.4;
   }

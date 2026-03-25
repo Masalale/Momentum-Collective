@@ -1,0 +1,70 @@
+/* ============================================================
+   Hero — Full-page Hero, Compact Hero Variant
+   ============================================================ */
+
+.hero {
+  min-height: clamp(40dvh, 60dvh, 80dvh);
+  display: flex;
+  align-items: center;
+  padding: clamp(3rem, 10vw, 8rem) 0 clamp(2rem, 6vw, 4rem);
+  background: var(--bg-deep);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero-eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--accent-ochre);
+  margin-bottom: var(--space-sm);
+}
+
+.hero-title {
+  font-size: clamp(1.8rem, 7vw, 4.5rem);
+  font-weight: 400;
+  line-height: 1.1;
+  margin-bottom: var(--space-md);
+}
+
+.hero-subtext {
+  font-size: var(--text-lg);
+  color: var(--text-muted);
+  margin-bottom: var(--space-md);
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  justify-content: center;
+}
+
+@media (min-width: 480px) {
+  .hero-buttons {
+    flex-direction: row;
+  }
+}
+
+/* Compact hero — pages with minimal hero content (Contact, Newsletter, Partners, 404) */
+.hero-compact {
+  min-height: 45dvh !important;
+  padding: var(--space-xl) 0 var(--space-md) !important;
+}
+
+@media (max-width: 768px) {
+  .hero-compact {
+    min-height: auto !important;
+    padding: var(--space-md) 0 !important;
+  }
+}

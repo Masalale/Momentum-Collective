@@ -1,0 +1,123 @@
+/* ============================================================
+   Base — Reset, HTML/Body, Lenis, Media Elements
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: auto;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  color: var(--text-primary);
+  background-color: var(--bg-deep);
+  min-height: 100dvh;
+  overflow-x: hidden;
+}
+
+/* 404 / not-found full-height layout */
+body.is-not-found {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+body.is-not-found [data-barba="wrapper"],
+body.is-not-found [data-barba="wrapper"].layout-fill {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+body.is-not-found [data-barba="container"],
+body.is-not-found [data-barba="container"].layout-fill {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+body.is-not-found .main-footer {
+  margin-top: auto;
+}
+
+/* Lenis Smooth Scroll Core */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Media elements */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

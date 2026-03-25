@@ -1,0 +1,103 @@
+/* ============================================================
+   About Page — Hero Grid, Pillars, Logo Visual
+   ============================================================ */
+
+/* ── About Hero ── */
+.about-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+  align-items: center;
+  width: 100%;
+}
+
+@media (min-width: 900px) {
+  .about-hero-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+  }
+}
+
+.about-hero-copy {
+  text-align: left;
+  max-width: none;
+  margin: 0;
+}
+
+.about-hero-copy .hero-eyebrow {
+  text-align: left;
+}
+
+.about-hero-copy .hero-title {
+  text-align: left;
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.about-hero-copy .hero-subtext {
+  text-align: left;
+  margin-left: 0;
+  margin-right: 0;
+  max-width: none;
+}
+
+.about-hero-buttons {
+  justify-content: flex-start;
+}
+
+.about-hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+@media (min-width: 900px) {
+  .about-hero-visual {
+    justify-content: flex-end;
+  }
+}
+
+.hero-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-logo {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  opacity: 0.9;
+}
+
+@media (min-width: 900px) {
+  .hero-logo {
+    max-width: 400px;
+  }
+}
+
+/* ── Pillars Grid ── */
+.pillars-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+@media (min-width: 768px) {
+  .pillars-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+    align-items: stretch;
+  }
+}
+
+/* Pillar cards: white background (override shared feature-card default) */
+.pillars-grid .feature-card {
+  background: var(--bg-deep);
+  border: 1px solid var(--border-subtle);
+}

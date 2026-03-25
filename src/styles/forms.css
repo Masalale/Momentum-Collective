@@ -1,0 +1,179 @@
+/* ============================================================
+   Forms — Enquiry Form, Newsletter Input, Contact Form Grid
+   ============================================================ */
+
+/* ── Enquiry Form ── */
+.enquiry-form-wrap {
+  max-width: 560px;
+}
+
+.enquiry-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.enquiry-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.enquiry-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.enquiry-input,
+.enquiry-textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: var(--bg-alt);
+  border: 1px solid var(--border-subtle);
+  border-radius: 4px;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  outline: none;
+  transition: border-color var(--duration-standard) var(--ease-out-expo);
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.enquiry-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.enquiry-input:focus,
+.enquiry-textarea:focus {
+  border-color: var(--accent-ochre);
+}
+
+.enquiry-input::placeholder,
+.enquiry-textarea::placeholder {
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+
+/* Compact variant — popup inline use */
+.enquiry-form--compact .enquiry-input,
+.enquiry-form--compact .enquiry-textarea {
+  padding: 0.625rem 0.875rem;
+  font-size: var(--text-sm);
+}
+
+.enquiry-form--compact .enquiry-textarea {
+  min-height: 60px;
+}
+
+/* Context banner */
+.enquiry-context-banner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  background: rgba(13, 148, 136, 0.06);
+  border: 1px solid rgba(13, 148, 136, 0.2);
+  border-radius: 4px;
+  padding: 0.75rem 1rem;
+  margin-bottom: var(--space-md);
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+}
+
+.enquiry-context-banner i[data-lucide],
+.enquiry-context-banner svg {
+  width: 16px;
+  height: 16px;
+  color: var(--accent-ochre);
+  flex-shrink: 0;
+}
+
+/* Success state */
+.enquiry-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  border: 1px solid rgba(13, 148, 136, 0.25);
+  border-radius: 4px;
+  background: rgba(13, 148, 136, 0.04);
+}
+
+.enquiry-success i[data-lucide],
+.enquiry-success svg {
+  width: 32px;
+  height: 32px;
+  color: var(--accent-ochre);
+}
+
+/* Error state */
+.enquiry-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-xs);
+  padding: var(--space-sm);
+  border: 1px solid rgba(225, 29, 72, 0.2);
+  border-radius: 4px;
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+}
+
+/* Submit button loading/disabled state */
+.enquiry-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ── Newsletter Email Input ── */
+.newsletter-input {
+  flex: 1;
+  min-width: 220px;
+  padding: 0.85rem 1.25rem;
+  background: var(--bg-deep);
+  border: 1px solid var(--border-subtle);
+  border-radius: 4px;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  outline: none;
+  transition: border-color var(--duration-standard) var(--ease-out-expo);
+}
+
+.newsletter-input:focus {
+  border-color: var(--accent-ochre);
+}
+
+/* ── Contact Page — 2-column Form Grid ── */
+.contact-form-grid {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: var(--space-lg);
+  align-items: start;
+}
+
+.contact-form-intro {
+  position: sticky;
+  top: calc(80px + var(--space-md));
+}
+
+.contact-form-side .enquiry-form-wrap {
+  max-width: none;
+}
+
+@media (max-width: 768px) {
+  .contact-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form-intro {
+    position: static;
+  }
+}

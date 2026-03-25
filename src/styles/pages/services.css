@@ -1,0 +1,230 @@
+/* ============================================================
+   Services Page — Intent Grid, Programme Cards, Sticky Bar
+   ============================================================ */
+
+/* Programme cards: white background (inside alt section) */
+#core-programs .card-editorial,
+.section-alt .card-editorial--programme,
+.card-grid-editorial .card-editorial--programme {
+  background: var(--bg-deep);
+  border: 1px solid var(--border-subtle);
+}
+
+/* ── Programme List ── */
+.programme-list {
+  list-style: none;
+  margin: var(--space-sm) 0;
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--space-xs) / 2);
+  flex: 1;
+}
+
+.programme-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: calc(var(--space-xs) / 2);
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.programme-list li i[data-lucide],
+.programme-list li svg {
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+  color: var(--accent-ochre);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* ── Programme CTA Links ── */
+.programme-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-top: auto;
+  padding-top: var(--space-sm);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-ochre);
+  text-decoration: none;
+  transition: gap 0.2s ease;
+}
+
+.programme-cta:hover {
+  gap: var(--space-sm);
+}
+
+.programme-cta i[data-lucide],
+.programme-cta svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* ── Programme Sub-Section (Hackathons inside Masterclasses card) ── */
+.programme-sub-section {
+  border-top: 1px solid var(--border-subtle);
+  margin-top: var(--space-md);
+  padding-top: var(--space-md);
+}
+
+/* ── Intent Grid ── */
+.intent-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-sm);
+}
+
+@media (min-width: 768px) {
+  .intent-grid {
+    gap: var(--space-md);
+  }
+}
+
+/* Centre lone orphan on tablet (768–1023px) when 5 cards leave 1 uncentred */
+@media (max-width: 1023px) {
+  .intent-grid > .intent-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    max-width: 50%;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .intent-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+/* ── Intent Card ── */
+.intent-card {
+  background: var(--bg-deep);
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  padding: clamp(var(--space-sm), 4vw, var(--space-lg)) clamp(var(--space-xs), 3vw, var(--space-md));
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-xs);
+  text-decoration: none;
+  color: inherit;
+}
+
+.intent-card:hover {
+  border-color: var(--accent-ochre);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.intent-card.active {
+  border-color: var(--accent-ochre);
+  background: rgba(13, 148, 136, 0.02);
+}
+
+/* anchor used as an intent card */
+.intent-card--link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.intent-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(13, 148, 136, 0.08);
+  border-radius: 50%;
+  color: var(--accent-ochre);
+  margin-bottom: var(--space-xs);
+}
+
+.intent-icon svg,
+.intent-icon i {
+  width: 20px;
+  height: 20px;
+}
+
+.intent-label {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.intent-hint {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+}
+
+/* ── Intent Sticky Bar ── */
+.intent-sticky {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: var(--bg-deep);
+  border-top: 1px solid var(--border-subtle);
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(100%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: var(--space-sm) 0;
+}
+
+.intent-sticky.visible {
+  transform: translateY(0);
+}
+
+.intent-sticky .btn {
+  white-space: nowrap;
+}
+
+.intent-sticky-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.intent-sticky-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  flex: 1;
+}
+
+.intent-sticky-close {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: color 0.2s;
+}
+
+.intent-sticky-close:hover {
+  color: var(--text-primary);
+}

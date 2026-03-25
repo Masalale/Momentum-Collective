@@ -1,0 +1,329 @@
+/* ============================================================
+   Courses Page — Popup Modal, Course List, Course Actions
+   ============================================================ */
+
+/* ── Two-action Card Footer (Panoramic Synergy) ── */
+.card-course-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-top: auto;
+  padding-top: var(--space-sm);
+}
+
+/* Each button takes equal share of available width — no overflow, no stacking */
+.card-course-actions .course-popup-trigger,
+.card-course-actions .course-enquire-direct {
+  flex: 1;
+  justify-content: center;
+  text-align: center;
+  min-width: 0; /* Allow text to shrink below minimums if needed */
+}
+
+.card-course-actions .course-popup-trigger {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* Enquire accent button in card footer */
+.course-enquire-direct {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  background: transparent;
+  border: 1px solid var(--accent-ochre);
+  color: var(--accent-ochre);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.5rem 0.5rem; /* Reduced horizontal padding slightly */
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+  white-space: nowrap; /* Keep single line */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Fallback for extreme narrow widths */
+}
+
+@media (max-width: 639px) {
+  /* Scale down the typography and spacing on mobile to fit col-2 */
+  .card-course-actions {
+    gap: 0.25rem;
+  }
+  .course-enquire-direct {
+    font-size: 0.65rem;
+    letter-spacing: 0.05em;
+    padding: 0.4rem 0.25rem;
+  }
+  .card-course-actions .course-popup-trigger {
+    font-size: 0.65rem;
+    letter-spacing: 0.05em;
+    padding-right: 0.15rem;
+  }
+}
+
+
+.course-enquire-direct:hover {
+  background: var(--accent-ochre);
+  color: var(--bg-primary, #0a0a0a);
+}
+
+.course-enquire-direct svg {
+  width: 12px;
+  height: 12px;
+}
+
+/* ── Course List (popup) ── */
+.card-course-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.card-course-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: var(--space-xs) 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.card-course-list li:last-child {
+  border-bottom: none;
+}
+
+.card-course-list-name {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.card-course-list-desc {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* ── Category Popup Modal ── */
+.course-popup-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.course-popup-overlay.is-open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.course-popup {
+  position: relative;
+  background: var(--bg-deep);
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  width: 100%;
+  max-width: 540px;
+  max-height: 85dvh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  padding: var(--space-lg);
+  transform: translateY(12px);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.course-popup-overlay.is-open .course-popup {
+  transform: translateY(0);
+}
+
+@media (max-width: 767px) {
+  .course-popup-overlay {
+    padding: 0;
+    align-items: flex-end;
+  }
+
+  .course-popup {
+    max-width: 100%;
+    max-height: 92dvh;
+    border-radius: 12px 12px 0 0;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    padding: var(--space-md) var(--space-sm);
+  }
+
+  .course-popup-title {
+    padding-right: var(--space-lg);
+  }
+}
+
+.course-popup-close {
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: 1px solid var(--border-subtle);
+  border-radius: 4px;
+  color: #dc2626;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  line-height: 1;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+
+.course-popup-close:hover {
+  color: #fff;
+  background: #dc2626;
+  border-color: #dc2626;
+}
+
+.course-popup-title {
+  font-family: var(--font-display);
+  font-size: clamp(var(--text-xl), 3vw, var(--text-2xl));
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: var(--space-xs);
+  padding-right: var(--space-lg);
+}
+
+.course-popup-meta {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-ochre);
+  margin-bottom: var(--space-md);
+}
+
+/* "View courses" trigger button on each card */
+.course-popup-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-top: auto;
+  padding-top: var(--space-sm);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-ochre);
+  font-weight: 500;
+  transition: gap 0.2s ease;
+  padding-left: 0;
+  padding-bottom: 0;
+}
+
+.course-popup-trigger:hover {
+  gap: var(--space-sm);
+}
+
+.course-popup-trigger i[data-lucide],
+.course-popup-trigger svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Enquire CTA inside popup */
+.course-popup-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-top: var(--space-md);
+}
+
+/* Popup step 2 back button */
+.course-popup-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: var(--space-sm);
+  transition: color 0.15s ease;
+}
+
+.course-popup-back:hover {
+  color: var(--text-primary);
+}
+
+/* ── Clickable Course Rows (Panoramic Synergy step 1) ── */
+.card-course-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 0.3rem 0.5rem;
+  margin: 0 -0.5rem;
+  transition: background 0.15s ease;
+}
+
+.card-course-item:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.card-course-item-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  flex: 1;
+}
+
+.card-course-item-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-sm);
+}
+
+.card-course-item-cta {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent-ochre);
+  white-space: nowrap;
+  flex-shrink: 0;
+  opacity: 0.65;
+  transition: all 0.2s ease;
+}
+
+.card-course-item:hover .card-course-item-cta {
+  opacity: 1;
+  color: var(--accent-electric);
+  transform: translateX(4px);
+}
+
+@media (hover: none) {
+  .card-course-item-cta {
+    opacity: 0.55;
+  }
+}
